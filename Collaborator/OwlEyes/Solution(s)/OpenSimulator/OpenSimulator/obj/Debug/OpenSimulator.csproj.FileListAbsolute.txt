@@ -1,0 +1,11 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\OpenSimulator.exe.config
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\OpenSimulator.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\OpenSimulator.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.csproj.SuggestedBindingRedirects.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.Properties.Resources.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.csproj.GenerateResource.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.MainForm.resources
