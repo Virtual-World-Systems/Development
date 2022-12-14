@@ -35,5 +35,40 @@ namespace OpenSimulator
 			}
 		}
 		public Form F_colladaFromDB = null;
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+			Tree.ImageList = IconList.Instance;
+			Tree.Load();
+		}
+
+		private void Tree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+		{
+			if (e.Button == MouseButtons.Right)
+			{
+				e.Node.TreeView.SelectedNode = e.Node;
+				string k = e.Node.Name;
+				string t = e.Node.Text;
+				if (k != t) t = k + ": " + t;
+				MessageBox.Show(t);
+			}
+		}
+
+		private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
+		{
+			if (Panel_Content.HasChildren)
+				foreach (Control c in Panel_Content.Controls)
+					Panel_Content.Controls.Remove(c);
+
+			PropertyGrid pg = new PropertyGrid();
+			Panel_Content.Controls.Add(pg);
+			pg.Dock = DockStyle.Fill;
+			List<string> hidden = (e.Node.Tag is Objects._)
+				? ((Objects._)e.Node.Tag).GetHiddenProperties()
+				: new List<string>() { "Capacity", "Count" };
+			pg.SelectedObject = new PropertiesWrapper(e.Node.Tag, hidden);
+			pg.Visible = true;
+			pg.Show();
+		}
 	}
 }

@@ -51,6 +51,15 @@ namespace OpenSimulator
 		static XmlElement Dialogs = null;
 		static Dictionary<string, Dialog> _dialogs = new Dictionary<string, Dialog>();
 
+		class POV
+		{
+			public POV(PropertyInfo p, object o, object v)
+			{ this.p = p; this.o = o; this.v = v; }
+			public PropertyInfo p;
+			public object o;
+			public object v;
+		}
+
 		Dialog(XmlElement x) : this()
 		{
 			xml = x;
@@ -71,6 +80,8 @@ namespace OpenSimulator
 				v.SuspendLayout();
 				ctls0.Add(v);
 			}
+			List<POV> Lazies = new List<POV>();
+
 			foreach (XmlElement e in x.SelectNodes("Controls/*"))
 			{
 				string type = e.Name;
@@ -84,29 +95,47 @@ namespace OpenSimulator
 				foreach (XmlElement a in e.SelectNodes("*"))
 				{
 					if (a.Name.StartsWith("_")) continue;
-					string[] s;
+					string[] ss;
 					object o = null;
+					bool lazy = false;
 					PropertyInfo pi = L.GetProperty(a.Name, BindingFlags.Public | BindingFlags.Instance);
 					switch (pi.PropertyType.Name)
 					{
 						case "Boolean": o = (a.InnerText.ToLower() == "true"); break;
 						case "String": o = a.InnerText; break;
 						case "Point":
-							s = a.InnerText.Split(';');
+							ss = a.InnerText.Split(';');
 							Point p = new Point();
-							p.X = int.Parse(s[0]);
-							p.Y = int.Parse(s[1]);
+							p.X = int.Parse(ss[0]);
+							p.Y = int.Parse(ss[1]);
 							o = p;
 							break;
 						case "Size":
-							s = a.InnerText.Split(';');
+							ss = a.InnerText.Split(';');
 							Size sz = new Size();
-							sz.Width = int.Parse(s[0]);
-							sz.Height = int.Parse(s[1]);
+							sz.Width = int.Parse(ss[0]);
+							sz.Height = int.Parse(ss[1]);
 							o = sz;
 							break;
+						case "AnchorStyles":
+							int ast = 0;
+							foreach (string s in a.InnerText.Split(','))
+								ast |= (int)Enum.Parse(typeof(AnchorStyles), s);
+							o = ast;
+							lazy = true;
+							break;
+						case "Int32":
+							o = int.Parse(a.InnerText);
+							break;
+						default:
+							MessageBox.Show("unknown: " + pi.PropertyType.Name);
+							break;
 					}
-					pi.SetValue(ctl, o, null);
+					if (o != null)
+					{
+						if (lazy) Lazies.Add(new POV(pi, ctl, o));
+						else pi.SetValue(ctl, o, null);
+					}
 				}
 				ctl.ResumeLayout();
 				ctl.PerformLayout();
@@ -122,11 +151,15 @@ namespace OpenSimulator
 			}
 			ResumeLayout();
 			PerformLayout();
+
 			AutoSize = false;
 			bot = bot + 40;
 			rgt = rgt + 12;
 			ClientSize = new Size(rgt, bot);
 			MinimumSize = Size;
+
+			foreach (POV pov in Lazies)
+				pov.p.SetValue(pov.o, pov.v, null);
 		}
 		XmlElement xml;
 

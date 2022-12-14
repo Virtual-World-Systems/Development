@@ -11,3 +11,9 @@ C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Ope
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.MainForm.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Dialogs.xml
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.Dialog.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\Servers.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\Server.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\_.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Objects\_.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\Message.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\Messages.png

@@ -9,8 +9,10 @@
 					<!--UseVisualStyleBackColor>true</UseVisualStyleBackColor-->
 					<Location>12;12</Location>
 					<AutoSize>true</AutoSize>
-					<Name>aLabel</Name>;
-					<Text>a Label</Text>;
+					<Name>aLabel</Name>
+					<Text>a Label</Text>
+					<Height>300</Height>
+					<Anchor>Left,Bottom,Right,Top</Anchor>
 				</GroupBox>
 			</Controls>
 		</ColladaFromDB>
