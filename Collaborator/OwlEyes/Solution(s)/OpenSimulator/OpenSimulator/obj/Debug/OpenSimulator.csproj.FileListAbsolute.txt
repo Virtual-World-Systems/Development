@@ -9,3 +9,5 @@ C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Ope
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.exe
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.pdb
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.MainForm.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Dialogs.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\obj\Debug\OpenSimulator.Dialog.resources

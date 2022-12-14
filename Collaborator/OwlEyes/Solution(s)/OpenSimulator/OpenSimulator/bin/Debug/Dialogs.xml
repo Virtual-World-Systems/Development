@@ -1,0 +1,18 @@
+﻿<File>
+	<Import>
+		<ColladaFromDB>
+			<Title>Import Collada from Database</Title>
+			<Width>600</Width>
+			<Height>200</Height>
+			<Controls>
+				<GroupBox>
+					<!--UseVisualStyleBackColor>true</UseVisualStyleBackColor-->
+					<Location>12;12</Location>
+					<AutoSize>true</AutoSize>
+					<Name>aLabel</Name>;
+					<Text>a Label</Text>;
+				</GroupBox>
+			</Controls>
+		</ColladaFromDB>
+	</Import>
+</File>
