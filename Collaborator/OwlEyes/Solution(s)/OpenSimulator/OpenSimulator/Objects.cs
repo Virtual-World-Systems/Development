@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OpenSimulator
 {
@@ -29,9 +30,19 @@ namespace OpenSimulator
 		{
 			public __(string name) { Name = name; }
 
-			public string _Type_ { get { return _.ToString(this); } }
+			public string _Type_ { get { return __<T>.ToString(this); } }
 
 			public string Name { get; set; }
+
+			internal static string ToString(__<T> t)
+			{
+				string s = t.ToString();
+				s = "List of " + t.Name;
+				//string[] ss = s.Split('[', ']');
+				//s = ss[1].Substring(ss[1].IndexOf("+") + 1);
+				//MessageBox.Show(s);
+				return s;
+			}
 		}
 	}
 }
