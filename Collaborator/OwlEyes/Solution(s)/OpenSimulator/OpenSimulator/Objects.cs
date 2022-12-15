@@ -17,6 +17,8 @@ namespace OpenSimulator
 			public string _Type_ { get { return _.ToString(this); } }
 			public string Name { get; set; }
 
+			public string URL { get; set; }
+
 			virtual public List<string> GetHiddenProperties() { return new List<string>(); }
 
 			internal static string ToString(object t)
@@ -42,6 +44,7 @@ namespace OpenSimulator
 				//s = ss[1].Substring(ss[1].IndexOf("+") + 1);
 				//MessageBox.Show(s);
 				return s;
+				Assembly.GetExecutingAssembly().LoadModule("xxx", null);
 			}
 		}
 	}

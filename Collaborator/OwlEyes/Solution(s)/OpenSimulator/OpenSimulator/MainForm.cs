@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,8 +14,10 @@ namespace OpenSimulator
 {
 	public partial class MainForm : Form
 	{
+		public static MainForm Instance;
 		public MainForm()
 		{
+			Instance = this;
 			InitializeComponent();
 		}
 
@@ -41,34 +44,83 @@ namespace OpenSimulator
 			Tree.ImageList = IconList.Instance;
 			Tree.Load();
 		}
+		O O;
 
 		private void Tree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
 			if (e.Button == MouseButtons.Right)
 			{
 				e.Node.TreeView.SelectedNode = e.Node;
-				string k = e.Node.Name;
-				string t = e.Node.Text;
-				if (k != t) t = k + ": " + t;
-				MessageBox.Show(t);
+				new Test.Test_TreeNodeRightClick(e.Node);
+				NodeContextMenu.Tag = e.Node;
+				NodeContextMenu.Show((Control)sender, e.Location);
 			}
+		}
+
+		public static void Log(string text)
+		{
+			Instance.Log_(text);
+		}
+		public void Log_(string text)
+		{
+			TextBox tb = (TextBox)Instance.Panel_Content.Controls[0];
+			tb.Text += text + "\r\n";
 		}
 
 		private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
 		{
-			if (Panel_Content.HasChildren)
-				foreach (Control c in Panel_Content.Controls)
-					Panel_Content.Controls.Remove(c);
+			VerifyPropertyGrid();
 
-			PropertyGrid pg = new PropertyGrid();
-			Panel_Content.Controls.Add(pg);
-			pg.Dock = DockStyle.Fill;
 			List<string> hidden = (e.Node.Tag is Objects._)
 				? ((Objects._)e.Node.Tag).GetHiddenProperties()
 				: new List<string>() { "Capacity", "Count" };
-			pg.SelectedObject = new PropertiesWrapper(e.Node.Tag, hidden);
-			pg.Visible = true;
-			pg.Show();
+			PropertyGrid.SelectedObject = new PropertiesWrapper(e.Node.Tag, hidden);
+		}
+		void VerifyPropertyGrid()
+		{
+			Panel_Content.Controls.Clear();
+
+			TextBox textBox = new TextBox();
+			Panel_Content.Controls.Add(textBox);
+			textBox.Multiline = true;
+			textBox.Height = 100;
+			textBox.ReadOnly = true;
+			textBox.Dock = DockStyle.Bottom;
+			textBox.Visible = true;
+			textBox.Show();
+
+			PropertyGrid = new PropertyGrid();
+			Panel_Content.Controls.Add(PropertyGrid);
+			PropertyGrid.Dock = DockStyle.Fill;
+			PropertyGrid.Visible = true;
+			PropertyGrid.Show();
+		}
+		PropertyGrid PropertyGrid;
+
+		private void Test_XML_Click(object sender, EventArgs e)
+		{
+			new Test.Test_XML(Dialog.Path("_.xml"));
+		}
+
+		private void Test_O_DataRow_Click(object sender, EventArgs e)
+		{
+			new Test.Test_O_DataRow();
+		}
+
+		private void Test_AssemblyName_Click(object sender, EventArgs e)
+		{
+			new Test.Test_AssemblyName();
+		}
+
+		private void NodeContext_ShowMetainfo_Click(object sender, EventArgs e)
+		{
+			VerifyPropertyGrid();
+			PropertyGrid.SelectedObject = ((ToolStripMenuItem)sender).Owner.Tag;
+		}
+
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }
