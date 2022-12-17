@@ -14,38 +14,43 @@ namespace OpenSimulator
 {
 	public partial class MainForm : Form
 	{
+		#region Lifetime
 		public static MainForm Instance;
 		public MainForm()
 		{
 			Instance = this;
 			InitializeComponent();
 		}
-
-		private void colladaFromDBToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			if (F_colladaFromDB == null)
-				F_colladaFromDB = Dialog.from("/File/Import/ColladaFromDB");
-			switch (F_colladaFromDB.ShowDialog())
-			{
-				case DialogResult.OK: MessageBox.Show("OK"); return;
-				case DialogResult.Cancel: MessageBox.Show("cancelled"); return;
-				case DialogResult.None: MessageBox.Show("none"); return;
-				case DialogResult.No: MessageBox.Show("no"); return;
-				case DialogResult.Retry: MessageBox.Show("retry"); return;
-				case DialogResult.Yes: MessageBox.Show("yes"); return;
-				case DialogResult.Abort: MessageBox.Show("abort"); return;
-				case DialogResult.Ignore: MessageBox.Show("ignore"); return;
-			}
-		}
-		public Form F_colladaFromDB = null;
-
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			Tree.ImageList = IconList.Instance;
 			Tree.Load();
 		}
 		O O;
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
 
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			NotifyIcon.Dispose();
+		}
+
+		#endregion
+		#region Log
+		public static void Log(string text)
+		{
+			Instance.Log_(text);
+		}
+		public void Log_(string text)
+		{
+			TextBox tb = (TextBox)Instance.Panel_Content.Controls[0];
+			tb.Text += text + "\r\n";
+		}
+		#endregion
+
+		#region Tree
 		private void Tree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
 			if (e.Button == MouseButtons.Right)
@@ -56,17 +61,6 @@ namespace OpenSimulator
 				NodeContextMenu.Show((Control)sender, e.Location);
 			}
 		}
-
-		public static void Log(string text)
-		{
-			Instance.Log_(text);
-		}
-		public void Log_(string text)
-		{
-			TextBox tb = (TextBox)Instance.Panel_Content.Controls[0];
-			tb.Text += text + "\r\n";
-		}
-
 		private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
 		{
 			VerifyPropertyGrid();
@@ -76,6 +70,9 @@ namespace OpenSimulator
 				: new List<string>() { "Capacity", "Count" };
 			PropertyGrid.SelectedObject = new PropertiesWrapper(e.Node.Tag, hidden);
 		}
+		#endregion
+
+		#region PropertyGrid
 		void VerifyPropertyGrid()
 		{
 			Panel_Content.Controls.Clear();
@@ -97,6 +94,35 @@ namespace OpenSimulator
 		}
 		PropertyGrid PropertyGrid;
 
+		private void NodeContext_ShowMetainfo_Click(object sender, EventArgs e)
+		{
+			VerifyPropertyGrid();
+			PropertyGrid.SelectedObject = ((ToolStripMenuItem)sender).Owner.Tag;
+		}
+		#endregion
+
+		#region ColladaFromDB
+		private void colladaFromDBToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (F_colladaFromDB == null)
+				F_colladaFromDB = Dialog.from("/File/Import/ColladaFromDB");
+			switch (F_colladaFromDB.ShowDialog())
+			{
+				case DialogResult.OK: MessageBox.Show("OK"); return;
+				case DialogResult.Cancel: MessageBox.Show("cancelled"); return;
+				case DialogResult.None: MessageBox.Show("none"); return;
+				case DialogResult.No: MessageBox.Show("no"); return;
+				case DialogResult.Retry: MessageBox.Show("retry"); return;
+				case DialogResult.Yes: MessageBox.Show("yes"); return;
+				case DialogResult.Abort: MessageBox.Show("abort"); return;
+				case DialogResult.Ignore: MessageBox.Show("ignore"); return;
+			}
+		}
+		public Form F_colladaFromDB = null;
+
+		#endregion
+
+		#region Tests
 		private void Test_XML_Click(object sender, EventArgs e)
 		{
 			new Test.Test_XML(Dialog.Path("_.xml"));
@@ -112,15 +138,47 @@ namespace OpenSimulator
 			new Test.Test_AssemblyName();
 		}
 
-		private void NodeContext_ShowMetainfo_Click(object sender, EventArgs e)
+		private void demoAssemblyBuilderToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			VerifyPropertyGrid();
-			PropertyGrid.SelectedObject = ((ToolStripMenuItem)sender).Owner.Tag;
+			DemoAssemblyBuilder.Run();
 		}
 
-		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		private void iLGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Close();
+			TestILGenerator.Run();
+		}
+		#endregion
+
+		#region NotifyIcon
+		private void NotifyIcon_BalloonTipShown(object sender, EventArgs e)
+		{
+			Log_("shown");
+		}
+		private void NotifyIcon_Click(object sender, EventArgs e)
+		{
+			switch (((MouseEventArgs)e).Button)
+			{
+				case MouseButtons.Left:
+					NotifyMenu.Show(Cursor.Position, ToolStripDropDownDirection.Default);
+					return;
+				case MouseButtons.Right:
+					NotifyContextMenu.Show(Cursor.Position, ToolStripDropDownDirection.Default);
+					return;
+				case MouseButtons.Middle:
+					NotifyIcon.ShowBalloonTip(3000);
+					return;
+			}
+		}
+		#endregion
+
+		private void NotifyIcon_BalloonTipClicked(object sender, EventArgs e)
+		{
+			Log_("clicked");
+		}
+
+		private void NotifyIcon_BalloonTipClosed(object sender, EventArgs e)
+		{
+			Log_("closed");
 		}
 	}
 }

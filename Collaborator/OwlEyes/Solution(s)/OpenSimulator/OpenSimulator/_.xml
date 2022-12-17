@@ -1,0 +1,7 @@
+﻿<_>
+	<Container _="Open Simmulator" ContentSource="file:{ApplicationData}_User.xml">
+		<default.UI>
+			<TrayButton ImageLocation="file:{}"></TrayButton>
+		</default.UI>
+	</Container>
+</_>

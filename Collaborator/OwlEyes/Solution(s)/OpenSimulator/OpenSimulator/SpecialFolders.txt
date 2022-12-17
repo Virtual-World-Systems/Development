@@ -1,0 +1,58 @@
+﻿MyComputer: 
+CommonOemLinks: 
+LocalizedResources: 
+
+Windows: C:\Windows
+Fonts: C:\Windows\Fonts
+System: C:\Windows\system32
+SystemX86: C:\Windows\SysWOW64
+Resources: C:\Windows\resources
+
+ProgramFiles: C:\Program Files (x86)
+ProgramFilesX86: C:\Program Files (x86)
+CommonProgramFiles: C:\Program Files (x86)\Common Files
+CommonProgramFilesX86: C:\Program Files (x86)\Common Files
+
+CommonApplicationData: C:\ProgramData
+CommonTemplates: C:\ProgramData\Microsoft\Windows\Templates
+CommonAdminTools: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools
+
+CommonStartMenu: C:\ProgramData\Microsoft\Windows\Start Menu
+CommonPrograms: C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+CommonStartup: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+
+CommonMusic: C:\Users\Public\Music
+CommonVideos: C:\Users\Public\Videos
+CommonPictures: C:\Users\Public\Pictures
+CommonDocuments: C:\Users\Public\Documents
+CommonDesktopDirectory: C:\Users\Public\Desktop
+
+UserProfile: C:\Users\Administrator
+MyMusic: C:\Users\Administrator\Music
+Desktop: C:\Users\Administrator\Desktop
+MyVideos: C:\Users\Administrator\Videos
+MyPictures: C:\Users\Administrator\Pictures
+Favorites: C:\Users\Administrator\Favorites
+MyDocuments: C:\Users\Administrator\Documents
+DesktopDirectory: C:\Users\Administrator\Desktop
+Personal: C:\Users\Administrator\Documents
+
+ApplicationData: C:\Users\Administrator\AppData\Roaming
+
+Recent: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Recent
+SendTo: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\SendTo
+
+Templates: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Templates
+NetworkShortcuts: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Network Shortcuts
+PrinterShortcuts: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Printer Shortcuts
+
+StartMenu: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu
+Programs: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+Startup: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+AdminTools: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Administrative Tools
+
+LocalApplicationData: C:\Users\Administrator\AppData\Local
+History: C:\Users\Administrator\AppData\Local\Microsoft\Windows\History
+Cookies: C:\Users\Administrator\AppData\Local\Microsoft\Windows\INetCookies
+InternetCache: C:\Users\Administrator\AppData\Local\Microsoft\Windows\INetCache
+CDBurning: C:\Users\Administrator\AppData\Local\Microsoft\Windows\Burn\Burn

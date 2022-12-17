@@ -17,3 +17,4 @@ C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Ope
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Objects\_.xml
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\Message.png
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\Icons\Messages.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\OpenSimulator\OpenSimulator\bin\Debug\_.xml
