@@ -1,0 +1,37 @@
+﻿
+.state, .TabButton {
+	padding: 1px 4px 1px 3px;
+	position: relative;
+	top: -4px;
+	border: 1px solid Black;
+	border-radius: 9px;
+	font-family: Arial;
+	cursor: default;
+	font-size: small;
+}
+.sOn {
+	background-color: LightGreen;
+	color: Black;
+}
+.sOff {
+	background-color: Red;
+	color: White;
+}
+
+.state_selected {
+	background-color: #F0F0F0;
+	border-width: 2px;
+	color: Black;
+}
+.state_unselected {
+	background-color: White;
+	border-width: 1px;
+	color: gray;
+}
+
+.inzoom {
+	cursor: zoom-in;
+}
+.outzoom {
+	cursor: zoom-out;
+}

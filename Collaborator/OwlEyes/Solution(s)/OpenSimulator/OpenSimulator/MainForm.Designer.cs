@@ -54,7 +54,7 @@
 			this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.NotifyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.NotifyContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.testMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ShowWebbrowser = new System.Windows.Forms.ToolStripMenuItem();
 			this.testCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MainMenu.SuspendLayout();
 			this.MainPanelOuter.SuspendLayout();
@@ -275,9 +275,9 @@
 			// NotifyMenu
 			// 
 			this.NotifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testMToolStripMenuItem});
+            this.ShowWebbrowser});
 			this.NotifyMenu.Name = "NotifyMenu";
-			this.NotifyMenu.Size = new System.Drawing.Size(464, 26);
+			this.NotifyMenu.Size = new System.Drawing.Size(181, 48);
 			// 
 			// NotifyContextMenu
 			// 
@@ -286,11 +286,12 @@
 			this.NotifyContextMenu.Name = "NotifyContextMenu";
 			this.NotifyContextMenu.Size = new System.Drawing.Size(103, 26);
 			// 
-			// testMToolStripMenuItem
+			// ShowWebbrowser
 			// 
-			this.testMToolStripMenuItem.Name = "testMToolStripMenuItem";
-			this.testMToolStripMenuItem.Size = new System.Drawing.Size(463, 22);
-			this.testMToolStripMenuItem.Text = "test masdkflakfaffsd dfkk vflök ckxmv ,l.lmmmmmmmmmmmmmmmm";
+			this.ShowWebbrowser.Name = "ShowWebbrowser";
+			this.ShowWebbrowser.Size = new System.Drawing.Size(180, 22);
+			this.ShowWebbrowser.Text = "Show Webbrowser";
+			this.ShowWebbrowser.Click += new System.EventHandler(this.ShowWebbrowser_Click);
 			// 
 			// testCToolStripMenuItem
 			// 
@@ -353,7 +354,7 @@
 		private System.Windows.Forms.NotifyIcon NotifyIcon;
 		private System.Windows.Forms.ContextMenuStrip NotifyMenu;
 		private System.Windows.Forms.ContextMenuStrip NotifyContextMenu;
-		private System.Windows.Forms.ToolStripMenuItem testMToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ShowWebbrowser;
 		private System.Windows.Forms.ToolStripMenuItem testCToolStripMenuItem;
 	}
 }

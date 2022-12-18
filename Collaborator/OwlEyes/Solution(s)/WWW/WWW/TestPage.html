@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="expires" content="0"/>
+    <title></title>
+    <script src="/scripts/jQuery-3.6.0.js"></script>
+    <link type="text/css" rel="stylesheet" href="/styles/default.css" />
+    <script>
+        var $WS;
+        $(function () {
+			var s = document.URL + "\r\n";
+			s += navigator.appVersion + "\r\n";
+            $("#body").html($("<pre>" + s + "</pre>"));
+
+            $WS = new WebSocket("wss://Virtual-World-Systems.net/Index.ashx?navigator.appVersion=" + encodeURI(navigator.appVersion));
+			$WS.onopen = function (evt) { alert("on WS open"); $WS.send("ok"); }
+            $WS.onmessage = function (evt) { alert("msg: " + evt.data); }
+		})
+    </script>
+</head>
+<body id="body" style="font-size:xx-small;border:1px solid Red;border-radius:3px 4px;font-family:Arial">
+
+</body>
+</html>

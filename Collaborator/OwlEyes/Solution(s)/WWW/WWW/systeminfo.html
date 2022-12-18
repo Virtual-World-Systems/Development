@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/jQuery-3.6.0.js"></script>
+    <script>
+		function run() {
+            var s = "<div>" + clientInformation.mediaDevices.toString();
+            for (var m in clientInformation.mediaDevices.enumerateDevices())
+                s += "<br/>" + m;
+		    s += "<br/>" + clientInformation.platform;
+			s += "<br/>" + clientInformation.product;
+		    s += "<br/>" + clientInformation.productSub;
+            s += "<br/>" + navigator.userAgent;
+            s += "<br/>" + navigator.platform;
+            s += "</div>";
+		    $("#body").html(s);
+		}
+        $(function () { run(); });
+    </script>
+</head>
+<body id="body">
+
+</body>
+</html>

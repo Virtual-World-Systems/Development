@@ -45,7 +45,7 @@ namespace OpenSimulator
 		}
 		public void Log_(string text)
 		{
-			TextBox tb = (TextBox)Instance.Panel_Content.Controls[0];
+			TextBox tb = (TextBox)Instance.Panel_Content.Controls[0].Controls[0];
 			tb.Text += text + "\r\n";
 		}
 		#endregion
@@ -77,14 +77,29 @@ namespace OpenSimulator
 		{
 			Panel_Content.Controls.Clear();
 
+			Panel panel = new Panel();
+			Panel_Content.Controls.Add(panel);
+			panel.Height = 100;
+			panel.Dock = DockStyle.Bottom;
+			panel.Visible = true;
+			panel.Show();
+
 			TextBox textBox = new TextBox();
-			Panel_Content.Controls.Add(textBox);
+			textBox.Name = "LogTextBox";
+			panel.Controls.Add(textBox);
 			textBox.Multiline = true;
-			textBox.Height = 100;
+			textBox.Width = 400;
 			textBox.ReadOnly = true;
-			textBox.Dock = DockStyle.Bottom;
+			textBox.Dock = DockStyle.Left;
 			textBox.Visible = true;
 			textBox.Show();
+
+			webBrowser = new WebBrowser();
+			webBrowser.AllowNavigation = true;
+			//webBrowser.Url = new Uri("http://ethikratie.net");
+			webBrowser.Dock = DockStyle.Fill;
+			webBrowser.Visible = true;
+			webBrowser.Show();
 
 			PropertyGrid = new PropertyGrid();
 			Panel_Content.Controls.Add(PropertyGrid);
@@ -93,6 +108,7 @@ namespace OpenSimulator
 			PropertyGrid.Show();
 		}
 		PropertyGrid PropertyGrid;
+		WebBrowser webBrowser;
 
 		private void NodeContext_ShowMetainfo_Click(object sender, EventArgs e)
 		{
@@ -169,7 +185,6 @@ namespace OpenSimulator
 					return;
 			}
 		}
-		#endregion
 
 		private void NotifyIcon_BalloonTipClicked(object sender, EventArgs e)
 		{
@@ -179,6 +194,12 @@ namespace OpenSimulator
 		private void NotifyIcon_BalloonTipClosed(object sender, EventArgs e)
 		{
 			Log_("closed");
+		}
+		#endregion
+
+		private void ShowWebbrowser_Click(object sender, EventArgs e)
+		{
+			//webBrowser.Navigate("https://ethikratie.net");
 		}
 	}
 }
