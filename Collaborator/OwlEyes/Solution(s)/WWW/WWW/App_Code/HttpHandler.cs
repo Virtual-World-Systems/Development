@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.Web;
 
 /// <summary>
@@ -13,17 +14,24 @@ public partial class HttpHandler : IHttpHandler
 
 	public void ProcessRequest(HttpContext context)
 	{
-		if (context.IsWebSocketRequest)
+		try
 		{
-			context.AcceptWebSocketRequest(new WebSocket(context).RunWebSocket);
-			return;
-		}
-		HttpResponse R = context.Response;
-		R.Expires = 0;
-		R.Cache.SetExpires(DateTime.MinValue);
-		R.Cache.SetCacheability(HttpCacheability.NoCache);
+			if (context.IsWebSocketRequest)
+			{
+				context.AcceptWebSocketRequest(new WebSocket(context).RunWebSocket);
+				return;
+			}
+			HttpResponse R = context.Response;
+			R.Expires = 0;
+			R.Cache.SetExpires(DateTime.MinValue);
+			R.Cache.SetCacheability(HttpCacheability.NoCache);
 
-		WriteContent(context);
+			WriteContent(context);
+		}
+		catch(Exception ex)
+		{
+			Debug.WriteLine("error: " + ex.Message + "\r\n" + ex.StackTrace);
+		}
 	}
 
 	virtual protected void WriteContent(HttpContext C)

@@ -44,7 +44,9 @@ namespace github
 
         internal static string test()
         {
-            Stream stm = RP.GET("repos/Virtual-World-Systems/Index/git/blobs/1506d5baebf7a48e0b6cfbee360be0a5bbb82ece");
+            Stream stm = RP.GET("repos/Virtual-World-Systems/Index/git/blobs/37f24cbc3dd0652f0a63110d78dd4f467bf807b1");
+            //Stream stm = RP.GET("repos/Virtual-World-Systems/Index/git/blobs/1506d5baebf7a48e0b6cfbee360be0a5bbb82ece");
+            //                         Virtual-World-Systems/Development/blob/37f24cbc3dd0652f0a63110d78dd4f467bf807b1/README.md
             string s = new StreamReader(stm).ReadToEnd();
             return xob(s);
             //return job(s);
