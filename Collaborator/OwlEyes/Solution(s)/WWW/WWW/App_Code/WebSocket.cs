@@ -28,9 +28,9 @@ public class WebSocket
 		try
 		{
 			System.Net.WebSockets.WebSocket socket = context.WebSocket;
-			ClientApplicationVersion = context.ServerVariables["HTTP_USER_AGENT"];
-			string logPath = context.Server.MapPath("/App_Data") + "\\clientapplog.txt";
-			File.AppendAllText(logPath, ClientApplicationVersion + "\r\n");
+			//ClientApplicationVersion = context.ServerVariables["HTTP_USER_AGENT"];
+			//string logPath = context.Server.MapPath("/App_Data") + "\\clientapplog.txt";
+			//File.AppendAllText(logPath, ClientApplicationVersion + "\r\n");
 
 			while (true)
 			{
