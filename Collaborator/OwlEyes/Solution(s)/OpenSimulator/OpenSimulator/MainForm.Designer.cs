@@ -43,6 +43,7 @@
 			this.Test_AssemblyName = new System.Windows.Forms.ToolStripMenuItem();
 			this.demoAssemblyBuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.iLGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.MainPanelOuter = new System.Windows.Forms.Panel();
 			this.MainPanel = new System.Windows.Forms.Panel();
 			this.MainSplit = new System.Windows.Forms.SplitContainer();
@@ -73,7 +74,8 @@
 			// 
 			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileMenu,
-            this.testToolStripMenuItem});
+            this.testToolStripMenuItem,
+            this.toolStripMenuItem1});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
 			this.MainMenu.Size = new System.Drawing.Size(1038, 24);
@@ -94,7 +96,7 @@
 			this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colladaFromDBToolStripMenuItem});
 			this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-			this.importToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+			this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.importToolStripMenuItem.Text = "&Import";
 			// 
 			// colladaFromDBToolStripMenuItem
@@ -110,7 +112,7 @@
 			// 
 			this.File_Exit.Name = "File_Exit";
 			this.File_Exit.ShortcutKeys = System.Windows.Forms.Keys.F4;
-			this.File_Exit.Size = new System.Drawing.Size(111, 22);
+			this.File_Exit.Size = new System.Drawing.Size(180, 22);
 			this.File_Exit.Text = "Exit";
 			this.File_Exit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -180,6 +182,15 @@
 			this.iLGeneratorToolStripMenuItem.Text = "IL Generator";
 			this.iLGeneratorToolStripMenuItem.Click += new System.EventHandler(this.iLGeneratorToolStripMenuItem_Click);
 			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.CheckOnClick = true;
+			this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripMenuItem1.Image = global::OpenSimulator.Properties.Resources.call_icon_24x24;
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+			this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+			// 
 			// MainPanelOuter
 			// 
 			this.MainPanelOuter.Controls.Add(this.MainPanel);
@@ -213,7 +224,7 @@
 			// 
 			this.MainSplit.Panel2.Controls.Add(this.Panel_Content);
 			this.MainSplit.Size = new System.Drawing.Size(1030, 515);
-			this.MainSplit.SplitterDistance = 214;
+			this.MainSplit.SplitterDistance = 275;
 			this.MainSplit.SplitterWidth = 6;
 			this.MainSplit.TabIndex = 0;
 			// 
@@ -224,7 +235,7 @@
 			this.Panel_Tree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel_Tree.Location = new System.Drawing.Point(0, 0);
 			this.Panel_Tree.Name = "Panel_Tree";
-			this.Panel_Tree.Size = new System.Drawing.Size(214, 515);
+			this.Panel_Tree.Size = new System.Drawing.Size(275, 515);
 			this.Panel_Tree.TabIndex = 0;
 			// 
 			// Tree
@@ -232,7 +243,7 @@
 			this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Tree.Location = new System.Drawing.Point(0, 0);
 			this.Tree.Name = "Tree";
-			this.Tree.Size = new System.Drawing.Size(210, 511);
+			this.Tree.Size = new System.Drawing.Size(271, 511);
 			this.Tree.TabIndex = 0;
 			this.Tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tree_AfterSelect);
 			this.Tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tree_NodeMouseClick);
@@ -243,7 +254,7 @@
 			this.Panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel_Content.Location = new System.Drawing.Point(0, 0);
 			this.Panel_Content.Name = "Panel_Content";
-			this.Panel_Content.Size = new System.Drawing.Size(810, 515);
+			this.Panel_Content.Size = new System.Drawing.Size(749, 515);
 			this.Panel_Content.TabIndex = 0;
 			// 
 			// NodeContextMenu
@@ -356,6 +367,7 @@
 		private System.Windows.Forms.ContextMenuStrip NotifyContextMenu;
 		private System.Windows.Forms.ToolStripMenuItem ShowWebbrowser;
 		private System.Windows.Forms.ToolStripMenuItem testCToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 	}
 }
 
