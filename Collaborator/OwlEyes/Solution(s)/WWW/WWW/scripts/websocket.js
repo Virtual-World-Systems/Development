@@ -1,9 +1,9 @@
 ﻿/// <reference path="jQuery-3.6.0.js" />
-
+/** @type {WebSocket} $WS */
 var $WS;
 
 var $WSF = {
-	setConnectionState: function(state) {
+	setConnectionState: function (state) {
 		try { $('#connectionState').html($WSF.stateSpan(state)); } catch { }
 	},
 	stateOn: "<span class='state sOn'>online</span>",
@@ -25,9 +25,10 @@ var NAV = new XMLNavigator();
 /** @param {XMLDocument} doc */
 function alertXML(doc) {
 	var s = new XMLSerializer().serializeToString(doc);
-	//NAV.selectNodes(doc, ":scope > :last-child").forEach(function (value, key, parentList) {
-	//	s += new XMLSerializer().serializeToString(value);
-	//});
+	s += "\r\n";
+	NAV.selectNodes(doc, ":scope > :last-child").forEach(function (value, key, parentList) {
+		s += new XMLSerializer().serializeToString(value);
+	});
 	alert(s);
 }
 
@@ -62,5 +63,5 @@ function clickedButton(btn) {
 	if (sel) btn.classList.add("state_unselected");
 	if (!sel) btn.classList.add("state_selected");
 
-	$WS.send("<test><v1>fv1</v1><v2><vvv>fv2v</vvv><vvw>fv2w</vvw></v2></test>");
+	$WS.send("<test xmlns:C='urn:C'><v1>fv1</v1><C:aa C:b='d'>aa</C:aa><C:X><V>vvv</V></C:X><v2><vvv>fv2v</vvv><vvw>fv2w</vvw></v2></test>");
 }
