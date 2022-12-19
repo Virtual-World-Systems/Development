@@ -2,8 +2,9 @@
 	<Import>
 		<ColladaFromDB>
 			<Title>Import Collada from Database</Title>
-			<Width>600</Width>
-			<Height>200</Height>
+			<AutoSize>true</AutoSize>
+			<AutoSizeMode>GrowOnly</AutoSizeMode>
+			<MinimumSize>50;50</MinimumSize>
 			<Controls>
 				<GroupBox>
 					<!--UseVisualStyleBackColor>true</UseVisualStyleBackColor-->
@@ -11,7 +12,7 @@
 					<AutoSize>true</AutoSize>
 					<Name>aLabel</Name>
 					<Text>a Label</Text>
-					<Height>300</Height>
+					<MinimumSize>100;120</MinimumSize>
 					<Anchor>Left,Bottom,Right,Top</Anchor>
 				</GroupBox>
 			</Controls>

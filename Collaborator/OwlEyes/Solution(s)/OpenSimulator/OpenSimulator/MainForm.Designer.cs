@@ -318,6 +318,7 @@
 			this.Controls.Add(this.MainPanelOuter);
 			this.Controls.Add(this.MainMenu);
 			this.MainMenuStrip = this.MainMenu;
+			this.MinimumSize = new System.Drawing.Size(300, 200);
 			this.Name = "MainForm";
 			this.Text = "OpenSimulator";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

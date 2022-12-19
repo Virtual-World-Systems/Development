@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace OpenSimulator
 {
@@ -37,11 +38,13 @@ namespace OpenSimulator
 			bool dbg = false;
 #if DEBUG
 			dbg = true;
+			Debug.WriteLine("debugging");
 #endif
-			if (dbg || (Dialogs == null))
+			if (true)//dbg || (Dialogs == null))
 			{
 				XmlDocument doc = new XmlDocument();
 				doc.Load(Path("Dialogs.xml"));
+				Debug.WriteLine("reading XML");
 				Dialogs = doc.DocumentElement;
 			}
 			if (dbg || (!_dialogs.ContainsKey(Index)))
