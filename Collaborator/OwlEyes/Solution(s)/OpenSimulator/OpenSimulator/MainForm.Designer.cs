@@ -213,7 +213,7 @@
 			// 
 			this.MainSplit.Panel2.Controls.Add(this.Panel_Content);
 			this.MainSplit.Size = new System.Drawing.Size(1030, 515);
-			this.MainSplit.SplitterDistance = 213;
+			this.MainSplit.SplitterDistance = 214;
 			this.MainSplit.SplitterWidth = 6;
 			this.MainSplit.TabIndex = 0;
 			// 
@@ -224,7 +224,7 @@
 			this.Panel_Tree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel_Tree.Location = new System.Drawing.Point(0, 0);
 			this.Panel_Tree.Name = "Panel_Tree";
-			this.Panel_Tree.Size = new System.Drawing.Size(213, 515);
+			this.Panel_Tree.Size = new System.Drawing.Size(214, 515);
 			this.Panel_Tree.TabIndex = 0;
 			// 
 			// Tree
@@ -232,7 +232,7 @@
 			this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Tree.Location = new System.Drawing.Point(0, 0);
 			this.Tree.Name = "Tree";
-			this.Tree.Size = new System.Drawing.Size(209, 511);
+			this.Tree.Size = new System.Drawing.Size(210, 511);
 			this.Tree.TabIndex = 0;
 			this.Tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tree_AfterSelect);
 			this.Tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tree_NodeMouseClick);
@@ -243,7 +243,7 @@
 			this.Panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel_Content.Location = new System.Drawing.Point(0, 0);
 			this.Panel_Content.Name = "Panel_Content";
-			this.Panel_Content.Size = new System.Drawing.Size(811, 515);
+			this.Panel_Content.Size = new System.Drawing.Size(810, 515);
 			this.Panel_Content.TabIndex = 0;
 			// 
 			// NodeContextMenu
