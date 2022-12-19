@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Collaborator/OwlEyes/Solution(s)/WWW/WWW/App_Data/Database.mdf
+/Collaborator/OwlEyes/Solution(s)/WWW/WWW/App_Data/Database_log.ldf
