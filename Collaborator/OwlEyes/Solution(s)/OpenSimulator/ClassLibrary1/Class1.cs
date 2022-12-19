@@ -10,7 +10,7 @@ namespace ClassLibrary1
 		{
 			get 
 			{
-				yield return "TestString";
+				yield return "TestString"; 
 			}
 		}
 		public static (int,char) xyz(string x)
