@@ -67,7 +67,7 @@ public class WebSocket
 						await SendText(socket, t);
 
 						StringBuilder sb = new StringBuilder();
-						using (MySqlConnection conn = new MySqlConnection("server=127.0.0.1;uid=sasquatch;pwd=sasquatch;database=sasquatch"))
+						using (MySqlConnection conn = new MySqlConnection(DB.GetSasquatchConnectionString()))
 						{
 							conn.Open();
 							MySqlCommand cmd = new MySqlCommand("select * from assets"

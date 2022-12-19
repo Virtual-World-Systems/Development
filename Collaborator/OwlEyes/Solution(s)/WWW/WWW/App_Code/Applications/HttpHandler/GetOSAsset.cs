@@ -20,12 +20,15 @@ namespace Applications
 					+ "</h2>";
 				yield return github.User.test();
 
-				// yield return "<div style='margin-top:10px'><img src='/images/fun/gollum.gif'></img></div>";
+				yield return "<div style='margin-top:10px'><img src='/images/fun/gollum.gif'></img></div>";
 
 				foreach (string key in HttpContext.Current.Request.Headers.Keys)
-				{
 					yield return "<br/>" + key + ": " + HttpContext.Current.Request.Headers[key];
-				}
+
+				yield return "<br/><br/>";
+
+				yield return DB.select("__T", "*").Replace("<", "&lt;").Replace(">", "&gt;");
+				DB.Close();
 
 				yield return "<br/>";
 

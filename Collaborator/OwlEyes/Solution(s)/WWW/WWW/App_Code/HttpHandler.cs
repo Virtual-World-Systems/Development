@@ -68,7 +68,7 @@ public partial class HttpHandler : IHttpHandler
 				+ "<span id='Tab_Meta' class='TabButton state_unselected' style='margin-left:20px' onclick='clickedButton(this)'>Meta</span>"
 				+ "<span id='connectionState' style='margin-left:10px'></span>"
 				+ "</h2>";
-			//yield return github.User.test();
+			yield return github.User.test();
 
 			yield return "<div style='margin-top:10px'><img src='/images/fun/gollum.gif?" + Tick + "'></img></div>";
 
