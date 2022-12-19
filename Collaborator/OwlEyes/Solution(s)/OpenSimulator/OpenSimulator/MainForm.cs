@@ -128,10 +128,9 @@ namespace OpenSimulator
 			if (dbg || (F_colladaFromDB == null))
 				F_colladaFromDB = Dialog.from("/File/Import/ColladaFromDB");
 
-			(int n, char str) = ClassLibrary1.Class1.xyz("bbb");
 			switch (F_colladaFromDB.ShowDialog())
 			{
-				case DialogResult.OK: MessageBox.Show("" + str); return;
+				case DialogResult.OK: MessageBox.Show("OK"); return;
 				case DialogResult.Cancel: MessageBox.Show("cancelled"); return;
 				case DialogResult.None: MessageBox.Show("none"); return;
 				case DialogResult.No: MessageBox.Show("no"); return;
