@@ -205,6 +205,7 @@ namespace OpenSimulator
 
 		private void ShowWebbrowser_Click(object sender, EventArgs e)
 		{
+			MessageBox.Show("not implemented");
 			//webBrowser.Navigate("https://ethikratie.net");
 		}
 	}
