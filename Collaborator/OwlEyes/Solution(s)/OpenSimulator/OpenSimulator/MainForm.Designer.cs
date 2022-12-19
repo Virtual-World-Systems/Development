@@ -53,8 +53,8 @@
 			this.NodeContext_ShowMetainfo = new System.Windows.Forms.ToolStripMenuItem();
 			this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.NotifyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.NotifyContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.ShowWebbrowser = new System.Windows.Forms.ToolStripMenuItem();
+			this.NotifyContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.testCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MainMenu.SuspendLayout();
 			this.MainPanelOuter.SuspendLayout();
@@ -277,7 +277,14 @@
 			this.NotifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ShowWebbrowser});
 			this.NotifyMenu.Name = "NotifyMenu";
-			this.NotifyMenu.Size = new System.Drawing.Size(181, 48);
+			this.NotifyMenu.Size = new System.Drawing.Size(173, 26);
+			// 
+			// ShowWebbrowser
+			// 
+			this.ShowWebbrowser.Name = "ShowWebbrowser";
+			this.ShowWebbrowser.Size = new System.Drawing.Size(172, 22);
+			this.ShowWebbrowser.Text = "Show Webbrowser";
+			this.ShowWebbrowser.Click += new System.EventHandler(this.ShowWebbrowser_Click);
 			// 
 			// NotifyContextMenu
 			// 
@@ -285,13 +292,6 @@
             this.testCToolStripMenuItem});
 			this.NotifyContextMenu.Name = "NotifyContextMenu";
 			this.NotifyContextMenu.Size = new System.Drawing.Size(103, 26);
-			// 
-			// ShowWebbrowser
-			// 
-			this.ShowWebbrowser.Name = "ShowWebbrowser";
-			this.ShowWebbrowser.Size = new System.Drawing.Size(180, 22);
-			this.ShowWebbrowser.Text = "Show Webbrowser";
-			this.ShowWebbrowser.Click += new System.EventHandler(this.ShowWebbrowser_Click);
 			// 
 			// testCToolStripMenuItem
 			// 

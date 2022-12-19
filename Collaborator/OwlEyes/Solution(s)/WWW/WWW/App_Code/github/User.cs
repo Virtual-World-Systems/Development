@@ -8,6 +8,8 @@ using JSSettings = Newtonsoft.Json.JsonSerializerSettings;
 using System.Web.Helpers;
 using System.Xml;
 using System.Text;
+using ENV = System.Environment;
+using System.Diagnostics;
 
 namespace github
 {
@@ -16,8 +18,23 @@ namespace github
     /// </summary>
     public class User
     {
-        internal static readonly string Name = "Virtual-World-Systems";
-        internal static readonly string Token = "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";
+		private static string _token = null;
+		internal static readonly string Name = "Virtual-World-Systems";
+
+        internal static string Token
+        {
+            get
+            {
+                foreach (string k in Enum.GetNames(typeof(ENV.SpecialFolder)))
+                    Debug.WriteLine(k + ": " + ENV.GetFolderPath((ENV.SpecialFolder)
+                        Enum.Parse(typeof(ENV.SpecialFolder), k)));
+                if (_token == null)
+                    _token = System.IO.File.ReadAllText(
+						ENV.GetFolderPath(ENV.SpecialFolder.ApplicationData)
+                        + "\\Virtual-World-Systems\\github\\AccessToken");
+                return _token;
+            }
+        }
 
         internal static string fmt(string s)
 		{
