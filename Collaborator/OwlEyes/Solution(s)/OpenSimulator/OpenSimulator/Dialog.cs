@@ -39,12 +39,14 @@ namespace OpenSimulator
 #if DEBUG
 			dbg = true;
 			Debug.WriteLine("debugging");
+			_dialogs.Clear();
+			Dialogs = null;
 #endif
-			if (true)//dbg || (Dialogs == null))
+			if (dbg || (Dialogs == null))
 			{
+				Debug.WriteLine("! reading XML");
 				XmlDocument doc = new XmlDocument();
 				doc.Load(Path("Dialogs.xml"));
-				Debug.WriteLine("reading XML");
 				Dialogs = doc.DocumentElement;
 			}
 			if (dbg || (!_dialogs.ContainsKey(Index)))

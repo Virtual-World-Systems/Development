@@ -120,11 +120,16 @@ namespace OpenSimulator
 		#region ColladaFromDB
 		private void colladaFromDBToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (F_colladaFromDB == null)
+			bool dbg = false;
+#if DEBUG
+			dbg = true;
+			F_colladaFromDB = null;
+#endif
+			if (dbg || (F_colladaFromDB == null))
 				F_colladaFromDB = Dialog.from("/File/Import/ColladaFromDB");
 			switch (F_colladaFromDB.ShowDialog())
 			{
-				case DialogResult.OK: MessageBox.Show("OK"); return;
+				case DialogResult.OK: MessageBox.Show(ClassLibrary1.Class1.TestString); return;
 				case DialogResult.Cancel: MessageBox.Show("cancelled"); return;
 				case DialogResult.None: MessageBox.Show("none"); return;
 				case DialogResult.No: MessageBox.Show("no"); return;

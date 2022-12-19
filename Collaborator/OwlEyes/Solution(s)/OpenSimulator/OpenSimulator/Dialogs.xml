@@ -2,20 +2,19 @@
 	<Import>
 		<ColladaFromDB>
 			<Title>Import Collada from Database</Title>
-			<AutoSize>true</AutoSize>
-			<AutoSizeMode>GrowOnly</AutoSizeMode>
-			<MinimumSize>50;50</MinimumSize>
+			<!--MinimumSize>50;50</MinimumSize-->
 			<Controls>
 				<GroupBox>
 					<!--UseVisualStyleBackColor>true</UseVisualStyleBackColor-->
 					<Location>12;12</Location>
-					<AutoSize>true</AutoSize>
 					<Name>aLabel</Name>
 					<Text>a Label</Text>
-					<MinimumSize>100;120</MinimumSize>
-					<Anchor>Left,Bottom,Right,Top</Anchor>
+					<MinimumSize>500;300</MinimumSize>
+					<Anchor>Left,Bottom,Top</Anchor>
 				</GroupBox>
 			</Controls>
+			<AutoSize>true</AutoSize>
+			<AutoSizeMode>GrowAndShrink</AutoSizeMode>
 		</ColladaFromDB>
 	</Import>
 </File>
