@@ -1,0 +1,6 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\BrowserControl\bin\Debug\ernsoft.BrowserControl.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\BrowserControl\bin\Debug\ernsoft.BrowserControl.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\BrowserControl\obj\Debug\BrowserControl.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\BrowserControl\obj\Debug\BrowserControl.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\BrowserControl\obj\Debug\ernsoft.BrowserControl.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\BrowserControl\obj\Debug\ernsoft.BrowserControl.pdb
