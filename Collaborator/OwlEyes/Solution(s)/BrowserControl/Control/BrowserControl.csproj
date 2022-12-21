@@ -51,5 +51,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BrowserControl.resx">
+      <DependentUpon>BrowserControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chrome\CefSharp.Core\CefSharp.Core.csproj">
+      <Project>{b760b002-d277-4525-9f63-67ed2065034a}</Project>
+      <Name>CefSharp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chrome\CefSharp.WinForms\CefSharp.WinForms.csproj">
+      <Project>{882505ad-246d-402a-8414-347efb8e2c8d}</Project>
+      <Name>CefSharp.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chrome\CefSharp\CefSharp.csproj">
+      <Project>{a55848cc-10e7-40cb-addb-04740b16dd43}</Project>
+      <Name>CefSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

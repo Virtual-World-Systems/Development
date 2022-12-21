@@ -208,5 +208,10 @@ namespace OpenSimulator
 			MessageBox.Show("not implemented");
 			//webBrowser.Navigate("https://ethikratie.net");
 		}
+
+		private void Test()
+		{
+			//trackBar1.
+		}
 	}
 }

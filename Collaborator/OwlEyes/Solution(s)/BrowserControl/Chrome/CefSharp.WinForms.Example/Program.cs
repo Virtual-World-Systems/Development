@@ -71,10 +71,10 @@ namespace CefSharp.WinForms.Example
 
                 // DEMO: To integrate CEF into your applications existing message loop 
                 // set multiThreadedMessageLoop = false;
-                const bool multiThreadedMessageLoop = true;
+                const bool multiThreadedMessageLoop = false;//true;
                 // When multiThreadedMessageLoop = true then externalMessagePump must be set to false
                 // To enable externalMessagePump set  multiThreadedMessageLoop = false and externalMessagePump = true
-                const bool externalMessagePump = false;
+                const bool externalMessagePump = true;//false;
 
                 //TEST: There are a number of different Forms for testing purposes.
                 var browser = new BrowserForm(multiThreadedMessageLoop);

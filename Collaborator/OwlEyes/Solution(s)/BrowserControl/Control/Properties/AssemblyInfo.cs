@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("BrowserControl")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("ernsoft Chrome Browser Control")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BrowserControl")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyCompany("ernst software engineering")]
+[assembly: AssemblyProduct("Chrome Browser Control")]
+[assembly: AssemblyCopyright("Copyright © Tom Ernst 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

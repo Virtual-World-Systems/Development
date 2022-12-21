@@ -57,6 +57,11 @@
 			this.ShowWebbrowser = new System.Windows.Forms.ToolStripMenuItem();
 			this.NotifyContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.testCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.trackBar1 = new System.Windows.Forms.TrackBar();
+			this.trackBar2 = new System.Windows.Forms.TrackBar();
 			this.MainMenu.SuspendLayout();
 			this.MainPanelOuter.SuspendLayout();
 			this.MainPanel.SuspendLayout();
@@ -68,6 +73,11 @@
 			this.NodeContextMenu.SuspendLayout();
 			this.NotifyMenu.SuspendLayout();
 			this.NotifyContextMenu.SuspendLayout();
+			this.tabControl1.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -96,7 +106,7 @@
 			this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colladaFromDBToolStripMenuItem});
 			this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-			this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.importToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
 			this.importToolStripMenuItem.Text = "&Import";
 			// 
 			// colladaFromDBToolStripMenuItem
@@ -112,7 +122,7 @@
 			// 
 			this.File_Exit.Name = "File_Exit";
 			this.File_Exit.ShortcutKeys = System.Windows.Forms.Keys.F4;
-			this.File_Exit.Size = new System.Drawing.Size(180, 22);
+			this.File_Exit.Size = new System.Drawing.Size(111, 22);
 			this.File_Exit.Text = "Exit";
 			this.File_Exit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -222,7 +232,7 @@
 			// 
 			// MainSplit.Panel2
 			// 
-			this.MainSplit.Panel2.Controls.Add(this.Panel_Content);
+			this.MainSplit.Panel2.Controls.Add(this.tabControl1);
 			this.MainSplit.Size = new System.Drawing.Size(1030, 515);
 			this.MainSplit.SplitterDistance = 275;
 			this.MainSplit.SplitterWidth = 6;
@@ -252,9 +262,9 @@
 			// 
 			this.Panel_Content.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.Panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.Panel_Content.Location = new System.Drawing.Point(0, 0);
+			this.Panel_Content.Location = new System.Drawing.Point(3, 3);
 			this.Panel_Content.Name = "Panel_Content";
-			this.Panel_Content.Size = new System.Drawing.Size(749, 515);
+			this.Panel_Content.Size = new System.Drawing.Size(735, 483);
 			this.Panel_Content.TabIndex = 0;
 			// 
 			// NodeContextMenu
@@ -310,6 +320,74 @@
 			this.testCToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
 			this.testCToolStripMenuItem.Text = "test c";
 			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(749, 515);
+			this.tabControl1.TabIndex = 0;
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Controls.Add(this.Panel_Content);
+			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new System.Drawing.Size(741, 489);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "tabPage1";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.tabPage2.Controls.Add(this.trackBar2);
+			this.tabPage2.Controls.Add(this.trackBar1);
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(741, 489);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "tabPage2";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// trackBar1
+			// 
+			this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.trackBar1.BackColor = System.Drawing.SystemColors.Window;
+			this.trackBar1.LargeChange = 10;
+			this.trackBar1.Location = new System.Drawing.Point(333, 6);
+			this.trackBar1.Maximum = 100;
+			this.trackBar1.Name = "trackBar1";
+			this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+			this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.trackBar1.RightToLeftLayout = true;
+			this.trackBar1.Size = new System.Drawing.Size(45, 473);
+			this.trackBar1.SmallChange = 5;
+			this.trackBar1.TabIndex = 0;
+			this.trackBar1.TabStop = false;
+			this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+			// 
+			// trackBar2
+			// 
+			this.trackBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.trackBar2.BackColor = System.Drawing.SystemColors.Window;
+			this.trackBar2.LargeChange = 10;
+			this.trackBar2.Location = new System.Drawing.Point(384, 6);
+			this.trackBar2.Maximum = 100;
+			this.trackBar2.Name = "trackBar2";
+			this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
+			this.trackBar2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.trackBar2.Size = new System.Drawing.Size(45, 473);
+			this.trackBar2.SmallChange = 5;
+			this.trackBar2.TabIndex = 1;
+			this.trackBar2.TabStop = false;
+			this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +413,12 @@
 			this.NodeContextMenu.ResumeLayout(false);
 			this.NotifyMenu.ResumeLayout(false);
 			this.NotifyContextMenu.ResumeLayout(false);
+			this.tabControl1.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.tabPage2.ResumeLayout(false);
+			this.tabPage2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -369,6 +453,11 @@
 		private System.Windows.Forms.ToolStripMenuItem ShowWebbrowser;
 		private System.Windows.Forms.ToolStripMenuItem testCToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.TrackBar trackBar2;
+		private System.Windows.Forms.TrackBar trackBar1;
 	}
 }
 
