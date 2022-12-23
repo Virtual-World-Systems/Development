@@ -140,5 +140,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_ TODO\BrowserControl\" />
+    <Folder Include="_ TODO\Diagrammer\" />
+    <Folder Include="_ TODO\ObjectModel\" />
+    <Folder Include="_ TODO\ObjectXML\" />
+    <Folder Include="_ TODO\Streaming\" />
+    <Folder Include="_ TODO\Transducer\HTTP\" />
+    <Folder Include="_ TODO\Transducer\Intercept\" />
+    <Folder Include="_ TODO\Transducer\Memory\" />
+    <Folder Include="_ TODO\Transducer\Pipe\" />
+    <Folder Include="_ TODO\Transducer\TCP\" />
+    <Folder Include="_ TODO\TreeView\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
