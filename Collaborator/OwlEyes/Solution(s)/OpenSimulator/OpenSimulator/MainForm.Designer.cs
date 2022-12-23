@@ -501,7 +501,7 @@
 			this.MainMenuStrip = this.MainMenu;
 			this.MinimumSize = new System.Drawing.Size(300, 200);
 			this.Name = "MainForm";
-			this.Text = "OpenSimulator 1.0";
+			this.Text = "OpenSimulator 0.1";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.MainMenu.ResumeLayout(false);
