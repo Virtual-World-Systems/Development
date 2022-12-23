@@ -26,6 +26,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://virtual-world-system
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSimulator", "..\OpenSimulator\OpenSimulator\OpenSimulator.csproj", "{2666048F-F3FF-466C-ACA6-F103CCF46CB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebResources", "..\..\..\..\..\..\..\WebResources\WebResources.csproj", "{037D782E-2F9F-4205-BB1F-A73B32EEA481}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{2666048F-F3FF-466C-ACA6-F103CCF46CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2666048F-F3FF-466C-ACA6-F103CCF46CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2666048F-F3FF-466C-ACA6-F103CCF46CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
