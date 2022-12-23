@@ -30,7 +30,7 @@ namespace OpenSimulator
 					PropertyInfo n = list.GetType().GetProperty("Name", BindingFlags.Public | BindingFlags.Instance);
 					string listName = n.GetValue(list).ToString();
 
-					TreeNode node = Add(Nodes, list.GetType(), listName, list);
+                    System.Windows.Forms.TreeNode node = Add(Nodes, list.GetType(), listName, list);
 
 					foreach (XmlElement y in x.SelectNodes("*"))
 					{
@@ -63,7 +63,7 @@ namespace OpenSimulator
 			ConstructorInfo ci = type.GetConstructor(new Type[] { typeof(String) });
 			return ci.Invoke(new object[] { name });
 		}
-		TreeNode Add(TreeNodeCollection nodes, Type objectType, string text, object tag)
+        System.Windows.Forms.TreeNode Add(TreeNodeCollection nodes, Type objectType, string text, object tag)
 		{
 			string key = objectType.ToString();
 			string imageKey = objectType.Name;
@@ -75,8 +75,9 @@ namespace OpenSimulator
 				text += " …";
 			}
 			//MessageBox.Show(imageKey);
-			TreeNode node = nodes.Add(key, text, imageKey, imageKey);
-
+			TreeNode node = new TreeNode(text, imageKey);
+			//System.Windows.Forms.TreeNode node = nodes.Add(key, , text, imageKey, imageKey);
+			nodes.Add(node);
 
 			ConstructorInfo ci = objectType.GetConstructor(new Type[] {});
 			node.Tag = tag;

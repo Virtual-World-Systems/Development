@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+
 
 namespace OpenSimulator
 {
@@ -25,6 +27,8 @@ namespace OpenSimulator
 		{
 			Tree.ImageList = IconList.Instance;
 			Tree.Load();
+			
+			
 		}
 		O O;
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,9 +213,9 @@ namespace OpenSimulator
 			//webBrowser.Navigate("https://ethikratie.net");
 		}
 
-		private void Test()
+		private void Tree_DrawNode(object sender, DrawTreeNodeEventArgs e)
 		{
-			//trackBar1.
+			((TreeNode)e.Node).Draw(e);
 		}
 	}
 }

@@ -49,7 +49,7 @@ namespace OpenSimulator
 
 		internal class Test_TreeNodeRightClick
 		{
-			public Test_TreeNodeRightClick(TreeNode node)
+			public Test_TreeNodeRightClick(System.Windows.Forms.TreeNode node)
 			{
 				string k = node.Name;
 				string t = node.Text;

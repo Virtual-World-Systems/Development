@@ -36,11 +36,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
       <Private>False</Private>
     </Reference>
@@ -83,6 +80,7 @@
     <Compile Include="Test.cs" />
     <Compile Include="Test\DemoAssemblyBuilder.cs" />
     <Compile Include="Test\TestILGenerator.cs" />
+    <Compile Include="TreeNode.cs" />
     <EmbeddedResource Include="Dialog.resx">
       <DependentUpon>Dialog.cs</DependentUpon>
     </EmbeddedResource>

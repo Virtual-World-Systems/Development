@@ -62,6 +62,16 @@
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.trackBar1 = new System.Windows.Forms.TrackBar();
 			this.trackBar2 = new System.Windows.Forms.TrackBar();
+			this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+			this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewLinkColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MainMenu.SuspendLayout();
 			this.MainPanelOuter.SuspendLayout();
 			this.MainPanel.SuspendLayout();
@@ -78,6 +88,12 @@
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+			this.toolStripContainer1.ContentPanel.SuspendLayout();
+			this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+			this.toolStripContainer1.SuspendLayout();
+			this.toolStrip1.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -85,10 +101,11 @@
 			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileMenu,
             this.testToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.toolStripComboBox1});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
-			this.MainMenu.Size = new System.Drawing.Size(1038, 24);
+			this.MainMenu.Size = new System.Drawing.Size(1038, 27);
 			this.MainMenu.TabIndex = 0;
 			this.MainMenu.Text = "MainMenu";
 			// 
@@ -205,10 +222,10 @@
 			// 
 			this.MainPanelOuter.Controls.Add(this.MainPanel);
 			this.MainPanelOuter.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.MainPanelOuter.Location = new System.Drawing.Point(0, 24);
+			this.MainPanelOuter.Location = new System.Drawing.Point(0, 0);
 			this.MainPanelOuter.Name = "MainPanelOuter";
 			this.MainPanelOuter.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-			this.MainPanelOuter.Size = new System.Drawing.Size(1038, 519);
+			this.MainPanelOuter.Size = new System.Drawing.Size(1038, 491);
 			this.MainPanelOuter.TabIndex = 1;
 			// 
 			// MainPanel
@@ -217,7 +234,7 @@
 			this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.MainPanel.Location = new System.Drawing.Point(4, 0);
 			this.MainPanel.Name = "MainPanel";
-			this.MainPanel.Size = new System.Drawing.Size(1030, 515);
+			this.MainPanel.Size = new System.Drawing.Size(1030, 487);
 			this.MainPanel.TabIndex = 0;
 			// 
 			// MainSplit
@@ -233,7 +250,7 @@
 			// MainSplit.Panel2
 			// 
 			this.MainSplit.Panel2.Controls.Add(this.tabControl1);
-			this.MainSplit.Size = new System.Drawing.Size(1030, 515);
+			this.MainSplit.Size = new System.Drawing.Size(1030, 487);
 			this.MainSplit.SplitterDistance = 275;
 			this.MainSplit.SplitterWidth = 6;
 			this.MainSplit.TabIndex = 0;
@@ -245,16 +262,18 @@
 			this.Panel_Tree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel_Tree.Location = new System.Drawing.Point(0, 0);
 			this.Panel_Tree.Name = "Panel_Tree";
-			this.Panel_Tree.Size = new System.Drawing.Size(275, 515);
+			this.Panel_Tree.Size = new System.Drawing.Size(275, 487);
 			this.Panel_Tree.TabIndex = 0;
 			// 
 			// Tree
 			// 
 			this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Tree.ItemHeight = 16;
 			this.Tree.Location = new System.Drawing.Point(0, 0);
 			this.Tree.Name = "Tree";
-			this.Tree.Size = new System.Drawing.Size(271, 511);
+			this.Tree.Size = new System.Drawing.Size(271, 483);
 			this.Tree.TabIndex = 0;
+			this.Tree.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.Tree_DrawNode);
 			this.Tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Tree_AfterSelect);
 			this.Tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tree_NodeMouseClick);
 			// 
@@ -264,7 +283,7 @@
 			this.Panel_Content.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel_Content.Location = new System.Drawing.Point(3, 3);
 			this.Panel_Content.Name = "Panel_Content";
-			this.Panel_Content.Size = new System.Drawing.Size(735, 483);
+			this.Panel_Content.Size = new System.Drawing.Size(735, 455);
 			this.Panel_Content.TabIndex = 0;
 			// 
 			// NodeContextMenu
@@ -324,11 +343,12 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(749, 515);
+			this.tabControl1.Size = new System.Drawing.Size(749, 487);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage1
@@ -337,7 +357,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(741, 489);
+			this.tabPage1.Size = new System.Drawing.Size(741, 461);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -350,7 +370,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(741, 489);
+			this.tabPage2.Size = new System.Drawing.Size(741, 461);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -366,7 +386,7 @@
 			this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.trackBar1.RightToLeftLayout = true;
-			this.trackBar1.Size = new System.Drawing.Size(45, 473);
+			this.trackBar1.Size = new System.Drawing.Size(45, 445);
 			this.trackBar1.SmallChange = 5;
 			this.trackBar1.TabIndex = 0;
 			this.trackBar1.TabStop = false;
@@ -382,23 +402,106 @@
 			this.trackBar2.Name = "trackBar2";
 			this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
 			this.trackBar2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.trackBar2.Size = new System.Drawing.Size(45, 473);
+			this.trackBar2.Size = new System.Drawing.Size(45, 445);
 			this.trackBar2.SmallChange = 5;
 			this.trackBar2.TabIndex = 1;
 			this.trackBar2.TabStop = false;
 			this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+			// 
+			// toolStripComboBox1
+			// 
+			this.toolStripComboBox1.Name = "toolStripComboBox1";
+			this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+			// 
+			// toolStripContainer1
+			// 
+			// 
+			// toolStripContainer1.ContentPanel
+			// 
+			this.toolStripContainer1.ContentPanel.Controls.Add(this.MainPanelOuter);
+			this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1038, 491);
+			this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.toolStripContainer1.Location = new System.Drawing.Point(0, 27);
+			this.toolStripContainer1.Name = "toolStripContainer1";
+			this.toolStripContainer1.Size = new System.Drawing.Size(1038, 516);
+			this.toolStripContainer1.TabIndex = 3;
+			this.toolStripContainer1.Text = "toolStripContainer1";
+			// 
+			// toolStripContainer1.TopToolStripPanel
+			// 
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
+			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+			this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Size = new System.Drawing.Size(98, 25);
+			this.toolStrip1.TabIndex = 0;
+			// 
+			// toolStripLabel1
+			// 
+			this.toolStripLabel1.Name = "toolStripLabel1";
+			this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+			this.toolStripLabel1.Text = "toolStripLabel1";
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.dataGridView1);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(741, 461);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "tabPage3";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(741, 461);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "Column1";
+			this.Column1.Name = "Column1";
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "Column2";
+			this.Column2.Name = "Column2";
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "Column3";
+			this.Column3.Name = "Column3";
+			// 
+			// Column4
+			// 
+			this.Column4.HeaderText = "Column4";
+			this.Column4.Name = "Column4";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1038, 543);
-			this.Controls.Add(this.MainPanelOuter);
+			this.Controls.Add(this.toolStripContainer1);
 			this.Controls.Add(this.MainMenu);
 			this.MainMenuStrip = this.MainMenu;
 			this.MinimumSize = new System.Drawing.Size(300, 200);
 			this.Name = "MainForm";
-			this.Text = "OpenSimulator";
+			this.Text = "OpenSimulator 1.0";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.MainMenu.ResumeLayout(false);
@@ -419,6 +522,15 @@
 			this.tabPage2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+			this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+			this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+			this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+			this.toolStripContainer1.ResumeLayout(false);
+			this.toolStripContainer1.PerformLayout();
+			this.toolStrip1.ResumeLayout(false);
+			this.toolStrip1.PerformLayout();
+			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -458,6 +570,16 @@
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.TrackBar trackBar2;
 		private System.Windows.Forms.TrackBar trackBar1;
+		private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+		private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewButtonColumn Column1;
+		private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
+		private System.Windows.Forms.DataGridViewLinkColumn Column3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 	}
 }
 
