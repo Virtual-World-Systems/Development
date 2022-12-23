@@ -81,7 +81,6 @@
     <Compile Include="Test\DemoAssemblyBuilder.cs" />
     <Compile Include="Test\TestILGenerator.cs" />
     <Compile Include="TreeNode.cs" />
-    <Compile Include="_ TODO\BrowserControl\Class1.cs" />
     <EmbeddedResource Include="Dialog.resx">
       <DependentUpon>Dialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +141,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="_ TODO\BrowserControl\" />
     <Folder Include="_ TODO\Diagrammer\" />
     <Folder Include="_ TODO\ObjectModel\" />
     <Folder Include="_ TODO\ObjectXML\" />
