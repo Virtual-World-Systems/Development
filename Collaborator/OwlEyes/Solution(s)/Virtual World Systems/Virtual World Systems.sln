@@ -7,6 +7,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://virtual-world-system
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{037d782e-2f9f-4205-bb1f-a73b32eea481}|WebResources.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/virtual-world-systems.net"
 		Debug.AspNetCompiler.PhysicalPath = "..\WWW\WWW\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\virtual-world-systems.net\"
