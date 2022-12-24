@@ -1,0 +1,6 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Libraries\Transducer\bin\Debug\Transducer.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Libraries\Transducer\bin\Debug\Transducer.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Libraries\Transducer\obj\Debug\Transducer.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Libraries\Transducer\obj\Debug\Transducer.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Libraries\Transducer\obj\Debug\Transducer.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Libraries\Transducer\obj\Debug\Transducer.pdb

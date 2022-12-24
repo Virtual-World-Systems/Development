@@ -153,5 +153,11 @@
     <Folder Include="_ TODO\Transducer\TCP\" />
     <Folder Include="_ TODO\TreeView\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Transducer\Transducer.csproj">
+      <Project>{c0fe2515-b503-4d2f-9071-d2419917e020}</Project>
+      <Name>Transducer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
