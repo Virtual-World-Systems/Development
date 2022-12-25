@@ -1,0 +1,14 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.SuggestedBindingRedirects.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Properties.Resources.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.GenerateResource.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.TestForm.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Virtual World Systems.exe.config
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Virtual World Systems.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Virtual World Systems.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.PanelWithHeader.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.TitleBar.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.ScrollableContentsPanel.resources

@@ -7,7 +7,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://virtual-world-system
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		ProjectReferences = "{037d782e-2f9f-4205-bb1f-a73b32eea481}|WebResources.dll;"
+		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/virtual-world-systems.net"
 		Debug.AspNetCompiler.PhysicalPath = "..\WWW\WWW\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\virtual-world-systems.net\"
@@ -27,9 +27,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://virtual-world-system
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSimulator", "..\OpenSimulator\OpenSimulator\OpenSimulator.csproj", "{2666048F-F3FF-466C-ACA6-F103CCF46CB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebResources", "..\..\..\..\..\..\..\WebResources\WebResources.csproj", "{037D782E-2F9F-4205-BB1F-A73B32EEA481}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transducer", "..\Libraries\Transducer\Transducer.csproj", "{C0FE2515-B503-4D2F-9071-D2419917E020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virtual World Systems (Windows Desktop)", "Windows Desktop\Virtual World Systems (Windows Desktop).csproj", "{BE9D4874-3FF5-42F0-B42B-6D85CC2E4F7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,14 +45,14 @@ Global
 		{2666048F-F3FF-466C-ACA6-F103CCF46CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2666048F-F3FF-466C-ACA6-F103CCF46CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2666048F-F3FF-466C-ACA6-F103CCF46CB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{037D782E-2F9F-4205-BB1F-A73B32EEA481}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0FE2515-B503-4D2F-9071-D2419917E020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0FE2515-B503-4D2F-9071-D2419917E020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0FE2515-B503-4D2F-9071-D2419917E020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0FE2515-B503-4D2F-9071-D2419917E020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE9D4874-3FF5-42F0-B42B-6D85CC2E4F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE9D4874-3FF5-42F0-B42B-6D85CC2E4F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE9D4874-3FF5-42F0-B42B-6D85CC2E4F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE9D4874-3FF5-42F0-B42B-6D85CC2E4F7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

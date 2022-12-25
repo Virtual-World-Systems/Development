@@ -10,7 +10,7 @@ namespace ernsoft.Transducer
 	{
 		internal class TCPServer : Transducer
 		{
-			internal TCPServer(CreationParameters args)
+			internal TCPServer(/*CreationParameters args*/)
 			{
 			}
 		}

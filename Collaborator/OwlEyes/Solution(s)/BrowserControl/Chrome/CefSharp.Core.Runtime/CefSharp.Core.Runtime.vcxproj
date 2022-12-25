@@ -209,7 +209,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glu32.lib;libcef.lib;libcef_dll_wrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)packages\$(CefSdkVer)\CEF\$(Platform)\$(Configuration);$(SolutionDir)packages\$(CefSdkVer)\CEF\$(Platform)\$(Configuration)\VS$(VisualStudioProductVersion)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\lib\x64;$(SolutionDir)packages\$(CefSdkVer)\CEF\$(Platform)\$(Configuration);$(SolutionDir)packages\$(CefSdkVer)\CEF\$(Platform)\$(Configuration)\VS$(VisualStudioProductVersion)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <KeyFile>$(LinkKeyFile)</KeyFile>
     </Link>

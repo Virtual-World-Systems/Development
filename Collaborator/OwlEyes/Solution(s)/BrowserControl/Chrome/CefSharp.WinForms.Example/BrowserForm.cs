@@ -32,7 +32,7 @@ namespace CefSharp.WinForms.Example
 
             var bitness = RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant();
             Text = "CefSharp.WinForms.Example - " + bitness;
-            WindowState = FormWindowState.Maximized;
+            //WindowState = FormWindowState.Maximized;
 
             Load += BrowserFormLoad;
 
@@ -41,6 +41,8 @@ namespace CefSharp.WinForms.Example
             ResizeEnd += (s, e) => ResumeLayout(true);
 
             this.multiThreadedMessageLoopEnabled = multiThreadedMessageLoopEnabled;
+
+
         }
 
         public IContainer Components
@@ -58,7 +60,8 @@ namespace CefSharp.WinForms.Example
 
         private void BrowserFormLoad(object sender, EventArgs e)
         {
-            AddTab(CefExample.DefaultUrl);
+            //AddTab(CefExample.DefaultUrl);
+            AddTab("https://virtual-world-systems.net/test-webm.html");
         }
 
         /// <summary>

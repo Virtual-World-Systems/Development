@@ -25,7 +25,7 @@ namespace OpenSimulator
 		}
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			ernsoft.Transducer.Interface TDI = ernsoft.Transducer.Interface.Create("TCPServer:5550");
+			//ernsoft.Transducer.Interface TDI = ernsoft.Transducer.Interface.Create("TCPServer:5550");
 			Tree.ImageList = IconList.Instance;
 			Tree.Load();
 			

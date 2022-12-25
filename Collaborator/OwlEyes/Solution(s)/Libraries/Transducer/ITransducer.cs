@@ -8,7 +8,7 @@ namespace ernsoft.Transducer
 {
 	public interface Interface
 	{
-		public Interface Create(string args) { }
-		string Name { get; set; }
+		//public Interface Create(string args) { }
+		//string Name { get; set; }
 	}
 }
