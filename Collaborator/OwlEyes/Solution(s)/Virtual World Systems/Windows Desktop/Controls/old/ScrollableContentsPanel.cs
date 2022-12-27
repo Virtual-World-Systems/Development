@@ -10,7 +10,7 @@ using System.Windows.Forms.Design;
 
 namespace VWS.WindowsDesktop.Controls
 {
-	public class ScrollableContentsPanel : Panel
+	public class ScrollableContentsPanel : UserControl
 	{
 		//TypeDescriptor.AddAttributes(this.ContentsPanel,
 		//		new DesignerAttribute(typeof(ContentPanelDesigner)));

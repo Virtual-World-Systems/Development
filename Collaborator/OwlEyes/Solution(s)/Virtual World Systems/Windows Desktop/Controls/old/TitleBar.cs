@@ -37,7 +37,8 @@ namespace VWS.WindowsDesktop.Controls
 
 		private void TitleBar_Paint(object sender, PaintEventArgs e)
 		{
-			Rectangle r = new Rectangle(new Point(), ComputeSize(e.Graphics) + new Size(8, 8));
+			Rectangle r;
+			r = new Rectangle(new Point(), ComputeSize(e.Graphics) + new Size(8, 8));
 			if (MinimumSize != r.Size) MinimumSize = r.Size;
 			r.Width = ClientRectangle.Width;
 			if (r.Height != Height) Height = r.Height;
@@ -50,7 +51,7 @@ namespace VWS.WindowsDesktop.Controls
 			using (Brush b = GetBrush(r)) e.Graphics.FillRectangle(b, r);
 			DrawCaptionText(e.Graphics, r.X + 2, r.Y, Text);
 			Debug.WriteLine("Paint Dock=" + Parent.Dock.ToString());
-			if (Parent.Dock != DockStyle.Fill) Parent.Dock = DockStyle.Fill;
+			//if (Parent.Dock != DockStyle.Fill) Parent.Dock = DockStyle.Fill;
 		}
 
 		[Browsable(true)]
@@ -77,6 +78,7 @@ namespace VWS.WindowsDesktop.Controls
 		protected override void OnResize(EventArgs eventargs)
 		{
 			base.OnResize(eventargs);
+			Invalidate();
 			Debug.WriteLine("on resize " + size.ToString());
 		}
 

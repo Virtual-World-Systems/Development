@@ -1,6 +1,6 @@
-﻿namespace VWS.WindowsDesktop.Controls
+﻿namespace VWS.WindowsDesktop.Controls.Container
 {
-	partial class TitleBar
+	partial class TreeListHeader
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -30,10 +30,14 @@
 		{
 			this.SuspendLayout();
 			// 
-			// TitleBar
+			// TreeListHeader
 			// 
-			this.Size = new System.Drawing.Size(40, 10);
-			this.Paint += new System.Windows.Forms.PaintEventHandler(this.TitleBar_Paint);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.PeachPuff;
+			this.Name = "TreeListHeader";
+			this.Size = new System.Drawing.Size(314, 16);
+			this.Paint += new System.Windows.Forms.PaintEventHandler(this.TreeListHeader_Paint);
 			this.ResumeLayout(false);
 
 		}

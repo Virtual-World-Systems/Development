@@ -5,7 +5,9 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VWS.WindowsDesktop.Controls
 {
@@ -61,6 +63,15 @@ namespace VWS.WindowsDesktop.Controls
 		internal static void DrawStringFormat(Graphics g, string t, int x, int y, Font f, Brush b)
 		{
 			g.DrawString(t, f, b, x, y, StringFormat);
+		}
+
+		internal static void DrawString(Graphics graphics, Rectangle r, object tag, Font font, Color foreColor)
+		{
+			TextRenderer.DrawText(graphics, "" + tag, font, r, foreColor, Color.Transparent,
+				TextFormatFlags.WordEllipsis | TextFormatFlags.NoPadding |
+				TextFormatFlags.Left | TextFormatFlags.SingleLine |
+				TextFormatFlags.VerticalCenter);
+
 		}
 	}
 }

@@ -45,6 +45,7 @@ namespace VWS.WindowsDesktop.Controls
 		public PanelWithHeader()
 		{
 			InitializeComponent();
+			Dock = DockStyle.None;
 		}
 		[Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
@@ -55,7 +56,7 @@ namespace VWS.WindowsDesktop.Controls
 		//}
 
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-		public Panel ContentsPanel
+		public UserControl ContentsPanel
 		{
 			get { return contentsPanel; }
 		}

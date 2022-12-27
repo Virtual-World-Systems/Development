@@ -49,20 +49,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Helper.cs" />
-    <Compile Include="Controls\PanelWithHeader.cs">
+    <Compile Include="Controls\Container\TreeList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PanelWithHeader.Designer.cs">
+    <Compile Include="Controls\Container\TreeList.Designer.cs">
+      <DependentUpon>TreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Container\TreeListHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Container\TreeListHeader.Designer.cs">
+      <DependentUpon>TreeListHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Container\TreeListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Container\TreeListItem.Designer.cs">
+      <DependentUpon>TreeListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HeaderBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HeaderBar.Designer.cs">
+      <DependentUpon>HeaderBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Helper.cs" />
+    <Compile Include="Controls\Nodes\TreeNodeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Nodes\TreeNodeButton.Designer.cs">
+      <DependentUpon>TreeNodeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\old\PanelWithHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\old\PanelWithHeader.Designer.cs">
       <DependentUpon>PanelWithHeader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ScrollableContentsPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\TitleBar.cs">
+    <Compile Include="Controls\old\ScrollableContentsPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TitleBar.Designer.cs">
+    <Compile Include="Controls\old\TitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\old\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
     <Compile Include="TestForm.cs">
@@ -73,13 +103,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\PanelWithHeader.resx">
+    <Compile Include="TestForm.InitializeRuntime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.SplitContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML\Document.cs" />
+    <EmbeddedResource Include="Controls\Container\TreeList.resx">
+      <DependentUpon>TreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Container\TreeListHeader.resx">
+      <DependentUpon>TreeListHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Container\TreeListItem.resx">
+      <DependentUpon>TreeListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeaderBar.resx">
+      <DependentUpon>HeaderBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Nodes\TreeNodeButton.resx">
+      <DependentUpon>TreeNodeButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\old\PanelWithHeader.resx">
       <DependentUpon>PanelWithHeader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ScrollableContentsPanel.resx">
+    <EmbeddedResource Include="Controls\old\ScrollableContentsPanel.resx">
       <DependentUpon>ScrollableContentsPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TitleBar.resx">
+    <EmbeddedResource Include="Controls\old\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -110,7 +162,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="ObjectModel.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\PNG_16x16\edit.png" />
+    <Content Include="Resources\PNG_16x16\ObjectTree.png" />
+    <Content Include="Resources\PNG_16x16\TreeNodeButton_closed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PNG_16x16\TreeNodeButton_opened.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PNG_32x16\TreeNodeButton.png" />
+    <Content Include="zz_Snippets.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

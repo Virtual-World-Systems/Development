@@ -1,0 +1,22 @@
+﻿<_>
+	<Classes>
+		<Class Name="Multiverse">
+			<Type is="Container" of="Metaverses" one-is="Metaverse"/>
+			<Container>
+				<Metaverse Name="Real Life"></Metaverse>
+			</Container>
+			<real-Life>
+				<Persons>
+					<Person Name="Judith Adele" main-OSSL.Name="Ada Radius"/>
+					<Person Name="Mike Higgins" main-OSSL.Name="Kayaker Magic"/>
+					<Person Name="Tom Ernst" main.OSSL.Name="Owl Eyes"/>
+				</Persons>
+				<Grids>
+					<Grid Name="Kitely" login-URI="http://grid.kitely.com:8002/"/>
+					<Grid Name="rOwlGrid Sasquatch" login-URI="http://ernsoft.selfhost.eu:8002"/>
+					<Grid Name="Second Life" login-URI="https://login.agni.lindenlab.com/cgi-bin/login.cgi"/>
+				</Grids>
+			</real-Life>
+		</Class>
+	</Classes>
+</_>

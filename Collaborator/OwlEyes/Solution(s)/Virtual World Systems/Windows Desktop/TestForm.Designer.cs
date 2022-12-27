@@ -35,16 +35,13 @@
 			this.SplitContainer = new System.Windows.Forms.SplitContainer();
 			this.ToolStrip = new System.Windows.Forms.ToolStrip();
 			this.EditMode = new System.Windows.Forms.ToolStripButton();
-			this.panelWithHeader1 = new VWS.WindowsDesktop.Controls.PanelWithHeader();
 			this.MainMenu.SuspendLayout();
 			this.ToolStripContainer.ContentPanel.SuspendLayout();
 			this.ToolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.ToolStripContainer.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
-			this.SplitContainer.Panel1.SuspendLayout();
 			this.SplitContainer.SuspendLayout();
 			this.ToolStrip.SuspendLayout();
-			this.panelWithHeader1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -102,51 +99,36 @@
 			// 
 			// SplitContainer.Panel1
 			// 
-			this.SplitContainer.Panel1.Controls.Add(this.panelWithHeader1);
+			this.SplitContainer.Panel1.BackColor = System.Drawing.SystemColors.Info;
 			this.SplitContainer.Size = new System.Drawing.Size(800, 401);
-			this.SplitContainer.SplitterDistance = 323;
+			this.SplitContainer.SplitterDistance = 324;
 			this.SplitContainer.TabIndex = 0;
+			this.SplitContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseDown);
+			this.SplitContainer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseMove);
+			this.SplitContainer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseUp);
 			// 
 			// ToolStrip
 			// 
+			this.ToolStrip.BackColor = System.Drawing.Color.Transparent;
 			this.ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditMode});
 			this.ToolStrip.Location = new System.Drawing.Point(3, 0);
 			this.ToolStrip.Name = "ToolStrip";
-			this.ToolStrip.Size = new System.Drawing.Size(35, 25);
+			this.ToolStrip.Size = new System.Drawing.Size(26, 25);
 			this.ToolStrip.TabIndex = 0;
 			// 
 			// EditMode
 			// 
+			this.EditMode.BackColor = System.Drawing.Color.Transparent;
 			this.EditMode.CheckOnClick = true;
 			this.EditMode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.EditMode.Image = global::VWS.WindowsDesktop.Properties.Resources.edit;
-			this.EditMode.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.EditMode.Image = global::VWS.WindowsDesktop.Properties.Resources.ObjectTree;
 			this.EditMode.Name = "EditMode";
 			this.EditMode.Size = new System.Drawing.Size(23, 22);
 			this.EditMode.Text = "EditMode";
-			// 
-			// panelWithHeader1
-			// 
-			this.panelWithHeader1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			// 
-			// panelWithHeader1.ContentsPanel
-			// 
-			this.panelWithHeader1.ContentsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panelWithHeader1.ContentsPanel.BackColor = System.Drawing.Color.LightGreen;
-			this.panelWithHeader1.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelWithHeader1.ContentsPanel.Location = new System.Drawing.Point(0, 24);
-			this.panelWithHeader1.ContentsPanel.Name = "ContentsPanel";
-			this.panelWithHeader1.ContentsPanel.Size = new System.Drawing.Size(319, 373);
-			this.panelWithHeader1.ContentsPanel.TabIndex = 0;
-			this.panelWithHeader1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelWithHeader1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.panelWithHeader1.Location = new System.Drawing.Point(0, 0);
-			this.panelWithHeader1.Name = "panelWithHeader1";
-			this.panelWithHeader1.Size = new System.Drawing.Size(319, 397);
-			this.panelWithHeader1.TabIndex = 0;
-			this.panelWithHeader1.Title = null;
+			this.EditMode.CheckedChanged += new System.EventHandler(this.EditMode_CheckedChanged);
 			// 
 			// TestForm
 			// 
@@ -155,6 +137,7 @@
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.ToolStripContainer);
 			this.Controls.Add(this.MainMenu);
+			this.DoubleBuffered = true;
 			this.MainMenuStrip = this.MainMenu;
 			this.Name = "TestForm";
 			this.Text = "TestForm";
@@ -165,12 +148,10 @@
 			this.ToolStripContainer.TopToolStripPanel.PerformLayout();
 			this.ToolStripContainer.ResumeLayout(false);
 			this.ToolStripContainer.PerformLayout();
-			this.SplitContainer.Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
 			this.SplitContainer.ResumeLayout(false);
 			this.ToolStrip.ResumeLayout(false);
 			this.ToolStrip.PerformLayout();
-			this.panelWithHeader1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -185,7 +166,6 @@
 		private System.Windows.Forms.ToolStrip ToolStrip;
 		private System.Windows.Forms.ToolStripButton EditMode;
 		private System.Windows.Forms.SplitContainer SplitContainer;
-		private Controls.PanelWithHeader panelWithHeader1;
 	}
 }
 
