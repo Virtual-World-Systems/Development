@@ -44,7 +44,7 @@ namespace OpenSimulator
 				//s = ss[1].Substring(ss[1].IndexOf("+") + 1);
 				//MessageBox.Show(s);
 				return s;
-				Assembly.GetExecutingAssembly().LoadModule("xxx", null);
+				//Assembly.GetExecutingAssembly().LoadModule("xxx", null);
 			}
 		}
 	}

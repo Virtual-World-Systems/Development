@@ -21,7 +21,7 @@ using System.Diagnostics;
 public class WebSocket
 {
 	HttpContext HttpContext;
-	string ClientApplicationVersion = "";
+	//string ClientApplicationVersion = "";
 	internal WebSocket(HttpContext context) { HttpContext = context; }
 	internal async Task RunWebSocket(AspNetWebSocketContext context)
 	{

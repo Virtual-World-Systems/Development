@@ -11,8 +11,6 @@ namespace Applications.PageEditor
 		public override string Title { get { return base.Title + " Page Editor"; } }
 		public override string CName { get { return "APE"; } }
 
-		private static DateTime ce;
-
 		override protected IEnumerable Contents
 		{
 			get

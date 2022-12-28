@@ -31,7 +31,7 @@ namespace OpenSimulator
 			
 			
 		}
-		O O;
+		//O O;
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Close();
