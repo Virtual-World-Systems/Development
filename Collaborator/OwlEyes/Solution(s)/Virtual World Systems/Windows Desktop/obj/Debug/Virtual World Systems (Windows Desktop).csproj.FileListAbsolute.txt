@@ -20,3 +20,4 @@ C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Vir
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Resources\PNG_16x16\TreeNodeButton_closed.png
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Resources\PNG_16x16\TreeNodeButton_opened.png
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\ObjectModel.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Container.TreeListBox.resources

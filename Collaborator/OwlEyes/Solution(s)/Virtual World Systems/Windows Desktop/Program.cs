@@ -22,7 +22,6 @@ namespace VWS.WindowsDesktop
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Mess("xx");
 			Application.Run(Form = new TestForm());
 		}
 		public static Form Form = null;
@@ -34,7 +33,7 @@ namespace VWS.WindowsDesktop
 				LoadPaths();
 				LoadObjectModel();
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				Mess(ex.Message + "\r\n" + ex.StackTrace);
 			}

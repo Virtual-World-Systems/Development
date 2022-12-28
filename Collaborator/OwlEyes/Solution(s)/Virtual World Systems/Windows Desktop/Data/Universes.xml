@@ -1,0 +1,6 @@
+﻿<List of="Universes" _1="Universe">
+	<Universe Name="Second Life" Key="OSSL:SecondLife"></Universe>
+	<Universe Name="Open Simulator" Key="OSSL:OpenSim"></Universe>
+	<Universe Name="Sansar"></Universe>
+	<Universe Name="Unity"></Universe>
+</List>

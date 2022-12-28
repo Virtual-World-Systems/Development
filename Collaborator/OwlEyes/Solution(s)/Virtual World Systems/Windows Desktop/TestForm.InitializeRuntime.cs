@@ -22,11 +22,17 @@ namespace VWS.WindowsDesktop
 
 			string path = Program.ApplicationData + "ApplicationProperties.xml";
 
-			if (!File.Exists(path)) File.WriteAllText(path,
-				"<User><ApplicationProperties><Width>1000</Width></ApplicationProperties></User>"
-				);
+			if (!Directory.Exists(Program.ApplicationData))
+				Directory.CreateDirectory(Program.ApplicationData);
 
+			if (!File.Exists(path))
+			{
+				File.WriteAllText(path,
+					"<User><ApplicationProperties><Width>1000</Width></ApplicationProperties></User>"
+				);
+			}
 			Program.XML.DocumentElement.AppendChild(Program.XML.ReadFile(path));
+
 			//Debug.WriteLine(Program.XML.OuterXml);
 			//Debug.WriteLine(Program.XML.DocumentElement.FirstChild.OuterXml);
 		}
@@ -34,7 +40,6 @@ namespace VWS.WindowsDesktop
 		void InitializeRuntime()
 		{
 			SetDoubleBuffered(this);
-			MessageBox.Show("ok");
 			//foreach (Element e in Program.XML.DocumentElement.SelectElements("User/ApplicationProperties"))
 			//{
 			//	Debug.WriteLine(e.Prefix + "[" + e.NamespaceURI + "]:" + e.Name + " :: " + e.OuterXml);

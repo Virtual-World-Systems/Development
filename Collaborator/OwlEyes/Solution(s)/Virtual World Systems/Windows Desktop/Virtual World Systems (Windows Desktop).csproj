@@ -55,6 +55,12 @@
     <Compile Include="Controls\Container\TreeList.Designer.cs">
       <DependentUpon>TreeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Container\TreeListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Container\TreeListBox.Designer.cs">
+      <DependentUpon>TreeListBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Container\TreeListHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,8 +116,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="XML\Document.cs" />
+    <Compile Include="XML\Element.cs" />
     <EmbeddedResource Include="Controls\Container\TreeList.resx">
       <DependentUpon>TreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Container\TreeListBox.resx">
+      <DependentUpon>TreeListBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Container\TreeListHeader.resx">
       <DependentUpon>TreeListHeader.cs</DependentUpon>
@@ -162,6 +172,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Data\Universes.xml" />
+    <Content Include="Data\Viewers.xml" />
     <Content Include="ObjectModel.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

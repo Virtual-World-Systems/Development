@@ -31,7 +31,7 @@ namespace VWS.WindowsDesktop.Controls.Container
 		public TreeList()
 		{
 			InitializeComponent();
-			for (int i = 0; i < 25; i++) { ListBox.Items.Add(new TreeListItem("" + i)); }
+//			for (int i = 0; i < 25; i++) { ListBox.Items.Add(new TreeListItem("" + i)); }
 		}
 
 		void doP(object sender, EventArgs e) { }
