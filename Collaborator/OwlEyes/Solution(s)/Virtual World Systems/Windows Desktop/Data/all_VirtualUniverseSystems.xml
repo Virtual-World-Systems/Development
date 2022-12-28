@@ -1,0 +1,10 @@
+﻿<all_VirtualUniverseSystems>
+	<VirtualUniverseSystem Name="SecondLife/OpenSimulator" Key="OSSL" has="Derivates">
+		<Derivates>
+			<Derivate Name="SecondLife" Key="_OS"/>
+			<Derivate Name="OpenSimulator" Key="_SL"/>
+		</Derivates>
+	</VirtualUniverseSystem>
+	<VirtualUniverseSystem Name="Sansar"/>
+	<VirtualUniverseSystem Name="Unity"/>
+</all_VirtualUniverseSystems>

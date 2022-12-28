@@ -41,8 +41,8 @@ namespace VWS.WindowsDesktop
 
 		static void LoadObjectModel()
 		{
-			Element e = XML.ReadFile(Path + "ObjectModel.xml");
-			XML.DocumentElement.AppendChild(e);
+			Element e = XML.ReadFile(Path + "_.xml");
+			XML.DocumentElement.PrependChild(e);
 		}
 		static void LoadPaths()
 		{

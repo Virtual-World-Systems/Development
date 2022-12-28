@@ -29,10 +29,6 @@ namespace VWS.WindowsDesktop
 			Close();
 		}
 
-		[Category("Data"), Browsable(true)]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-		public XML.Element XMLElement { get; set; }
-
 		private void EditMode_CheckedChanged(object sender, EventArgs e)
 		{
 

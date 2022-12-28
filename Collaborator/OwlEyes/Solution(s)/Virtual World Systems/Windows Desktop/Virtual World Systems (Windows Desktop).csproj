@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ElementComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ElementComponent.Designer.cs">
+      <DependentUpon>ElementComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Container\TreeList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="Controls\Container\TreeListItem.Designer.cs">
       <DependentUpon>TreeListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ElementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ElementControl.Designer.cs">
+      <DependentUpon>ElementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\HeaderBar.cs">
       <SubType>UserControl</SubType>
@@ -130,6 +142,9 @@
     <EmbeddedResource Include="Controls\Container\TreeListItem.resx">
       <DependentUpon>TreeListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ElementControl.resx">
+      <DependentUpon>ElementControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HeaderBar.resx">
       <DependentUpon>HeaderBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,9 +190,28 @@
     <Folder Include="Controls\ObjectModel\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Universes.xml" />
-    <Content Include="Data\Viewers.xml" />
-    <Content Include="ObjectModel.xml">
+    <Content Include="Data\all_OSSLGrids.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\all_RealPersons.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\the_Multiverse.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\the_RealLife.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\the_Metaverse.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\all_VirtualUniverseSystems.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\all_OSSLViewers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\PNG_16x16\edit.png" />

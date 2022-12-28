@@ -35,11 +35,13 @@
 			this.SplitContainer = new System.Windows.Forms.SplitContainer();
 			this.ToolStrip = new System.Windows.Forms.ToolStrip();
 			this.EditMode = new System.Windows.Forms.ToolStripButton();
+			this.elementControl1 = new VWS.WindowsDesktop.Controls.ElementControl();
 			this.MainMenu.SuspendLayout();
 			this.ToolStripContainer.ContentPanel.SuspendLayout();
 			this.ToolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.ToolStripContainer.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
+			this.SplitContainer.Panel1.SuspendLayout();
 			this.SplitContainer.SuspendLayout();
 			this.ToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -100,8 +102,9 @@
 			// SplitContainer.Panel1
 			// 
 			this.SplitContainer.Panel1.BackColor = System.Drawing.SystemColors.Info;
+			this.SplitContainer.Panel1.Controls.Add(this.elementControl1);
 			this.SplitContainer.Size = new System.Drawing.Size(800, 401);
-			this.SplitContainer.SplitterDistance = 324;
+			this.SplitContainer.SplitterDistance = 330;
 			this.SplitContainer.TabIndex = 0;
 			this.SplitContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseDown);
 			this.SplitContainer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseMove);
@@ -130,6 +133,14 @@
 			this.EditMode.Text = "EditMode";
 			this.EditMode.CheckedChanged += new System.EventHandler(this.EditMode_CheckedChanged);
 			// 
+			// elementControl1
+			// 
+			this.elementControl1.Location = new System.Drawing.Point(98, 87);
+			this.elementControl1.Name = "elementControl1";
+			this.elementControl1.Size = new System.Drawing.Size(150, 150);
+			this.elementControl1.TabIndex = 0;
+			this.elementControl1.XML_Selector = "_";
+			// 
 			// TestForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +159,7 @@
 			this.ToolStripContainer.TopToolStripPanel.PerformLayout();
 			this.ToolStripContainer.ResumeLayout(false);
 			this.ToolStripContainer.PerformLayout();
+			this.SplitContainer.Panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
 			this.SplitContainer.ResumeLayout(false);
 			this.ToolStrip.ResumeLayout(false);
@@ -166,6 +178,7 @@
 		private System.Windows.Forms.ToolStrip ToolStrip;
 		private System.Windows.Forms.ToolStripButton EditMode;
 		private System.Windows.Forms.SplitContainer SplitContainer;
+		private Controls.ElementControl elementControl1;
 	}
 }
 
