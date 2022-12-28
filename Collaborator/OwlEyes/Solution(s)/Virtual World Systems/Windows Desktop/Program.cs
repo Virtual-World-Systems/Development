@@ -97,7 +97,7 @@ namespace VWS.WindowsDesktop
 				string s = val.Location;
 				s = s.Replace("/", "\\");
 				s = s.Substring(0, s.LastIndexOf("\\") + 1);
-				Element n = e.OwnerDocument.CreateElement(an);
+				Element n = e.Document.CreateElement(an);
 				e.AppendChild(n);
 				n.InnerText = s;
 				return s;

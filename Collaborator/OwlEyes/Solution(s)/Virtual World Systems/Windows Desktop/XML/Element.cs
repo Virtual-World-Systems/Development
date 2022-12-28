@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -15,15 +16,33 @@ namespace XML
 		#region miscellaneous
 		public Element(string prefix, string localName, string namespaceURI, Document doc)
 			: base(prefix, localName, namespaceURI, doc) { }
-		public new Document OwnerDocument => (Document)base.OwnerDocument;
+
+		public Element() : base(null, "_", null, Document.Instance) { }
+
+		public Document Document { get { return (Document)OwnerDocument; } }
+		public Element Root { get { return Document.Root; } }
+		public Element Parent { get { return (Element) ParentNode; } }
+
+		public static Element @new(string name) { return Document.Instance.CreateElement(name); }
+
 		public XmlNodeList SelectElements(string selector)
 		{
-			return SelectNodes(selector, OwnerDocument.NamespaceManager);
+			return SelectNodes(selector, Document.NamespaceManager);
 		}
 		public Element SelectElement(string selector)
 		{
-			return (Element)SelectSingleNode(selector, OwnerDocument.NamespaceManager);
+			return (Element)SelectSingleNode(selector, Document.NamespaceManager);
 		}
+
+		public XmlNodeList SelectAttributes(string selector)
+		{
+			return SelectNodes(selector, Document.NamespaceManager);
+		}
+		public Attribute SelectAttribute(string selector)
+		{
+			return (Attribute)SelectSingleNode(selector, Document.NamespaceManager);
+		}
+
 		public void WriteFile(string path)
 		{
 			Debug.WriteLine("**** writing XML to " + path);
@@ -60,8 +79,7 @@ namespace XML
 				WriteTo(wr);
 			}
 		}
+
 		#endregion
-
-
 	}
 }

@@ -25,6 +25,7 @@ namespace XML
 		}
 
 		static internal Document Instance { get; private set; }
+
 		public Document()
 		{
 			Instance = this;
@@ -43,7 +44,9 @@ namespace XML
 		internal string VWSNS { get; }
 		internal _NamespaceManager NamespaceManager { get; set; }
 
+		public Element Root { get { return (Element)base.DocumentElement; } }
 		public new Element DocumentElement { get { return (Element)base.DocumentElement; } }
+
 		public override XmlElement CreateElement(string prefix, string localName, string namespaceURI)
 		{
 			return new Element(prefix, localName, namespaceURI, this);
@@ -52,6 +55,25 @@ namespace XML
 		{
 			return (Element)CreateElement(null, name, null);
 		}
+
+		static Element NewElement(string name)
+		{
+			return Instance.CreateElement(name);
+		}
+		static Attribute NewAttribute(string name)
+		{
+			return Instance.CreateAttribute(name);
+		}
+
+		public override XmlAttribute CreateAttribute(string prefix, string localName, string namespaceURI)
+		{
+			return new Attribute(prefix, localName, namespaceURI, this);
+		}
+		public new Attribute CreateAttribute(string name)
+		{
+			return (Attribute)CreateAttribute(null, name, null);
+		}
+
 
 		public Element ReadFile(string path)
 		{

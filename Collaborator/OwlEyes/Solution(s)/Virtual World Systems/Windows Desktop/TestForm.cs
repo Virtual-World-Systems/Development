@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace VWS.WindowsDesktop
 {
@@ -27,6 +28,10 @@ namespace VWS.WindowsDesktop
 		{
 			Close();
 		}
+
+		[Category("Data"), Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		public XML.Element XMLElement { get; set; }
 
 		private void EditMode_CheckedChanged(object sender, EventArgs e)
 		{

@@ -115,6 +115,7 @@
     <Compile Include="TestForm.SplitContainer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
     <EmbeddedResource Include="Controls\Container\TreeList.resx">

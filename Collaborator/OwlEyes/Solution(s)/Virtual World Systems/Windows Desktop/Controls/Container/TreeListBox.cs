@@ -16,5 +16,9 @@ namespace VWS.WindowsDesktop.Controls.Container
 		{
 			InitializeComponent();
 		}
+
+		[Category("Data"), Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		public XML.Element XMLElement { get; set; }
 	}
 }
