@@ -23,9 +23,18 @@ namespace VWS.WindowsDesktop
 			//this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
 			Icon = Resources.Multiverse;
-
 			//Debug.WriteLine("\r\n\r\nOrphans: " + Program.XML.Orphans.OuterXml);
+
+			//foreach (string s in Program.MimeTypes) Debug.WriteLine(s);
+			//Type MimeTypes = typeof(System.Net.Mime.MediaTypeNames);
+			//foreach (Type TC in MimeTypes.GetNestedTypes())
+			//{
+			//	foreach (FieldInfo fi in TC.GetFields(BindingFlags.Public | BindingFlags.Static))
+			//	Debug.WriteLine(TC.Name + "/" + fi.Name);
+			//}
 		}
+
+
 
 		void InitializeRuntime()
 		{
@@ -42,13 +51,20 @@ namespace VWS.WindowsDesktop
 					ol = o; o = pi.GetValue(o, null);
 				}
 				//Debug.WriteLine(e.Name + " old : " + o);
+				//object vx = (object)pi.GetValue(ol);
+				//Debug.WriteLine($"{vx.GetType()}");
+				//string sx = (string)Convert.ChangeType(pi.GetValue(ol), typeof(string));
+
 				object v = Convert.ChangeType(e.InnerText, pi.PropertyType);
+
 				//Debug.WriteLine(e.Name + " new : " + v);
 				pi.SetValue(ol, v);
 			}
 			StringBuilder sb = new StringBuilder();
 			Program.XML.Root.WriteTo(sb);
 			Debug.WriteLine("\r\nDocument : " + sb.ToString());
+
+			TabControl.SelectTab(Converter);
 		}
 
 		void SetDoubleBuffered(Control c)

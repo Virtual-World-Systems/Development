@@ -14,12 +14,13 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
 	public partial class XMLTreeListPanel : ScrollableControl
 	{
-		internal static XMLElementPainter Painter = new XMLElementPainter();
-
 		public XMLTreeListPanel()
 		{
 			InitializeComponent();
 		}
+		internal XMLTreeList TreeList { get => (XMLTreeList)Parent; }
+
+		internal static XMLElementPainter Painter = new XMLElementPainter();
 
 		public XML.Element ParentElement
 		{
@@ -47,9 +48,8 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			}
 		}
 		XML.Element parentElement;
-		List<XMLTreeListItem> Items = new List<XMLTreeListItem>();
 
-		internal XMLTreeList TreeList { get => (XMLTreeList) Parent; }
+		List<XMLTreeListItem> Items = new List<XMLTreeListItem>();
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
@@ -61,8 +61,12 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				while (++i < Items.Count)
 				{
 					item = Items[i];
-					if ((Y + item.Height) <= e.ClipRectangle.Top) continue;
 
+					if ((Y + item.Height) <= e.ClipRectangle.Top)
+					{
+						Y += item.Height;
+						continue;
+					}
 					while (Y < e.ClipRectangle.Bottom)
 					{
 						Point pt = new Point(AutoScrollPosition.X + Padding.Left, Y);
@@ -108,6 +112,93 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		private void XMLTreeListPanel_Scroll(object sender, ScrollEventArgs e)
 		{
 			Invalidate();
+		}
+
+		protected override void OnClick(EventArgs e)
+		{
+			MouseEventArgs a = (MouseEventArgs) e;
+
+			int i = -1; XMLTreeListItem item;
+			int Y = AutoScrollPosition.Y + Padding.Top;
+
+			while (++i < Items.Count)
+			{
+				item = Items[i];
+				if ((Y + item.Height) <= a.Y)
+				{
+					Y += item.Height;
+					continue;
+				}
+				Debug.WriteLine($"found {item}[{item.Index}]");
+				break;
+			}
+			base.OnClick(e);
+		}
+
+		protected override void OnMouseMove(MouseEventArgs e)
+		{
+			Point pt = PointToClient(MousePosition);
+			
+			int i = -1; XMLTreeListItem item = null;
+			int Y = AutoScrollPosition.Y + Padding.Top;
+
+			while (++i < Items.Count)
+			{
+				item = Items[i];
+				if ((Y + item.Height) <= pt.Y)
+				{
+					Y += item.Height;
+					item = null;
+					continue;
+				}
+
+				//Debug.WriteLine($"found \"{item.Element.DisplayName}\"");
+				break;
+			}
+			if (item != HoveredItem)
+			{
+				if (HoveredItem != null) HoverItem(HoveredItem, false);
+				HoveredItem = item;
+				if (HoveredItem != null) HoverItem(HoveredItem, true);
+			}
+			base.OnMouseMove(e);
+		}
+		XMLTreeListItem HoveredItem = null;
+		void HoverItem(XMLTreeListItem item, bool isHovered)
+		{
+			DrawItemRect(item);
+		}
+
+		void DrawItemRect(XMLTreeListItem item)
+		{
+			Rectangle r = GetItemRect(item);
+			r.Offset(0, Padding.Top);
+			r = RectangleToScreen(r);
+			ControlPaint.DrawReversibleFrame(r, Color.DarkRed, FrameStyle.Thick);
+		}
+
+		protected override void OnMouseLeave(EventArgs e)
+		{
+			if (HoveredItem != null)
+			{
+				DrawItemRect(HoveredItem);
+				HoveredItem = null;
+			}
+			base.OnMouseLeave(e);
+		}
+
+		Rectangle GetItemRect(XMLTreeListItem item)
+		{
+			int Y = 0;
+
+			foreach (XMLTreeListItem it in Items)
+			{
+				if (it == item) break;
+				Y += it.Size.Height;
+			}
+			Rectangle r = new Rectangle(0, Y, ClientRectangle.Width, item.Size.Height);
+			//r.Offset(Padding.Left, Padding.Top);
+			return r;
 		}
 	}
 }

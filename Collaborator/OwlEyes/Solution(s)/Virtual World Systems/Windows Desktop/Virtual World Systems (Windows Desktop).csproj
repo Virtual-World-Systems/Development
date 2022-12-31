@@ -49,6 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\Conversion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Converter\Conversion.Designer.cs">
+      <DependentUpon>Conversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\Converter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Converter\Converter.Designer.cs">
+      <DependentUpon>Converter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\FormatSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Converter\FormatSettings.Designer.cs">
+      <DependentUpon>FormatSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\Input.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Converter\Input.Designer.cs">
+      <DependentUpon>Input.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\Stream.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Converter\Stream.Designer.cs">
+      <DependentUpon>Stream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\Output.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Converter\Output.Designer.cs">
+      <DependentUpon>Output.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\ElementComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -119,6 +155,12 @@
     <Compile Include="Controls\old\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Splitter.Designer.cs">
+      <DependentUpon>Splitter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\XMLTreeList\XMLElementPainter.cs" />
     <Compile Include="Controls\XMLTreeList\XMLTreeList.cs">
       <SubType>UserControl</SubType>
@@ -163,6 +205,18 @@
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
+    <EmbeddedResource Include="Converter\Converter.resx">
+      <DependentUpon>Converter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\FormatSettings.resx">
+      <DependentUpon>FormatSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\Stream.resx">
+      <DependentUpon>Stream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\Output.resx">
+      <DependentUpon>Output.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Container\TreeList.resx">
       <DependentUpon>TreeList.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\old\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Splitter.resx">
+      <DependentUpon>Splitter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeList.resx">
       <DependentUpon>XMLTreeList.cs</DependentUpon>
@@ -233,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\ObjectModel\" />
+    <Folder Include="TrafficInterceptor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\all_OSSLGrids.xml">

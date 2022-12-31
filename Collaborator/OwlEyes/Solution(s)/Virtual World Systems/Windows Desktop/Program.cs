@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using XML;
 
 namespace VWS.WindowsDesktop
@@ -32,6 +33,7 @@ namespace VWS.WindowsDesktop
 			{
 				LoadPaths();
 				LoadUserData();
+				LoadMimeTypes();
 				LoadObjectModel();
 			}
 			catch (Exception ex)
@@ -60,6 +62,48 @@ namespace VWS.WindowsDesktop
 			p.AppendChild(e);
 		}
 
+		static void LoadMimeTypes()
+		{
+			Element e = null;
+			string path = CommonApplicationData + "MimeTypes.xml";
+
+			if (!File.Exists(path))
+			{
+				using (e = (Element)XML.CreateElement("mime", "Types", "mime"))
+				{
+					Type MT = typeof(System.Net.Mime.MediaTypeNames);
+
+					foreach (Type TC in MT.GetNestedTypes())
+						foreach (FieldInfo fi in TC.GetFields(BindingFlags.Public | BindingFlags.Static))
+							AddMimeType(e, TC.Name + "/" + fi.Name);
+
+					AddMimeType(e, "Image/Png");
+
+					AddMimeType(e, "Text/XML"); // .xml
+					AddMimeType(e, "Text/glTF"); // .gltf
+					AddMimeType(e, "Text/Collada"); // .dae
+					AddMimeType(e, "Text/BiovisionHierarchyAnimation"); // .bvh
+					AddMimeType(e, "Application/MayaAnimation"); // .anim
+					AddMimeType(e, "Application/OSSLAnimation"); // .animatn
+					AddMimeType(e, "Application/glB"); // .glb
+					AddMimeType(e, "Application/OSSLMesh"); // .llm
+
+					StringBuilder sb = new StringBuilder();
+					e.WriteTo(sb);
+					File.WriteAllText(path, sb.ToString());
+				}
+			}
+			XML.DocumentElement.AppendChild(XML.ReadFile(path));
+		}
+		static void AddMimeType(Element e, string name)
+		{
+			Element x = e.SelectElement("Type[@Name='" + name + "']");
+			if (x != null) return;
+			Element p = (Element)XML.CreateElement("Type");
+			p.SetAttribute("Name", name);
+			e.AppendChild(p);
+		}
+		public static List<string> MimeTypes = new List<string>();
 		static void LoadObjectModel()
 		{
 			Element e = XML.ReadFile(Path + "_.xml");

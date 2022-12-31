@@ -37,6 +37,7 @@ namespace XML
 				NamespaceManager.AddNamespace("_", VWSNS);
 				NamespaceManager.AddNamespace("orphans", "orphans");
 				NamespaceManager.AddNamespace("runtime", "runtime");
+				NamespaceManager.AddNamespace("mime", "mime");
 				NamespaceManager.AddNamespace("user", "user");
 				AppendChild(new Element(null, "_", null, this));
 				orphans = Orphans; orphaning.Push(true);
