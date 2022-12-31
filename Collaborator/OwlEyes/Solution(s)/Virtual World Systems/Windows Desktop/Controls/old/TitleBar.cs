@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security;
+using XML;
 
 namespace VWS.WindowsDesktop.Controls
 {
@@ -35,7 +36,7 @@ namespace VWS.WindowsDesktop.Controls
 		}
 		Size size = Size.Empty;
 
-		private void TitleBar_Paint(object sender, PaintEventArgs e)
+		private void TitleBar_PaintX(object sender, PaintEventArgs e)
 		{
 			Rectangle r;
 			r = new Rectangle(new Point(), ComputeSize(e.Graphics) + new Size(8, 8));
@@ -53,6 +54,39 @@ namespace VWS.WindowsDesktop.Controls
 			Debug.WriteLine("Paint Dock=" + Parent.Dock.ToString());
 			//if (Parent.Dock != DockStyle.Fill) Parent.Dock = DockStyle.Fill;
 		}
+
+		private void TitleBar_Paint(object sender, PaintEventArgs e)
+		{
+			int BorderSize = 2;
+			Rectangle r = ClientRectangle;
+
+			//using (Brush b = new SolidBrush(Color.LightBlue))
+			//	e.Graphics.FillRectangle(b, r);
+
+			r.Height = Helper.MeasureStringSize(e.Graphics, CaptionFont, "|").
+				Height + 2 * BorderSize + 2;
+
+			for (int i = 0; i < BorderSize; i++)
+			{
+				ControlPaint.DrawBorder3D(e.Graphics, r, Border3DStyle.RaisedInner);
+				r.Inflate(-1, -1);
+			}
+			using (Brush b = GetBrush(r)) e.Graphics.FillRectangle(b, r);
+
+			r.Inflate(BorderSize, BorderSize);
+			string t = Text;// (element == null) ? "" : element.DisplayName;
+
+			r.Inflate(-(BorderSize - 1), -(BorderSize + 1));
+			TextRenderer.DrawText(e.Graphics, t, CaptionFont,
+				r, Color.Black, TextFormatFlags.EndEllipsis);
+
+			r.Offset(0, r.Height);
+			r.Height = ClientRectangle.Height;// - r.Top;
+
+			r.Size = new Size(16, 16);
+			//ControlPaint.DrawButton(e.Graphics, r, ButtonState.Checked);
+		}
+
 
 		[Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]

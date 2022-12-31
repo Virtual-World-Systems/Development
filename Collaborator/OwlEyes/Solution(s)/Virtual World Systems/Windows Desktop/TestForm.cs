@@ -22,7 +22,10 @@ namespace VWS.WindowsDesktop
 			PreInitialize(); // incl. TransparencyKey fixes
 			InitializeComponent();
 			InitializeRuntime(); // incl. SplitContainer fixes
+			Root = Program.XML.Root;
 		}
+
+		public XML.Element Root { get; private set; }
 
 		private void MM_File_Exit_Click(object sender, EventArgs e)
 		{

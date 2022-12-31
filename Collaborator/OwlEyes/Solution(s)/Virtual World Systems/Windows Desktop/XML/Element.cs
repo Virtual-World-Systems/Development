@@ -4,14 +4,17 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 using XML;
 
 namespace XML
 {
-	public class Element : XmlElement
+	public class Element : XmlElement, IDisposable
 	{
 		#region miscellaneous
 		public Element(string prefix, string localName, string namespaceURI, Document doc)
@@ -25,6 +28,21 @@ namespace XML
 
 		public static Element @new(string name) { return Document.Instance.CreateElement(name); }
 
+		public string DisplayName
+		{
+			get
+			{
+				if (HasAttribute("DisplayName")) return GetAttribute("DisplayName");
+				if (HasAttribute("Name")) return GetAttribute("Name");
+				if (HasAttribute("Key")) return GetAttribute("Key");
+				if (this == Root) return "Object Tree"; // •
+				if (Name == "orphans:_") return "Orphans";
+				if (Name == "user:Data") return "User Data";
+				if (Name == "runtime:Paths") return "Runtime Paths";
+				if (Name == "_:the_Multiverse") return "Das Multiversum";
+				return Name;
+			}
+		}
 		public XmlNodeList SelectElements(string selector)
 		{
 			return SelectNodes(selector, Document.NamespaceManager);
@@ -80,6 +98,26 @@ namespace XML
 			}
 		}
 
+		public void Dispose()
+		{
+			if (ParentNode != null) ParentNode.RemoveChild(this);
+		}
+
 		#endregion
+
+		private static char[] xpc = new char[] { '*', '/', ']' };
+
+		public new Element this[string name]
+		{
+			get
+			{ 
+				if (name.IndexOfAny(xpc) < 0) return (Element) base[name];
+				return SelectElement(name);
+			}
+		}
+		public string ElementXML
+		{
+			get { using (Element e = (Element)CloneNode(false)) { return e.OuterXml; } }
+		}
 	}
 }

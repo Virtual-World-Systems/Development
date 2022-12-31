@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -34,13 +35,31 @@ namespace XML
 				VWSNS = "https://Virtual-World-Systems.net";
 				NamespaceManager = new _NamespaceManager(this);
 				NamespaceManager.AddNamespace("_", VWSNS);
+				NamespaceManager.AddNamespace("orphans", "orphans");
+				NamespaceManager.AddNamespace("runtime", "runtime");
+				NamespaceManager.AddNamespace("user", "user");
 				AppendChild(new Element(null, "_", null, this));
+				orphans = Orphans; orphaning.Push(true);
+
 			}
 			catch (Exception ex)
 			{
 				Program.Mess(ex.Message + "\r\n" + ex.StackTrace);
 			}
 		}
+		public Element Orphans
+		{
+			get
+			{
+				if (orphans == null)
+					Root.PrependChild(orphans = (Element)CreateElement("orphans:_", "orphans"));
+				return orphans;
+			}
+		}
+		Element orphans = null;
+		Stack<bool> orphaning = new Stack<bool>();
+		bool isOrphaning { get { return (orphaning.Count > 0) ? orphaning.Peek() : false; } }
+
 		internal string VWSNS { get; }
 		internal _NamespaceManager NamespaceManager { get; set; }
 
@@ -49,8 +68,11 @@ namespace XML
 
 		public override XmlElement CreateElement(string prefix, string localName, string namespaceURI)
 		{
-			return new Element(prefix, localName, namespaceURI, this);
+			Element e = new Element(prefix, localName, namespaceURI, this);
+			if (isOrphaning && (DocumentElement != null) && (Orphans != null)) Orphans.AppendChild(e);
+			return e;
 		}
+
 		public new Element CreateElement(string name)
 		{
 			return (Element)CreateElement(null, name, null);
@@ -77,18 +99,26 @@ namespace XML
 
 		public Element ReadFile(string path)
 		{
-			XmlReaderSettings s = new XmlReaderSettings() { NameTable = NameTable };
+			orphaning.Push(false);
 
+			XmlReaderSettings s = new XmlReaderSettings()
+			{
+				IgnoreWhitespace = true,
+				NameTable = NameTable
+			};
 			Element e = null;
 
 			using (FileStream sr = new FileStream(path, FileMode.OpenOrCreate))
 			{
 				using (XmlReader rdr = XmlReader.Create(sr, s))
 				{
-					e = (Element)Program.XML.ReadNode(rdr);
+					e = (Element)ReadNode(rdr);
 				}
-				if (e == null) return null;
+				if (e == null) { orphaning.Pop(); return null; }
 			}
+			orphaning.Pop();
+			//Debug.WriteLine("orphaning : " + e.ElementXML);
+			Orphans.AppendChild(e);
 			return e;
 		}
 	}

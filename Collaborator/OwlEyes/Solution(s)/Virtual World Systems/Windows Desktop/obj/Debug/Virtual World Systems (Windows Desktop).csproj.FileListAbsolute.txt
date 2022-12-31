@@ -29,3 +29,8 @@ C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Vir
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\the_Metaverse.xml
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\all_VirtualUniverseSystems.xml
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\all_OSSLViewers.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Resources\PNG_32x32\Tree_32x32.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.DataViews.Filetypes.Collada.dae.DataView_Collada.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListHeader.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListPanel.resources

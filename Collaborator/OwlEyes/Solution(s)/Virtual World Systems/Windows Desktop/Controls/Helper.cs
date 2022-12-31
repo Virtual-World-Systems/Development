@@ -60,18 +60,43 @@ namespace VWS.WindowsDesktop.Controls
 			Color ce = Color.FromArgb(R, G, B);
 			return new LinearGradientBrush(r, ca, ce, LinearGradientMode.ForwardDiagonal);
 		}
-		internal static void DrawStringFormat(Graphics g, string t, int x, int y, Font f, Brush b)
+		internal static Brush GetSolidBrush(Color c)
+		{
+			if (SolidBrushes.ContainsKey(c)) return SolidBrushes[c];
+			return (SolidBrushes[c] = new SolidBrush(c));
+		}
+		internal static Dictionary<Color, Brush>
+			SolidBrushes = new Dictionary<Color, Brush>();
+
+		internal static void DrawString(Graphics g, string t, int x, int y, Font f, Brush b)
 		{
 			g.DrawString(t, f, b, x, y, StringFormat);
 		}
-
-		internal static void DrawString(Graphics graphics, Rectangle r, object tag, Font font, Color foreColor)
+		internal static void DrawRenderString(Graphics g,
+			string t, Rectangle r, Font f, Color ct, Color cb)
 		{
-			TextRenderer.DrawText(graphics, "" + tag, font, r, foreColor, Color.Transparent,
-				TextFormatFlags.WordEllipsis | TextFormatFlags.NoPadding |
+			TextRenderer.DrawText(g, t, f, r, ct, cb,
+				TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding |
 				TextFormatFlags.Left | TextFormatFlags.SingleLine |
 				TextFormatFlags.VerticalCenter);
-
+		}
+		static Size MaxSize = new Size(int.MaxValue, int.MaxValue);
+		internal static Size MeasureRenderStringSize(Graphics g, Font f, string t)
+		{
+			Size sz;
+			string tt = (t == "") ? "|" : t;
+			if (g == null)
+				sz = TextRenderer.MeasureText(tt, f, MaxSize,
+					TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding |
+					TextFormatFlags.Left | TextFormatFlags.SingleLine |
+					TextFormatFlags.VerticalCenter);
+			else
+				sz = TextRenderer.MeasureText(g, tt, f, MaxSize,
+					TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding |
+					TextFormatFlags.Left | TextFormatFlags.SingleLine |
+					TextFormatFlags.VerticalCenter);
+			if (t == "") sz.Width = 0;
+			return sz;
 		}
 	}
 }

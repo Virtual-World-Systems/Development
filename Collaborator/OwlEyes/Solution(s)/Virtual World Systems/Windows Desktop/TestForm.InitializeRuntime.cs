@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XML;
 using System.Xml;
+using System.Drawing;
+using VWS.WindowsDesktop.Properties;
 
 namespace VWS.WindowsDesktop
 {
@@ -20,33 +22,17 @@ namespace VWS.WindowsDesktop
 			//SetStyle(ControlStyles.Opaque, true);
 			//this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
-			string path = Program.ApplicationData + "ApplicationProperties.xml";
+			Icon = Resources.Multiverse;
 
-			if (!Directory.Exists(Program.ApplicationData))
-				Directory.CreateDirectory(Program.ApplicationData);
-
-			if (!File.Exists(path))
-			{
-				File.WriteAllText(path,
-					"<User><ApplicationProperties><Width>1000</Width></ApplicationProperties></User>"
-				);
-			}
-			Program.XML.DocumentElement.AppendChild(Program.XML.ReadFile(path));
-
-			//Debug.WriteLine(Program.XML.OuterXml);
-			//Debug.WriteLine(Program.XML.DocumentElement.FirstChild.OuterXml);
+			//Debug.WriteLine("\r\n\r\nOrphans: " + Program.XML.Orphans.OuterXml);
 		}
 
 		void InitializeRuntime()
 		{
 			SetDoubleBuffered(this);
-			//foreach (Element e in Program.XML.DocumentElement.SelectElements("User/ApplicationProperties"))
-			//{
-			//	Debug.WriteLine(e.Prefix + "[" + e.NamespaceURI + "]:" + e.Name + " :: " + e.OuterXml);
-			//}
 
-			foreach (Element e in Program.XML.DocumentElement
-				.SelectElements("User/ApplicationProperties/*"))
+			foreach (Element e in Program.XML.Root
+				.SelectElements("user:Data/User/ApplicationProperties/*"))
 			{
 				object o = this, ol = this;
 				PropertyInfo pi = null;
@@ -61,8 +47,8 @@ namespace VWS.WindowsDesktop
 				pi.SetValue(ol, v);
 			}
 			StringBuilder sb = new StringBuilder();
-			Program.XML.DocumentElement.WriteTo(sb);
-			Debug.WriteLine(sb.ToString());
+			Program.XML.Root.WriteTo(sb);
+			Debug.WriteLine("\r\nDocument : " + sb.ToString());
 		}
 
 		void SetDoubleBuffered(Control c)

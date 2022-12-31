@@ -35,7 +35,7 @@
 			this.SplitContainer = new System.Windows.Forms.SplitContainer();
 			this.ToolStrip = new System.Windows.Forms.ToolStrip();
 			this.EditMode = new System.Windows.Forms.ToolStripButton();
-			this.elementControl1 = new VWS.WindowsDesktop.Controls.ElementControl();
+			this.xmlTreeList1 = new VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList();
 			this.MainMenu.SuspendLayout();
 			this.ToolStripContainer.ContentPanel.SuspendLayout();
 			this.ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -102,9 +102,9 @@
 			// SplitContainer.Panel1
 			// 
 			this.SplitContainer.Panel1.BackColor = System.Drawing.SystemColors.Info;
-			this.SplitContainer.Panel1.Controls.Add(this.elementControl1);
+			this.SplitContainer.Panel1.Controls.Add(this.xmlTreeList1);
 			this.SplitContainer.Size = new System.Drawing.Size(800, 401);
-			this.SplitContainer.SplitterDistance = 330;
+			this.SplitContainer.SplitterDistance = 277;
 			this.SplitContainer.TabIndex = 0;
 			this.SplitContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseDown);
 			this.SplitContainer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseMove);
@@ -133,13 +133,14 @@
 			this.EditMode.Text = "EditMode";
 			this.EditMode.CheckedChanged += new System.EventHandler(this.EditMode_CheckedChanged);
 			// 
-			// elementControl1
+			// xmlTreeList1
 			// 
-			this.elementControl1.Location = new System.Drawing.Point(98, 87);
-			this.elementControl1.Name = "elementControl1";
-			this.elementControl1.Size = new System.Drawing.Size(150, 150);
-			this.elementControl1.TabIndex = 0;
-			this.elementControl1.XML_Selector = "_";
+			this.xmlTreeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.xmlTreeList1.Location = new System.Drawing.Point(0, 0);
+			this.xmlTreeList1.Name = "xmlTreeList1";
+			this.xmlTreeList1.Size = new System.Drawing.Size(273, 397);
+			this.xmlTreeList1.TabIndex = 0;
+			this.xmlTreeList1.XPathSelector = "./_:the_Multiverse";
 			// 
 			// TestForm
 			// 
@@ -178,7 +179,7 @@
 		private System.Windows.Forms.ToolStrip ToolStrip;
 		private System.Windows.Forms.ToolStripButton EditMode;
 		private System.Windows.Forms.SplitContainer SplitContainer;
-		private Controls.ElementControl elementControl1;
+		private Controls.XMLTreeList.XMLTreeList xmlTreeList1;
 	}
 }
 

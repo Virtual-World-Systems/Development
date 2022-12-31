@@ -34,8 +34,10 @@ namespace VWS.WindowsDesktop.Controls.Container
 			Color c = (((e.Index & 1) == 0) ? Color.Green : Color.Red);
 			TreeListItem Item = (TreeListItem)ListBox.Items[e.Index];
 			r.Offset(-ListBox.AutoScrollOffset.X, -ListBox.AutoScrollOffset.Y);
-			e.Graphics.FillRectangle(new SolidBrush(c), r);
-			Helper.DrawString(e.Graphics, r, Tag, Font, ListBox.ForeColor);
+			using (Brush b = new SolidBrush(c))
+				e.Graphics.FillRectangle(new SolidBrush(c), r);
+			using (Brush b = new SolidBrush(ListBox.ForeColor))
+				Helper.DrawString(e.Graphics, "" + Tag, r.Left, r.Top, Font, b);
 		}
 	}
 }

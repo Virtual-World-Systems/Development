@@ -31,6 +31,7 @@ namespace VWS.WindowsDesktop
 			try
 			{
 				LoadPaths();
+				LoadUserData();
 				LoadObjectModel();
 			}
 			catch (Exception ex)
@@ -39,10 +40,30 @@ namespace VWS.WindowsDesktop
 			}
 		}
 
+		static void LoadUserData()
+		{
+			string path = ApplicationData + "ApplicationProperties.xml";
+			//Debug.WriteLine("UserAppData: " + path);
+
+			if (!Directory.Exists(ApplicationData))
+				Directory.CreateDirectory(ApplicationData);
+
+			if (!File.Exists(path))
+			{
+				File.WriteAllText(path,
+					"<User><ApplicationProperties><Width>1000</Width></ApplicationProperties></User>"
+				);
+			}
+			Element e = XML.ReadFile(path);
+			Element p = (Element)XML.CreateElement("user", "Data", "user");
+			XML.Root.AppendChild(p);
+			p.AppendChild(e);
+		}
+
 		static void LoadObjectModel()
 		{
 			Element e = XML.ReadFile(Path + "_.xml");
-			XML.DocumentElement.PrependChild(e);
+			XML.DocumentElement.AppendChild(e);
 		}
 		static void LoadPaths()
 		{
@@ -60,20 +81,24 @@ namespace VWS.WindowsDesktop
 				if (Assembly.GetEntryAssembly() == null)
 				{
 					XML.DocumentElement.AppendChild(XML.ReadFile(XMLPath));
-					ProgramPath = XML.DocumentElement.SelectElement("Paths/EntryAssembly").InnerText;
+					ProgramPath = XML.DocumentElement.SelectElement("runtime:Paths/EntryAssembly").InnerText;
 				}
 				else
 				{
-					Element e = XML.CreateElement("Paths");
+					Element e = (Element)XML.CreateElement("runtime:Paths", "runtime");
 					XML.DocumentElement.AppendChild(e);
 					ProgramPath = LoadAssPath(e, "EntryAssembly", V);
 					e.WriteFile(XMLPath);
 				}
+				SourceRoot = ProgramPath;
+				if (SourceRoot.EndsWith("Debug\\") || SourceRoot.EndsWith("Release\\"))
+					SourceRoot = SourceRoot = SourceRoot.Substring(0, SourceRoot.IndexOf("\\bin\\") + 1);
 			}
 			catch(Exception ex)
 			{
 				Mess(ex.Message + "\r\n" + ex.StackTrace);
 			}
+			Debug.WriteLine($"**** SourceRoot: {SourceRoot}");
 			Debug.WriteLine($"**** ProgramPath: {ProgramPath}");
 		}
 		static public void Mess(string message)
@@ -112,6 +137,7 @@ namespace VWS.WindowsDesktop
 		public static string LocalApplicationData { get; private set; }
 		public static string CommonApplicationData { get; private set; }
 		public static string ProgramPath { get; private set; } = null;
+		public static string SourceRoot { get; private set; } = null;
 
 		public static string Path { get {
 				if (string.IsNullOrEmpty(ProgramPath)) LoadPaths();

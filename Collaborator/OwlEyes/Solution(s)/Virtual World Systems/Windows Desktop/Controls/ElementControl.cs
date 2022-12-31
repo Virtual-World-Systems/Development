@@ -17,7 +17,7 @@ namespace VWS.WindowsDesktop.Controls
 		{
 			InitializeComponent();
 		}
-
+		#region Selector
 		[Category("_"), Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		public string XML_Selector
@@ -25,38 +25,40 @@ namespace VWS.WindowsDesktop.Controls
 			get { return selector; }
 			set { selector = value;
 				//MessageBox.Show($"Value=\"{value}\" Root={Program.XML}");
-				element = string.IsNullOrEmpty(value) ? null : Program.XML.Root.SelectElement(value);
+				element = string.IsNullOrEmpty(value)
+					? Program.XML.Root
+					: Program.XML.Root.SelectElement(value);
 				Invalidate(); }
 		}
 		private string selector;
-
-		[Category("_"), Browsable(true)]
+		#endregion
 		public string XML_Element { get { return element.OuterXml; } }
 		private XML.Element element;
 
 		private void ElementControl_Paint(object sender, PaintEventArgs e)
 		{
+			int BorderSize = 2;
 			Rectangle r = ClientRectangle;
 
-			using (Brush b = new SolidBrush(Color.LightBlue))
-				e.Graphics.FillRectangle(b, r);
+			//using (Brush b = new SolidBrush(Color.LightBlue))
+			//	e.Graphics.FillRectangle(b, r);
 
-			r.Height = Helper.MeasureStringSize(e.Graphics, CaptionFont, "|").Height + 8;
+			r.Height = Helper.MeasureStringSize(e.Graphics, CaptionFont, "|").
+				Height + 2 * BorderSize + 2;
 
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < BorderSize; i++)
 			{
 				ControlPaint.DrawBorder3D(e.Graphics, r, Border3DStyle.RaisedInner);
 				r.Inflate(-1, -1);
 			}
 			using (Brush b = GetBrush(r)) e.Graphics.FillRectangle(b, r);
 
-			r.Inflate(3, 3);
+			r.Inflate(BorderSize, BorderSize);
 
-			string t = (element == null) ? "ÄÖ|jpq_"
-				: element.HasAttribute("Name") ? element.GetAttribute("Name")
-				: element.Name;
+			string t = (element == null) ? "" : element.DisplayName;
 
-			DrawCaptionText(e.Graphics, r.X + 2, r.Y + 4, t);
+			r.Inflate(-(BorderSize-1), -(BorderSize+1));
+			DrawCaptionText(e.Graphics, r, t);
 
 			r.Offset(0, r.Height);
 			r.Height = ClientRectangle.Height - r.Top;
@@ -64,6 +66,7 @@ namespace VWS.WindowsDesktop.Controls
 			r.Size = new Size(16, 16);
 			ControlPaint.DrawButton(e.Graphics, r, ButtonState.Checked);
 		}
+
 		//Size ComputeSize(Graphics g)
 		//{
 		//	Graphics gg = g ?? CreateGraphics();
@@ -96,9 +99,9 @@ namespace VWS.WindowsDesktop.Controls
 			//Debug.WriteLine("on resize " + size.ToString());
 		}
 
-		internal static void DrawCaptionText(Graphics g, int x, int y, string t)
+		internal static void DrawCaptionText(Graphics g, Rectangle r, string t)
 		{
-			TextRenderer.DrawText(g, t, CaptionFont, new Point(x, y), Color.Black);
+			TextRenderer.DrawText(g, t, CaptionFont, r, Color.Black, TextFormatFlags.EndEllipsis);
 			//Helper.DrawStringFormat(g, t, x, y, CaptionFont, SystemBrushes.ActiveCaptionText);
 		}
 		static Font CaptionFont

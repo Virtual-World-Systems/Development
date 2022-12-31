@@ -79,6 +79,12 @@
     <Compile Include="Controls\Container\TreeListItem.Designer.cs">
       <DependentUpon>TreeListItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DataViews\Filetypes\Collada.dae\DataView_Collada.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataViews\Filetypes\Collada.dae\DataView_Collada.Designer.cs">
+      <DependentUpon>DataView_Collada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ElementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,33 @@
     <Compile Include="Controls\old\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLElementPainter.cs" />
+    <Compile Include="Controls\XMLTreeList\XMLTreeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeList.Designer.cs">
+      <DependentUpon>XMLTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.Designer.cs">
+      <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeListItem.cs" />
+    <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.Designer.cs">
+      <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\HorizontalLayout.cs" />
+    <Compile Include="Layouts\_Layout.cs" />
+    <Compile Include="ObjectModel\A.cs" />
+    <Compile Include="ObjectModel\O.cs" />
+    <Compile Include="ObjectModel\P.cs" />
+    <Compile Include="ObjectModel\R.cs" />
+    <Compile Include="ObjectModel\T.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +175,9 @@
     <EmbeddedResource Include="Controls\Container\TreeListItem.resx">
       <DependentUpon>TreeListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataViews\Filetypes\Collada.dae\DataView_Collada.resx">
+      <DependentUpon>DataView_Collada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ElementControl.resx">
       <DependentUpon>ElementControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +195,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\old\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeList.resx">
+      <DependentUpon>XMLTreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListHeader.resx">
+      <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListPanel.resx">
+      <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -211,6 +256,13 @@
     <Content Include="Data\all_OSSLViewers.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Earth.ico" />
+    <Content Include="Resources\Multiverse.ico" />
+    <Content Include="Resources\PNG_32x32\Tree_32x32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ToggleButton_closed.png" />
+    <None Include="Resources\ToggleButton_opened.png" />
     <Content Include="_.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -222,7 +274,6 @@
     <Content Include="Resources\PNG_16x16\TreeNodeButton_opened.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\PNG_32x16\TreeNodeButton.png" />
     <Content Include="zz_Snippets.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

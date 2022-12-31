@@ -1,1 +1,4 @@
-﻿<_ Name="The Multiverse" Key="the_Multiverse"/>
+﻿<_:the_Multiverse xmlns:_="https://Virtual-World-Systems.net" Name="The Multiverse" is="the Container" of="all Universes">
+	<Universe Name="The RealLife" Key="the_RealLife"/>
+	<Universe Name="The Metaverse" Key="the_Metaverse"/>
+</_:the_Multiverse>
