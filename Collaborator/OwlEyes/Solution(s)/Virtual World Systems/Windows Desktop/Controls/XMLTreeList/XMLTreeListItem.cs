@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using XML;
 
 namespace VWS.WindowsDesktop.Controls.XMLTreeList
@@ -50,6 +52,42 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal void Draw(XMLTreeListPanel panel, Graphics g, Point pt, Size sz)
 		{
 			XMLTreeListPanel.Painter.Draw(g, panel.Font, Element.DisplayName, pt, sz, panel.ForeColor, panel.BackColor);
+		}
+
+		internal void Click(Target target)
+		{
+			if (target.part.ToString() == "Button")
+			{
+				if (!Element.HasAttribute("runtime:open"))
+				{
+					Rectangle r = TreeListPanel.GetItemRect(this);
+					r.Offset(16, Size.Height);
+					r.Width -= 16;
+					r.Height += 50;
+					XMLTreeListPanel c = new XMLTreeListPanel();
+					c.AutoScroll = true;
+					TreeListPanel.Controls.Add(c);
+				}
+			}
+			Debug.WriteLine($"click(1) item={target.item.Index}, rect={target.rect}, part={target.part}");
+			Debug.WriteLine($"click(2) {Element.DisplayName}");
+		}
+		internal Target FindMouseTarget(Point pt)
+		{
+			string s;
+			Rectangle r = TreeListPanel.GetItemRect(this);
+			if (pt.X < 10)
+			{
+				r.Width = 10;
+				s = "Button";
+			}
+			else
+			{ 
+				r.Offset(10, 0);
+				r.Width -= 10;
+				s = "Text";
+			}
+			return new Target(this, s, r);
 		}
 	}
 }

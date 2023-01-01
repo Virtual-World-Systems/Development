@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XML;
+using static VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListPanel;
 
 namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
@@ -49,7 +50,28 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		}
 		XML.Element parentElement;
 
-		List<XMLTreeListItem> Items = new List<XMLTreeListItem>();
+		internal class ItemList : List<XMLTreeListItem>
+		{
+			internal ItemList(Point origin) : base() { Origin = origin; }
+			internal Point Origin { get; set; }
+			internal Size Size
+			{
+				get
+				{ 
+					Size szT = Size.Empty, sz;
+
+					foreach (XMLTreeListItem item in this)
+					{
+						sz = item.Size;
+						szT.Width = Math.Max(szT.Width, sz.Width);
+						szT.Height += sz.Height;
+					}
+					Debug.WriteLine($"ItemList.Size = {szT}");
+					return szT;
+				} 
+			}
+		}
+		internal ItemList Items = new ItemList(new Point(0, 0));
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
@@ -116,31 +138,53 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 		protected override void OnClick(EventArgs e)
 		{
-			MouseEventArgs a = (MouseEventArgs) e;
-
-			int i = -1; XMLTreeListItem item;
-			int Y = AutoScrollPosition.Y + Padding.Top;
-
-			while (++i < Items.Count)
-			{
-				item = Items[i];
-				if ((Y + item.Height) <= a.Y)
-				{
-					Y += item.Height;
-					continue;
-				}
-				Debug.WriteLine($"found {item}[{item.Index}]");
-				break;
-			}
-			base.OnClick(e);
+			if (Target == null) return;
+			Target.Click();
 		}
 
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
+			base.OnMouseMove(e);
+			Target = FindMouseTarget();
+		}
+
+		Target Target
+		{
+			get { return target; }
+			set {
+				if (target == null)
+					if (value == null) return;
+
+				if ((target != null) && target.Equals(value)) return;
+				int hc1 = (value == null) ? 0 : value.GetHashCode();
+				int hc2 = (target == null) ? 0 : target.GetHashCode();
+				if (hc1 == hc2) return;
+
+				if (target != null) DrawHoverFrame();
+				target = value;
+				if (target != null) DrawHoverFrame();
+			}
+		}
+		Target target = null;
+
+		void DrawHoverFrame()
+		{
+			Rectangle r = Target.rect;
+			r.Offset(Padding.Left, Padding.Top);
+			r = RectangleToScreen(r);
+
+			ControlPaint.DrawReversibleFrame(
+				r, Color.DarkRed, FrameStyle.Dashed);
+		}
+
+		Target FindMouseTarget()
+		{
 			Point pt = PointToClient(MousePosition);
-			
+			pt -= new Size(Padding.Left, Padding.Top);
+			pt += new Size(AutoScrollPosition);
+
 			int i = -1; XMLTreeListItem item = null;
-			int Y = AutoScrollPosition.Y + Padding.Top;
+			int Y = 0;
 
 			while (++i < Items.Count)
 			{
@@ -155,39 +199,18 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				//Debug.WriteLine($"found \"{item.Element.DisplayName}\"");
 				break;
 			}
-			if (item != HoveredItem)
-			{
-				if (HoveredItem != null) HoverItem(HoveredItem, false);
-				HoveredItem = item;
-				if (HoveredItem != null) HoverItem(HoveredItem, true);
-			}
-			base.OnMouseMove(e);
-		}
-		XMLTreeListItem HoveredItem = null;
-		void HoverItem(XMLTreeListItem item, bool isHovered)
-		{
-			DrawItemRect(item);
-		}
-
-		void DrawItemRect(XMLTreeListItem item)
-		{
-			Rectangle r = GetItemRect(item);
-			r.Offset(0, Padding.Top);
-			r = RectangleToScreen(r);
-			ControlPaint.DrawReversibleFrame(r, Color.DarkRed, FrameStyle.Thick);
+			if (item != null)
+				return item.FindMouseTarget(pt + new Size(0, pt.Y - Y));
+			return null;
 		}
 
 		protected override void OnMouseLeave(EventArgs e)
 		{
-			if (HoveredItem != null)
-			{
-				DrawItemRect(HoveredItem);
-				HoveredItem = null;
-			}
+			if (Target != null) Target = null;
 			base.OnMouseLeave(e);
 		}
 
-		Rectangle GetItemRect(XMLTreeListItem item)
+		internal Rectangle GetItemRect(XMLTreeListItem item)
 		{
 			int Y = 0;
 
@@ -199,6 +222,28 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			Rectangle r = new Rectangle(0, Y, ClientRectangle.Width, item.Size.Height);
 			//r.Offset(Padding.Left, Padding.Top);
 			return r;
+		}
+	}
+	internal class Target
+	{
+		internal Target(XMLTreeListItem item, object part, Rectangle rect)
+		{
+			this.item = item;
+			this.rect = rect;
+			this.part = part;
+		}
+		internal XMLTreeListItem item;
+		internal Rectangle rect;
+		internal object part;
+
+		internal void Click() { item.Click(this); }
+
+		public bool Equals(Target other)
+		{
+			return (other == null) ? false :
+				(item == other.item) &&
+				(rect == other.rect) &&
+				(part == other.part);
 		}
 	}
 }
