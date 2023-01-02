@@ -1,0 +1,10 @@
+﻿<view:Model xmlns:view="view">
+	<DrawText>
+		
+	</DrawText>
+	<![CDATA[TextRenderer.DrawText(g, t, f, r, ct, cb,
+				TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding |
+				TextFormatFlags.Left | TextFormatFlags.SingleLine |
+				TextFormatFlags.VerticalCenter);
+]]>
+</view:Model>

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace VWS.WindowsDesktop
 {
 	partial class TestForm
-	{
+	{/*
 		//assign this to the SplitContainer's MouseDown event
 		private void SplitContainer_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -64,7 +64,7 @@ namespace VWS.WindowsDesktop
 					((SplitContainer)sender).IsSplitterFixed = false;
 				}
 			}
-		}
+		}*/
 		void Updates(SplitContainer sender)
 		{
 			Invalidate(); // Refresh();

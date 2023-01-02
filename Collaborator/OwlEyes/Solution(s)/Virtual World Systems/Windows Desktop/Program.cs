@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using VWS.WindowsDesktop.Test;
 using XML;
 
 namespace VWS.WindowsDesktop
@@ -21,6 +22,8 @@ namespace VWS.WindowsDesktop
 		[STAThread]
 		static void Main()
 		{
+			//Generator.Run();
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(Form = new TestForm());

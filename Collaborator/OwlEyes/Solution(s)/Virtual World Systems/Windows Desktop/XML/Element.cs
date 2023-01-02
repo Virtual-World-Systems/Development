@@ -43,6 +43,7 @@ namespace XML
 				return Name;
 			}
 		}
+
 		public XmlNodeList SelectElements(string selector)
 		{
 			return SelectNodes(selector, Document.NamespaceManager);
@@ -51,7 +52,6 @@ namespace XML
 		{
 			return (Element)SelectSingleNode(selector, Document.NamespaceManager);
 		}
-
 		public XmlNodeList SelectAttributes(string selector)
 		{
 			return SelectNodes(selector, Document.NamespaceManager);
@@ -102,6 +102,8 @@ namespace XML
 		{
 			if (ParentNode != null) ParentNode.RemoveChild(this);
 		}
+		public Element DetatchFrom(object o) { return null; }
+		public Element AttatchTo(object o) { return this; }
 
 		#endregion
 
@@ -117,7 +119,25 @@ namespace XML
 		}
 		public string ElementXML
 		{
-			get { using (Element e = (Element)CloneNode(false)) { return e.OuterXml; } }
+			get
+			{
+				lock(SB)
+				{
+					SB.Clear(); SB.Append("<").Append(Name);
+					if (HasAttributes)
+						foreach (Attribute a in Attributes)
+							SB.Append(" ").Append(a.Name).Append("='").Append(a.Value
+								.Replace("&", "&amp;")
+								.Replace("<", "&lt;")
+								.Replace(">", "&gt;")
+								.Replace("'", "&apos;")
+								).Append("'");
+					if (!HasChildNodes) SB.Append("/>"); else
+						SB.Append(">•</").Append(Name).Append(">");
+					return SB.ToString();
+				}
+			}
 		}
+		private static StringBuilder SB = new StringBuilder();
 	}
 }

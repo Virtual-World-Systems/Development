@@ -23,29 +23,23 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 		internal static XMLElementPainter Painter = new XMLElementPainter();
 
+		internal XMLTreeListElements ElementList { get; private set; }
 		public XML.Element ParentElement
 		{
 			get { return parentElement; }
 			set
 			{
-				parentElement = value;
-				if (parentElement == null) return;
-				Items.Clear();
-
-				Size sz = Size.Empty, sz0; XMLTreeListItem item;
-
-				using (Graphics g = CreateGraphics())
+				if (parentElement != null)
 				{
-					for (int i = 0; i < parentElement.ChildNodes.Count; i++)
-					{
-						Items.Add(item = new XMLTreeListItem(this,
-							(Element)parentElement.ChildNodes[i], i));
-						sz0 = item.MeasureClosed(this, g);
-						sz.Height += sz0.Height;
-						sz.Width = Math.Max(sz0.Width, sz.Width);
-					}
+					if (ElementList != null)
+						ElementList = ElementList.Delete();
+					parentElement = ParentElement.DetatchFrom(this);
 				}
-				AutoScrollMinSize = sz + Padding.Size;
+				if (value == null) return;
+
+				parentElement = value.AttatchTo(this);
+				ElementList = new XMLTreeListElements(this, parentElement);
+				AutoScrollMinSize = ElementList.Size + Padding.Size;
 			}
 		}
 		XML.Element parentElement;
@@ -73,35 +67,21 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		}
 		internal ItemList Items = new ItemList(new Point(0, 0));
 
+		internal Point PaddedOffset
+		{
+			get => new Point(
+				AutoScrollPosition.X + Padding.Left,
+				AutoScrollPosition.Y + Padding.Top);
+		}
 		protected override void OnPaint(PaintEventArgs e)
 		{
-			using (Brush b = new SolidBrush(ForeColor))
-			{
-				int i = -1; XMLTreeListItem item;
-				int Y = AutoScrollPosition.Y + Padding.Top;
-
-				while (++i < Items.Count)
-				{
-					item = Items[i];
-
-					if ((Y + item.Height) <= e.ClipRectangle.Top)
-					{
-						Y += item.Height;
-						continue;
-					}
-					while (Y < e.ClipRectangle.Bottom)
-					{
-						Point pt = new Point(AutoScrollPosition.X + Padding.Left, Y);
-						Size sz = item.Size;
-						sz.Width = ClientRectangle.Width - pt.X;
-						item.Draw(this, e.Graphics, pt, sz);
-						Y += item.Height;
-						if ((i + 1) >= Items.Count) break;
-						item = Items[++i];
-					}
-					break;
-				}
-			}
+			Rectangle clip = e.ClipRectangle;
+			clip.Offset(PaddedOffset);
+			Rectangle client = ClientRectangle;
+			client.Offset(PaddedOffset);
+			client.Size = ClientRectangle.Size - new Size(PaddedOffset);
+			Debug.WriteLine($"OnPaint: clip={clip}, client={client}");
+			ElementList.Paint(e.Graphics, clip, client);
 		}
 		protected override void OnResize(EventArgs e)
 		{
@@ -133,6 +113,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 		private void XMLTreeListPanel_Scroll(object sender, ScrollEventArgs e)
 		{
+			Debug.WriteLine($"on Scroll : AutoScrollPosition={AutoScrollPosition}, PaddedOffset={PaddedOffset}");
 			Invalidate();
 		}
 

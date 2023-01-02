@@ -28,19 +28,21 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.MM_File = new System.Windows.Forms.ToolStripMenuItem();
 			this.MM_File_Exit = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.SplitContainer = new System.Windows.Forms.SplitContainer();
-			this.ToolStrip = new System.Windows.Forms.ToolStrip();
-			this.EditMode = new System.Windows.Forms.ToolStripButton();
+			this.xmlTreeList1 = new VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList();
 			this.TabControl = new System.Windows.Forms.TabControl();
 			this.Context = new System.Windows.Forms.TabPage();
 			this.TrafficInterceptor = new System.Windows.Forms.TabPage();
 			this.Converter = new System.Windows.Forms.TabPage();
-			this.xmlTreeList1 = new VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList();
 			this.ConverterControl = new VWS.WindowsDesktop.Converter.Converter();
+			this.ToolStrip = new System.Windows.Forms.ToolStrip();
+			this.EditMode = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.MainMenu.SuspendLayout();
 			this.ToolStripContainer.ContentPanel.SuspendLayout();
 			this.ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -49,9 +51,9 @@
 			this.SplitContainer.Panel1.SuspendLayout();
 			this.SplitContainer.Panel2.SuspendLayout();
 			this.SplitContainer.SuspendLayout();
-			this.ToolStrip.SuspendLayout();
 			this.TabControl.SuspendLayout();
 			this.Converter.SuspendLayout();
+			this.ToolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -116,34 +118,20 @@
 			// 
 			this.SplitContainer.Panel2.Controls.Add(this.TabControl);
 			this.SplitContainer.Size = new System.Drawing.Size(800, 401);
-			this.SplitContainer.SplitterDistance = 165;
+			this.SplitContainer.SplitterDistance = 82;
 			this.SplitContainer.TabIndex = 0;
 			this.SplitContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseDown);
 			this.SplitContainer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseMove);
 			this.SplitContainer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseUp);
 			// 
-			// ToolStrip
+			// xmlTreeList1
 			// 
-			this.ToolStrip.BackColor = System.Drawing.Color.Transparent;
-			this.ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-			this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EditMode});
-			this.ToolStrip.Location = new System.Drawing.Point(3, 0);
-			this.ToolStrip.Name = "ToolStrip";
-			this.ToolStrip.Size = new System.Drawing.Size(26, 25);
-			this.ToolStrip.TabIndex = 0;
-			// 
-			// EditMode
-			// 
-			this.EditMode.BackColor = System.Drawing.Color.Transparent;
-			this.EditMode.CheckOnClick = true;
-			this.EditMode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.EditMode.Image = global::VWS.WindowsDesktop.Properties.Resources.ObjectTree;
-			this.EditMode.Name = "EditMode";
-			this.EditMode.Size = new System.Drawing.Size(23, 22);
-			this.EditMode.Text = "EditMode";
-			this.EditMode.CheckedChanged += new System.EventHandler(this.EditMode_CheckedChanged);
+			this.xmlTreeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.xmlTreeList1.Location = new System.Drawing.Point(0, 0);
+			this.xmlTreeList1.Name = "xmlTreeList1";
+			this.xmlTreeList1.Size = new System.Drawing.Size(78, 397);
+			this.xmlTreeList1.TabIndex = 0;
+			this.xmlTreeList1.XPathSelector = "./_:the_Multiverse";
 			// 
 			// TabControl
 			// 
@@ -154,7 +142,7 @@
 			this.TabControl.Location = new System.Drawing.Point(0, 0);
 			this.TabControl.Name = "TabControl";
 			this.TabControl.SelectedIndex = 0;
-			this.TabControl.Size = new System.Drawing.Size(627, 397);
+			this.TabControl.Size = new System.Drawing.Size(710, 397);
 			this.TabControl.TabIndex = 0;
 			// 
 			// Context
@@ -163,7 +151,7 @@
 			this.Context.Location = new System.Drawing.Point(4, 22);
 			this.Context.Name = "Context";
 			this.Context.Padding = new System.Windows.Forms.Padding(3);
-			this.Context.Size = new System.Drawing.Size(619, 371);
+			this.Context.Size = new System.Drawing.Size(702, 371);
 			this.Context.TabIndex = 0;
 			this.Context.Text = "Context";
 			// 
@@ -186,15 +174,6 @@
 			this.Converter.Text = "Converter";
 			this.Converter.UseVisualStyleBackColor = true;
 			// 
-			// xmlTreeList1
-			// 
-			this.xmlTreeList1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.xmlTreeList1.Location = new System.Drawing.Point(0, 0);
-			this.xmlTreeList1.Name = "xmlTreeList1";
-			this.xmlTreeList1.Size = new System.Drawing.Size(161, 397);
-			this.xmlTreeList1.TabIndex = 0;
-			this.xmlTreeList1.XPathSelector = "./_:the_Multiverse";
-			// 
 			// ConverterControl
 			// 
 			this.ConverterControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -202,6 +181,41 @@
 			this.ConverterControl.Name = "ConverterControl";
 			this.ConverterControl.Size = new System.Drawing.Size(619, 371);
 			this.ConverterControl.TabIndex = 0;
+			// 
+			// ToolStrip
+			// 
+			this.ToolStrip.BackColor = System.Drawing.Color.Transparent;
+			this.ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+			this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+			this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditMode,
+            this.toolStripButton1});
+			this.ToolStrip.Location = new System.Drawing.Point(3, 0);
+			this.ToolStrip.Name = "ToolStrip";
+			this.ToolStrip.Size = new System.Drawing.Size(49, 25);
+			this.ToolStrip.TabIndex = 0;
+			// 
+			// EditMode
+			// 
+			this.EditMode.BackColor = System.Drawing.Color.Transparent;
+			this.EditMode.CheckOnClick = true;
+			this.EditMode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.EditMode.Image = global::VWS.WindowsDesktop.Properties.Resources.ObjectTree;
+			this.EditMode.Name = "EditMode";
+			this.EditMode.Size = new System.Drawing.Size(23, 22);
+			this.EditMode.Text = "EditMode";
+			this.EditMode.CheckedChanged += new System.EventHandler(this.EditMode_CheckedChanged);
+			// 
+			// toolStripButton1
+			// 
+			this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+			this.toolStripButton1.Text = "toolStripButton1";
+			this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
 			// 
 			// TestForm
 			// 
@@ -226,10 +240,10 @@
 			this.SplitContainer.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
 			this.SplitContainer.ResumeLayout(false);
-			this.ToolStrip.ResumeLayout(false);
-			this.ToolStrip.PerformLayout();
 			this.TabControl.ResumeLayout(false);
 			this.Converter.ResumeLayout(false);
+			this.ToolStrip.ResumeLayout(false);
+			this.ToolStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -250,6 +264,7 @@
 		private System.Windows.Forms.TabPage TrafficInterceptor;
 		private System.Windows.Forms.TabPage Converter;
 		private Converter.Converter ConverterControl;
+		private System.Windows.Forms.ToolStripButton toolStripButton1;
 	}
 }
 

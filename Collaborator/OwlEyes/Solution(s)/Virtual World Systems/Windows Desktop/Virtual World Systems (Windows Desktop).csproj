@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\XMLTreeList\Visuals.cs" />
+    <Compile Include="Controls\XMLTreeList\XMLTreeListElements.cs" />
     <Compile Include="Converter\Conversion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +183,7 @@
     <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.Designer.cs">
       <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="G.cs" />
     <Compile Include="Layouts\HorizontalLayout.cs" />
     <Compile Include="Layouts\_Layout.cs" />
     <Compile Include="ObjectModel\A.cs" />
@@ -199,9 +202,7 @@
     <Compile Include="TestForm.InitializeRuntime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm.SplitContainer.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Test\Generator.cs" />
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
@@ -290,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\ObjectModel\" />
+    <Folder Include="generic\" />
     <Folder Include="TrafficInterceptor\" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +316,7 @@
     <Content Include="Data\all_OSSLViewers.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="_ViewModel.xml" />
     <None Include="Resources\Earth.ico" />
     <Content Include="Resources\Multiverse.ico" />
     <Content Include="Resources\PNG_32x32\Tree_32x32.png">
