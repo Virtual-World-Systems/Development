@@ -39,6 +39,8 @@ namespace XML
 				NamespaceManager.AddNamespace("runtime", "runtime");
 				NamespaceManager.AddNamespace("mime", "mime");
 				NamespaceManager.AddNamespace("user", "user");
+				NamespaceManager.AddNamespace("ui", "UI");
+				NamespaceManager.AddNamespace("ns", "Namespace");
 				AppendChild(new Element(null, "_", null, this));
 				orphans = Orphans; orphaning.Push(true);
 

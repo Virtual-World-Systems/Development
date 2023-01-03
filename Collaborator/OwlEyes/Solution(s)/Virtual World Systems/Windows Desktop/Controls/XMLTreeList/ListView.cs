@@ -87,10 +87,10 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 			using (Graphics g = Control.CreateGraphics())
 			{
-				foreach (Element child in Element.ChildNodes)
+				foreach (Element child in Element.SelectElements("*"))
 				{
 					Items.Add(item = new ItemView(this, child, index++));
-					item.ComputeSize((XMLTreeListPanel)Control, g);
+					item.ComputeHeaderSize((XMLTreeListPanel)Control, g);
 				}
 			}
 		}
@@ -99,7 +99,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		
 		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
 		{
-			Debug.WriteLine($"Paint ItemList clip={clip}, client={client}");
+			//Debug.WriteLine($"Paint ItemList clip={clip}, client={client}");
 
 			(int Y, ItemView item) = ItemFromPoint(clip.Location);
 			clip.Height -= Y; if (clip.Height < 0) clip.Height = 0;
@@ -142,6 +142,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				Y += item.Height;
 				item = null;
 			}
+			if (item != null) Debug.WriteLine($"ItemFromPoint {item.Element.DisplayName}");
 			return (Y, item);
 		}
 

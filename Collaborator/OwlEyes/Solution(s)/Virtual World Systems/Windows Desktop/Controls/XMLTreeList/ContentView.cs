@@ -9,6 +9,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
 	internal class ContentView
 	{
+		#region misc
 		internal ContentView(ItemView itemView, Point offset)
 		{
 			Offset = offset;
@@ -17,6 +18,16 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal Point Offset;
 		internal ItemView ItemView = null;
 		internal ListView ListView = null;
+		void VerifyListView()
+		{
+			if (ListView != null) return;
+			ListView = new ListView(this);
+		}
+
+		#endregion
+
+		#region OpenState
+
 		internal bool IsOpen
 		{
 			get => isOpen;
@@ -25,19 +36,16 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				if (isOpen == value) return;
 				isOpen = value;
 				VerifyListView();
-				if (!IsOpen) ItemView.SetContentCorner(Offset);
+				if (!IsOpen)
+					ItemView.SetContentCorner(new Point(ItemView.HeaderSize));
 				else ItemView.SetContentCorner(Offset + ListView.Size);
 			}
 		}
 		bool isOpen;
 
-		void VerifyListView()
-		{
-			if (ListView != null) return;
-			ListView = new ListView(this);
-		}
-
 		internal void Open() { IsOpen = true; }
 		internal void Close() { IsOpen = false; }
+
+		#endregion
 	}
 }

@@ -17,7 +17,9 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		{
 			InitializeComponent();
 		}
+
 		#region Selector
+
 		[Category("_"), Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		public string XPathSelector

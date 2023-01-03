@@ -5,7 +5,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using V = VWS.WindowsDesktop.Controls.XMLTreeList.Visual.Visual;
+using V = VWS.WindowsDesktop.Controls.XMLTreeList.Visual;
 
 namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
@@ -15,7 +15,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 		internal Size Measure(Graphics g, Font f, string t)
 		{
-			return V.From<string>((object o) => t, null).Measure(g, f) + new Size(13, 0);
+			return V.From<string>((object o) => t, null).Measure(g, f) + new Size(11, 0);
 		}
 		internal void Draw(Graphics g, Font f, string t, Point pt, Size sz, Color fg, Color bg)
 		{

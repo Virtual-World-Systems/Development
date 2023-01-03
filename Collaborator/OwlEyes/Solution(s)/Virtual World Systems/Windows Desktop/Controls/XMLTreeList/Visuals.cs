@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using XML;
 
-namespace VWS.WindowsDesktop.Controls.XMLTreeList.Visual
+namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
 	internal abstract class Visual
 	{

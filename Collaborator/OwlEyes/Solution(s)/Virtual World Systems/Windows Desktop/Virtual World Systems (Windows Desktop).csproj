@@ -295,6 +295,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\Layouts\Types\" />
     <Folder Include="Controls\ObjectModel\" />
     <Folder Include="generic\" />
     <Folder Include="TrafficInterceptor\" />
@@ -322,6 +323,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="_ViewModel.xml" />
+    <Content Include="__.xml" />
     <None Include="Resources\Earth.ico" />
     <Content Include="Resources\Multiverse.ico" />
     <Content Include="Resources\PNG_32x32\Tree_32x32.png">

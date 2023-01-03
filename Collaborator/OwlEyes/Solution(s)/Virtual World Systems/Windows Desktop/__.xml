@@ -1,0 +1,18 @@
+﻿<_:Types xmlns:_="_" xmlns:ns="Namespace" xmlns:ui="UI" xmlns:param="Parameter">
+	<ns:XML>
+		<class Name="Element">
+			<ui:Views>
+				<XMLTreeList.ItemView.Default Orientation="vertical">
+					<Orientation _="vertical"/>
+					<Header from=""/>
+					<Image ResourceKey="ToggleButton_{State}">
+						<param:State from="bool:ancestor::class/@ui:isOpen" returns="string">
+							<if from="false" return="closed"/>
+							<return string="opened"/>
+						</param:State>
+					</Image>
+				</XMLTreeList.ItemView.Default>
+			</ui:Views>
+		</class>
+	</ns:XML>
+</_:Types>

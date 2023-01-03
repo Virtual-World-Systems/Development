@@ -131,7 +131,7 @@
 			this.xmlTreeList1.Name = "xmlTreeList1";
 			this.xmlTreeList1.Size = new System.Drawing.Size(169, 397);
 			this.xmlTreeList1.TabIndex = 0;
-			this.xmlTreeList1.XPathSelector = "./_:the_Multiverse";
+			this.xmlTreeList1.XPathSelector = "";
 			// 
 			// TabControl
 			// 
@@ -159,7 +159,7 @@
 			// 
 			this.TrafficInterceptor.Location = new System.Drawing.Point(4, 22);
 			this.TrafficInterceptor.Name = "TrafficInterceptor";
-			this.TrafficInterceptor.Size = new System.Drawing.Size(702, 371);
+			this.TrafficInterceptor.Size = new System.Drawing.Size(611, 371);
 			this.TrafficInterceptor.TabIndex = 1;
 			this.TrafficInterceptor.Text = "Traffic Interceptor";
 			this.TrafficInterceptor.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
 			this.Converter.Controls.Add(this.ConverterControl);
 			this.Converter.Location = new System.Drawing.Point(4, 22);
 			this.Converter.Name = "Converter";
-			this.Converter.Size = new System.Drawing.Size(702, 371);
+			this.Converter.Size = new System.Drawing.Size(611, 371);
 			this.Converter.TabIndex = 2;
 			this.Converter.Text = "Converter";
 			this.Converter.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
 			this.ConverterControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ConverterControl.Location = new System.Drawing.Point(0, 0);
 			this.ConverterControl.Name = "ConverterControl";
-			this.ConverterControl.Size = new System.Drawing.Size(702, 371);
+			this.ConverterControl.Size = new System.Drawing.Size(611, 371);
 			this.ConverterControl.TabIndex = 0;
 			// 
 			// ToolStrip

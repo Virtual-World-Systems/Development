@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 using XML;
 
@@ -46,9 +47,11 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal Size HeaderSize;
 		internal int Width { get => Size.Width; }
 		internal int Height { get => Size.Height; }
-		internal Size ComputeSize(XMLTreeListPanel panel, Graphics g)
+
+		int ContentIndent { get => 12; }
+		internal Size ComputeHeaderSize(XMLTreeListPanel panel, Graphics g)
 		{
-			return (HeaderSize = (Size = XMLTreeListPanel.Painter.
+			return (Size = (HeaderSize = XMLTreeListPanel.Painter.
 				Measure(g, panel.Font, Element.DisplayName)));
 		}
 		#endregion
@@ -58,39 +61,17 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal ContentView ContentView = null;
 		internal void SetContentCorner(Point pt)
 		{
+			//Debug.WriteLine($"SetContentCorner {pt}, ContentSize={ContentView.ListView.Size}");
 			Size szNew = new Size(pt);
 			if (szNew.Width < HeaderSize.Width) szNew.Width = HeaderSize.Width;
 			if (Size == szNew) return;
-			Size = szNew;
-			ItemList.ChangedItemHeight(this, szNew.Height - Size.Height);
+			Size szOld = Size; Size = szNew;
+			ItemList.ChangedItemHeight(this, szNew.Height - szOld.Height);
 		}
 
 		#endregion
 
-		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
-		{
-			Debug.WriteLine($"Paint Items[{Index}]  clip={clip}, client={client}");
-
-			Control panel = ItemList.Control;
-			Size szD = new Size(client.Width, HeaderSize.Height);
-
-			XMLTreeListPanel.Painter.Draw(g, panel.Font,
-				Element.DisplayName, client.Location, szD,
-				panel.ForeColor, panel.BackColor);
-
-			if (ContentView == null) return;
-			if (!ContentView.IsOpen) return;
-
-			clip.Height -= HeaderSize.Height;
-
-			client.X += 12; client.Width -= 12;
-
-			client.Y += HeaderSize.Height;
-			client.Height -= HeaderSize.Height;
-
-			ContentView.ListView.Paint(g, clip, client);
-		}
-
+		#region Targetting
 		internal Target TargetFromPoint(Point pt)
 		{
 			//Debug.WriteLine($"TargeFromPoint, Item={Index}, Point={pt}");
@@ -107,26 +88,34 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 					return new Target(this, "Button", r);
 
 				r.Offset(r.Width, 0);
-				r.Width = Size.Width - r.Left;
+				r.Width = HeaderSize.Width - r.Left;
 				return new Target(this, "Text", r);
 			}
+			if (pt.Y < HeaderSize.Height)
+				return new Target(this, "^", r);
+
 			r = new Rectangle(Point.Empty, Size);
 
-			if (ContentView == null) return new Target(this, "#", r);
-			if (!ContentView.IsOpen) return new Target(this, "#", r);
+			if ((ContentView == null) || (!ContentView.IsOpen))
+				return new Target(this, "^", r);
 
-			r.Offset(12, HeaderSize.Height);
-			r.Size -= new Size(12, HeaderSize.Height);
+			r = new Rectangle(
+				new Point(ContentIndent, HeaderSize.Height),
+				ContentView.ListView.Size);
 
-			if (!r.Contains(pt)) return new Target(this, "|", r);
+			if (pt.X < r.Left)
+				return new Target(this, "|", r);
 
 			pt -= new Size(r.Location);
+
 			Target target = ContentView.ListView.TargetFromPoint(pt);
-			if (target == null) return null;
-			target.rect.Offset(12, HeaderSize.Height);
+
+			if (target == null)
+				return new Target(this, "|", r);
+
+			target.rect.Offset(ContentIndent, HeaderSize.Height);
 			return target;
 		}
-
 		internal void Click(Target target)
 		{
 			Debug.WriteLine($"clicked [{Element.DisplayName}] item={target.item.Index}, rect={target.rect}, part={target.part}");
@@ -134,13 +123,41 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			if (target.part.ToString() == "Button")
 			{
 				if (ContentView == null)
-					ContentView = new ContentView(this, new Point(16, HeaderSize.Height));
+					ContentView = new ContentView(this,
+						new Point(ContentIndent, HeaderSize.Height));
 
 				if (ContentView.IsOpen) ContentView.Close();
 				else ContentView.Open();
 
 				TopTreeListPanel.Invalidate(true);
 			}
+		}
+
+		#endregion
+
+		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
+		{
+			//Debug.WriteLine($"Paint Items[{Index}]  clip={clip}, client={client}");
+
+			Control panel = ItemList.Control;
+			Size szD = new Size(client.Width, HeaderSize.Height);
+
+			XMLTreeListPanel.Painter.Draw(g, panel.Font,
+				Element.DisplayName, client.Location, szD,
+				panel.ForeColor, panel.BackColor);
+
+			if (ContentView == null) return;
+			if (!ContentView.IsOpen) return;
+
+			clip.Height -= HeaderSize.Height;
+
+			client.X += ContentIndent;
+			client.Width -= ContentIndent;
+
+			client.Y += HeaderSize.Height;
+			client.Height -= HeaderSize.Height;
+
+			ContentView.ListView.Paint(g, clip, client);
 		}
 	}
 }
