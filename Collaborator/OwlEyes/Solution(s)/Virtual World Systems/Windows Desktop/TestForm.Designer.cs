@@ -118,7 +118,7 @@
 			// 
 			this.SplitContainer.Panel2.Controls.Add(this.TabControl);
 			this.SplitContainer.Size = new System.Drawing.Size(800, 401);
-			this.SplitContainer.SplitterDistance = 82;
+			this.SplitContainer.SplitterDistance = 173;
 			this.SplitContainer.TabIndex = 0;
 			this.SplitContainer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseDown);
 			this.SplitContainer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SplitContainer_MouseMove);
@@ -129,7 +129,7 @@
 			this.xmlTreeList1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.xmlTreeList1.Location = new System.Drawing.Point(0, 0);
 			this.xmlTreeList1.Name = "xmlTreeList1";
-			this.xmlTreeList1.Size = new System.Drawing.Size(78, 397);
+			this.xmlTreeList1.Size = new System.Drawing.Size(169, 397);
 			this.xmlTreeList1.TabIndex = 0;
 			this.xmlTreeList1.XPathSelector = "./_:the_Multiverse";
 			// 
@@ -142,7 +142,7 @@
 			this.TabControl.Location = new System.Drawing.Point(0, 0);
 			this.TabControl.Name = "TabControl";
 			this.TabControl.SelectedIndex = 0;
-			this.TabControl.Size = new System.Drawing.Size(710, 397);
+			this.TabControl.Size = new System.Drawing.Size(619, 397);
 			this.TabControl.TabIndex = 0;
 			// 
 			// Context
@@ -151,7 +151,7 @@
 			this.Context.Location = new System.Drawing.Point(4, 22);
 			this.Context.Name = "Context";
 			this.Context.Padding = new System.Windows.Forms.Padding(3);
-			this.Context.Size = new System.Drawing.Size(702, 371);
+			this.Context.Size = new System.Drawing.Size(611, 371);
 			this.Context.TabIndex = 0;
 			this.Context.Text = "Context";
 			// 
@@ -159,7 +159,7 @@
 			// 
 			this.TrafficInterceptor.Location = new System.Drawing.Point(4, 22);
 			this.TrafficInterceptor.Name = "TrafficInterceptor";
-			this.TrafficInterceptor.Size = new System.Drawing.Size(619, 371);
+			this.TrafficInterceptor.Size = new System.Drawing.Size(702, 371);
 			this.TrafficInterceptor.TabIndex = 1;
 			this.TrafficInterceptor.Text = "Traffic Interceptor";
 			this.TrafficInterceptor.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
 			this.Converter.Controls.Add(this.ConverterControl);
 			this.Converter.Location = new System.Drawing.Point(4, 22);
 			this.Converter.Name = "Converter";
-			this.Converter.Size = new System.Drawing.Size(619, 371);
+			this.Converter.Size = new System.Drawing.Size(702, 371);
 			this.Converter.TabIndex = 2;
 			this.Converter.Text = "Converter";
 			this.Converter.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
 			this.ConverterControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ConverterControl.Location = new System.Drawing.Point(0, 0);
 			this.ConverterControl.Name = "ConverterControl";
-			this.ConverterControl.Size = new System.Drawing.Size(619, 371);
+			this.ConverterControl.Size = new System.Drawing.Size(702, 371);
 			this.ConverterControl.TabIndex = 0;
 			// 
 			// ToolStrip

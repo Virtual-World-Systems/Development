@@ -13,6 +13,7 @@ using static VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListPanel;
 
 namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
+	[ToolboxItem(false)]
 	public partial class XMLTreeListPanel : ScrollableControl
 	{
 		public XMLTreeListPanel()
@@ -23,8 +24,8 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 		internal static XMLElementPainter Painter = new XMLElementPainter();
 
-		internal XMLTreeListElements ElementList { get; private set; }
-		public XML.Element ParentElement
+		internal ListView ElementList { get; private set; }
+		public Element ParentElement
 		{
 			get { return parentElement; }
 			set
@@ -38,34 +39,13 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				if (value == null) return;
 
 				parentElement = value.AttatchTo(this);
-				ElementList = new XMLTreeListElements(this, parentElement);
+				ElementList = new ListView(this, parentElement);
+				//Debug.WriteLine($"new Panel, Size={ElementList.Size}");
 				AutoScrollMinSize = ElementList.Size + Padding.Size;
+				Size = AutoScrollMinSize;
 			}
 		}
-		XML.Element parentElement;
-
-		internal class ItemList : List<XMLTreeListItem>
-		{
-			internal ItemList(Point origin) : base() { Origin = origin; }
-			internal Point Origin { get; set; }
-			internal Size Size
-			{
-				get
-				{ 
-					Size szT = Size.Empty, sz;
-
-					foreach (XMLTreeListItem item in this)
-					{
-						sz = item.Size;
-						szT.Width = Math.Max(szT.Width, sz.Width);
-						szT.Height += sz.Height;
-					}
-					Debug.WriteLine($"ItemList.Size = {szT}");
-					return szT;
-				} 
-			}
-		}
-		internal ItemList Items = new ItemList(new Point(0, 0));
+		Element parentElement;
 
 		internal Point PaddedOffset
 		{
@@ -80,35 +60,13 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			Rectangle client = ClientRectangle;
 			client.Offset(PaddedOffset);
 			client.Size = ClientRectangle.Size - new Size(PaddedOffset);
-			Debug.WriteLine($"OnPaint: clip={clip}, client={client}");
+			//Debug.WriteLine($"OnPaint: clip={clip}, client={client}");
 			ElementList.Paint(e.Graphics, clip, client);
 		}
 		protected override void OnResize(EventArgs e)
 		{
-			Rectangle r = ClientRectangle;
-			r.Offset(r.Width - Padding.Right, 0);
-			r.Width = Padding.Right;
 			Invalidate();
 			base.OnResize(e);
-		}
-
-		int ElementCount
-		{
-			get { return (parentElement == null) 
-					? 0 : parentElement.ChildNodes.Count; }
-		}
-
-		public string GetDisplayName(int i)
-		{
-			XML.Element e = GetElement(i);
-			if (e != null) return GetElement(i).DisplayName;
-			return "";
-		}
-		public XML.Element GetElement(int i)
-		{
-			if (parentElement == null) return null;
-			if (i >= ElementCount) return null;
-			return (XML.Element) parentElement.ChildNodes[i];
 		}
 
 		private void XMLTreeListPanel_Scroll(object sender, ScrollEventArgs e)
@@ -120,7 +78,9 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		protected override void OnClick(EventArgs e)
 		{
 			if (Target == null) return;
-			Target.Click();
+			Target T = Target;
+			Target = null;
+			T.Click();
 		}
 
 		protected override void OnMouseMove(MouseEventArgs e)
@@ -129,7 +89,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			Target = FindMouseTarget();
 		}
 
-		Target Target
+		internal Target Target
 		{
 			get { return target; }
 			set {
@@ -151,7 +111,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		void DrawHoverFrame()
 		{
 			Rectangle r = Target.rect;
-			r.Offset(Padding.Left, Padding.Top);
+			r.Offset(Point.Empty + new Size(PaddedOffset));
 			r = RectangleToScreen(r);
 
 			ControlPaint.DrawReversibleFrame(
@@ -161,28 +121,8 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		Target FindMouseTarget()
 		{
 			Point pt = PointToClient(MousePosition);
-			pt -= new Size(Padding.Left, Padding.Top);
-			pt += new Size(AutoScrollPosition);
-
-			int i = -1; XMLTreeListItem item = null;
-			int Y = 0;
-
-			while (++i < Items.Count)
-			{
-				item = Items[i];
-				if ((Y + item.Height) <= pt.Y)
-				{
-					Y += item.Height;
-					item = null;
-					continue;
-				}
-
-				//Debug.WriteLine($"found \"{item.Element.DisplayName}\"");
-				break;
-			}
-			if (item != null)
-				return item.FindMouseTarget(pt + new Size(0, pt.Y - Y));
-			return null;
+			pt = pt - new Size(PaddedOffset);
+			return ElementList.TargetFromMouse(pt);
 		}
 
 		protected override void OnMouseLeave(EventArgs e)
@@ -191,40 +131,24 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			base.OnMouseLeave(e);
 		}
 
-		internal Rectangle GetItemRect(XMLTreeListItem item)
+		internal void Place(XMLTreeListPanel cp, Point pt)
 		{
-			int Y = 0;
-
-			foreach (XMLTreeListItem it in Items)
-			{
-				if (it == item) break;
-				Y += it.Size.Height;
-			}
-			Rectangle r = new Rectangle(0, Y, ClientRectangle.Width, item.Size.Height);
-			//r.Offset(Padding.Left, Padding.Top);
-			return r;
+			pt = pt + new Size(PaddedOffset);
+			cp.Location = pt;
+			cp.Visible = true;
+			Controls.Add(cp);
 		}
-	}
-	internal class Target
-	{
-		internal Target(XMLTreeListItem item, object part, Rectangle rect)
+
+		internal void ChangeHeight(int cy)
 		{
-			this.item = item;
-			this.rect = rect;
-			this.part = part;
+			AutoScrollMinSize += new Size(0, cy);
+			if (Parent is XMLTreeListPanel) SetSize(AutoScrollMinSize);
 		}
-		internal XMLTreeListItem item;
-		internal Rectangle rect;
-		internal object part;
 
-		internal void Click() { item.Click(this); }
-
-		public bool Equals(Target other)
+		internal void SetSize(Size szNew)
 		{
-			return (other == null) ? false :
-				(item == other.item) &&
-				(rect == other.rect) &&
-				(part == other.part);
+			//int cy = szNew.Height - Size.Height;
+			//((XMLTreeListPanel)Parent).ElementList.Change
 		}
 	}
 }

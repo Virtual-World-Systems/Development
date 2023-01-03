@@ -49,8 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\XMLTreeList\Target.cs" />
     <Compile Include="Controls\XMLTreeList\Visuals.cs" />
-    <Compile Include="Controls\XMLTreeList\XMLTreeListElements.cs" />
+    <Compile Include="Controls\XMLTreeList\ListView.cs" />
+    <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.Designer.cs">
+      <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="Converter\Conversion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,13 +177,7 @@
     <Compile Include="Controls\XMLTreeList\XMLTreeList.Designer.cs">
       <DependentUpon>XMLTreeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.Designer.cs">
-      <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\XMLTreeList\XMLTreeListItem.cs" />
+    <Compile Include="Controls\XMLTreeList\ItemView.cs" />
     <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -206,6 +207,9 @@
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
+    <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListHeader.resx">
+      <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Converter\Converter.resx">
       <DependentUpon>Converter.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,9 +261,6 @@
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeList.resx">
       <DependentUpon>XMLTreeList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListHeader.resx">
-      <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListPanel.resx">
       <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +277,9 @@
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
