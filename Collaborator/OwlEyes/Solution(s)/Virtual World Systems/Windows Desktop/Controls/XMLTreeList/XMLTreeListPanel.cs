@@ -42,7 +42,6 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				ElementList = new ListView(this, parentElement);
 				//Debug.WriteLine($"new Panel, Size={ElementList.Size}");
 				AutoScrollMinSize = ElementList.Size + Padding.Size;
-				Size = AutoScrollMinSize;
 			}
 		}
 		Element parentElement;
@@ -55,11 +54,20 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		}
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			Debug.WriteLine($"Paint ******** clip={e.ClipRectangle}, client={ClientRectangle}");
+
+			Rectangle rl = new Rectangle(PaddedOffset, ElementList.Size);
+			rl.Width = ClientRectangle.Width - rl.Left;
+			rl.Height = ClientRectangle.Height - rl.Top;
+
 			Rectangle clip = e.ClipRectangle;
-			clip.Offset(PaddedOffset);
+			clip.Intersect(rl);
+			clip.Offset(-rl.Left, -rl.Top);
+
 			Rectangle client = ClientRectangle;
 			client.Offset(PaddedOffset);
 			client.Size = ClientRectangle.Size - new Size(PaddedOffset);
+
 			//Debug.WriteLine($"OnPaint: clip={clip}, client={client}");
 			ElementList.Paint(e.Graphics, clip, client);
 		}
@@ -122,7 +130,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		{
 			Point pt = PointToClient(MousePosition);
 			pt = pt - new Size(PaddedOffset);
-			return ElementList.TargetFromMouse(pt);
+			return ElementList.TargetFromPoint(pt);
 		}
 
 		protected override void OnMouseLeave(EventArgs e)
@@ -131,24 +139,9 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			base.OnMouseLeave(e);
 		}
 
-		internal void Place(XMLTreeListPanel cp, Point pt)
+		internal void SetListSize(Size sz)
 		{
-			pt = pt + new Size(PaddedOffset);
-			cp.Location = pt;
-			cp.Visible = true;
-			Controls.Add(cp);
-		}
-
-		internal void ChangeHeight(int cy)
-		{
-			AutoScrollMinSize += new Size(0, cy);
-			if (Parent is XMLTreeListPanel) SetSize(AutoScrollMinSize);
-		}
-
-		internal void SetSize(Size szNew)
-		{
-			//int cy = szNew.Height - Size.Height;
-			//((XMLTreeListPanel)Parent).ElementList.Change
+			AutoScrollMinSize = sz + Padding.Size;
 		}
 	}
 }

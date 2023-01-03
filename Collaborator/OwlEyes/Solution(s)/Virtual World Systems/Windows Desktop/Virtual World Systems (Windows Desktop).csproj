@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\XMLTreeList\ContentView.cs" />
     <Compile Include="Controls\XMLTreeList\Target.cs" />
     <Compile Include="Controls\XMLTreeList\Visuals.cs" />
     <Compile Include="Controls\XMLTreeList\ListView.cs" />

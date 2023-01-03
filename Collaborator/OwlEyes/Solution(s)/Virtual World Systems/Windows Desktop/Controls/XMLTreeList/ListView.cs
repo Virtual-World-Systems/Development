@@ -12,36 +12,52 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 {
 	internal class ListView : IDisposable
 	{
+		#region misc
 		public ListView(Control control, Element element)
 		{
 			Control = control;
 			Element = element;
+			ContentView = null;
 			CreateItemList();
 			ComputeSize();
 		}
+		internal ListView Delete() { Dispose(); return null; }
+		public void Dispose() { }
+
 		internal Control Control { get; private set; }
 		internal Element Element { get; private set; }
 
-		internal Size Size { get; private set; }
-		internal void CreateItemList()
-		{
-			Items.Clear();
-			int index = 0;
-			ItemView item;
+		#endregion
 
-			using (Graphics g = Control.CreateGraphics())
-			{
-				foreach (Element child in Element.ChildNodes)
-				{
-					Items.Add(item = new ItemView(this, child, index++));
-					item.ComputeSize((XMLTreeListPanel)Control, g);
-				}
-			}
-		}
+		#region Sizing
+		internal Size Size { get; private set; }
 		internal void ComputeSize()
 		{
 			Size = Items.Size;
 		}
+		internal void ChangedItemHeight(ItemView itemView, int cy)
+		{
+			ComputeSize();
+
+			if (ContentView != null)
+				ContentView.ItemView.SetContentCorner(ContentView.Offset + Size);
+			else
+				((XMLTreeListPanel)Control).SetListSize(Size);
+		}
+
+		#endregion
+
+		#region Container
+		public ListView(ContentView ContentView)
+			: this(ContentView.ItemView.Panel, ContentView.ItemView.Element)
+		{
+			this.ContentView = ContentView;
+		}
+		internal ContentView ContentView { get; private set; } = null;
+
+		#endregion
+
+		#region Items
 		internal class ItemList : List<ItemView>
 		{
 			internal ItemList() : base() { }
@@ -63,22 +79,49 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			}
 		}
 		internal ItemList Items = new ItemList();
+		internal void CreateItemList()
+		{
+			Items.Clear();
+			int index = 0;
+			ItemView item;
 
-		internal ListView Delete() { Dispose(); return null; }
-		public void Dispose() {}
+			using (Graphics g = Control.CreateGraphics())
+			{
+				foreach (Element child in Element.ChildNodes)
+				{
+					Items.Add(item = new ItemView(this, child, index++));
+					item.ComputeSize((XMLTreeListPanel)Control, g);
+				}
+			}
+		}
 
+		#endregion
+		
 		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
 		{
+			Debug.WriteLine($"Paint ItemList clip={clip}, client={client}");
+
+			(int Y, ItemView item) = ItemFromPoint(clip.Location);
+			clip.Height -= Y; if (clip.Height < 0) clip.Height = 0;
+
+			if (item == null) return;
+
 			using (Brush b = new SolidBrush(Control.ForeColor))
 			{
-				(int Y, ItemView item) = ItemFromPoint(clip.Location);
 				int i = item.Index;
-				while (Y < clip.Bottom)
+
+				while (clip.Height > 0)
 				{
 					Rectangle r = client;
 					r.Y += Y; r.Height = item.Height;
-					item.Draw((XMLTreeListPanel)Control, g, r.Location, r.Size);
+
+					item.Paint(g, clip, r);
+
 					Y += item.Height;
+
+					clip.Height -= item.Height;
+					if (clip.Height < 0) break;
+
 					if ((i + 1) >= Items.Count) break;
 					item = Items[++i];
 				}
@@ -102,7 +145,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			return (Y, item);
 		}
 
-		internal Target TargetFromMouse(Point pt)
+		internal Target TargetFromPoint(Point pt)
 		{
 			(int Y, ItemView item) = ItemFromPoint(pt);
 
@@ -112,37 +155,6 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			if (Target == null) return null;
 			Target.rect.Offset(0, Y);
 			return Target;
-		}
-
-
-		internal void Place(XMLTreeListPanel cp, ItemView item, Point pt)
-		{
-			Size sz = Size.Empty, sz0 = Size.Empty;
-
-			for (int i = 0; i < Items.Count; i++)
-			{
-				ItemView ti = Items[i];
-				if (ti == item) sz0 = sz;
-				sz.Height += ti.Height;
-				sz.Width = Math.Max(sz.Width, ti.Width);
-			}
-			Size = sz;
-			((XMLTreeListPanel)Control).Place(cp, pt + new Size(0, sz0.Height));
-		}
-
-		internal void ItemSizeChanged(ItemView item, Size oldItemSize, Size newItemSize)
-		{
-			Size oldSize = Size;
-			Size newSize = new Size(
-				Math.Max(Size.Width, newItemSize.Width),
-				Size.Height + newItemSize.Height - oldItemSize.Height);
-			Size = newSize;
-
-
-			//for (int i = item.Index + 1; i < Items.Count; i++)
-			//	Items[i].MoveVertically(newSize.Height - oldSize.Height);
-
-			//Control.ChangeHeight(cy);
 		}
 	}
 }
