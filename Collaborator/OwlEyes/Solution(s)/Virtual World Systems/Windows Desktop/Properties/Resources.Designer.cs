@@ -113,6 +113,16 @@ namespace VWS.WindowsDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ToggleButton_empty {
+            get {
+                object obj = ResourceManager.GetObject("ToggleButton_empty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ToggleButton_opened {
             get {
                 object obj = ResourceManager.GetObject("ToggleButton_opened", resourceCulture);

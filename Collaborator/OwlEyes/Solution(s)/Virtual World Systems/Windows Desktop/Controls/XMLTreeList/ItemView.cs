@@ -43,6 +43,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		#endregion
 
 		#region Sizing
+
 		internal Size Size;
 		internal Size HeaderSize;
 		internal int Width { get => Size.Width; }
@@ -54,6 +55,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			return (Size = (HeaderSize = XMLTreeListPanel.Painter.
 				Measure(g, panel.Font, Element.DisplayName)));
 		}
+
 		#endregion
 
 		#region Content
@@ -142,8 +144,12 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			Control panel = ItemList.Control;
 			Size szD = new Size(client.Width, HeaderSize.Height);
 
-			XMLTreeListPanel.Painter.Draw(g, panel.Font,
-				Element.DisplayName, client.Location, szD,
+			System.Drawing.Image img = Properties.Resources.ToggleButton_closed;
+			if (!Element.HasChildElements) img = Properties.Resources.ToggleButton_empty;
+			else if ((ContentView != null) && ContentView.IsOpen) img = Properties.Resources.ToggleButton_opened;
+
+			XMLTreeListPanel.Painter.DrawItem(g, img,
+				panel.Font, Element.DisplayName, client.Location, szD,
 				panel.ForeColor, panel.BackColor);
 
 			if (ContentView == null) return;

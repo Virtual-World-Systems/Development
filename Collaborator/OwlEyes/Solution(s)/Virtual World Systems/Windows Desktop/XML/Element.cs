@@ -28,7 +28,32 @@ namespace XML
 
 		public static Element @new(string name) { return Document.Instance.CreateElement(name); }
 
+		public bool HasTextNodeOnly
+		{
+			get
+			{
+				if (ChildNodes.Count != 1) return false;
+				return (ChildNodes[0] is XmlText);
+			}
+		}
+		public String TextNode
+		{
+			get
+			{
+				if (!HasTextNodeOnly) return "";
+				return InnerText;
+			}
+		}
 		public string DisplayName
+		{
+			get
+			{
+				string Text = _DisplayName;
+				if (HasTextNodeOnly) Text += " = " + TextNode;
+				return Text;
+			}
+		}
+		string _DisplayName
 		{
 			get
 			{
@@ -59,6 +84,16 @@ namespace XML
 		public Attribute SelectAttribute(string selector)
 		{
 			return (Attribute)SelectSingleNode(selector, Document.NamespaceManager);
+		}
+
+		public bool HasChildElements
+		{
+			get
+			{
+				if (ChildNodes.Count == 0) return false;
+				if ((ChildNodes.Count == 1) && (ChildNodes[0] is XmlText)) return false;
+				return true;
+			}
 		}
 
 		public void WriteFile(string path)

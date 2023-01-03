@@ -322,6 +322,7 @@
     <Content Include="Data\all_OSSLViewers.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\PNG_16x16\treenodebutton_opened1.png" />
     <Content Include="_ViewModel.xml" />
     <Content Include="__.xml" />
     <None Include="Resources\Earth.ico" />

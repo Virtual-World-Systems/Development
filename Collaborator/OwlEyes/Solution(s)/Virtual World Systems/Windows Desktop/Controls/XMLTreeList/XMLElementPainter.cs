@@ -17,7 +17,8 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		{
 			return V.From<string>((object o) => t, null).Measure(g, f) + new Size(11, 0);
 		}
-		internal void Draw(Graphics g, Font f, string t, Point pt, Size sz, Color fg, Color bg)
+		internal void DrawItem(Graphics g, System.Drawing.Image img,
+			Font f, string t, Point pt, Size sz, Color fg, Color bg)
 		{
 			Rectangle rect = new Rectangle(pt, sz);
 
@@ -25,7 +26,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				g.FillRectangle(Helper.GetSolidBrush(bg), rect);
 
 			Rectangle r = new Rectangle(pt + new Size(0, 1), new Size(9, 9));
-			g.DrawImage(Properties.Resources.ToggleButton_closed, r);
+			g.DrawImage(img, r);
 
 			r = rect; r.Offset(11, 0); r.Width -= 11;
 			Helper.DrawRenderString(g, t, r, f, fg, bg);

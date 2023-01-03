@@ -133,6 +133,9 @@
   <data name="ToggleButton_closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToggleButton_closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ToggleButton_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PNG_16x16\treenodebutton_opened1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ToggleButton_opened" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToggleButton_opened.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

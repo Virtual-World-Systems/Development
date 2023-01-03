@@ -96,7 +96,39 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		}
 
 		#endregion
-		
+
+		#region Targetting
+		(int, ItemView) ItemFromPoint(Point pt)
+		{
+			int i = -1; int Y = 0;
+			ItemView item = null;
+
+			while (++i < Items.Count)
+			{
+				item = Items[i];
+
+				if ((Y + item.Height) > pt.Y) break;
+
+				Y += item.Height;
+				item = null;
+			}
+			//if (item != null) Debug.WriteLine($"ItemFromPoint {item.Element.DisplayName}");
+			return (Y, item);
+		}
+
+		internal Target TargetFromPoint(Point pt)
+		{
+			(int Y, ItemView item) = ItemFromPoint(pt);
+
+			if (item == null) return null;
+			pt.Y -= Y;
+			Target Target = item.TargetFromPoint(pt);
+			if (Target == null) return null;
+			Target.rect.Offset(0, Y);
+			return Target;
+		}
+
+		#endregion
 		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
 		{
 			//Debug.WriteLine($"Paint ItemList clip={clip}, client={client}");
@@ -126,36 +158,6 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 					item = Items[++i];
 				}
 			}
-		}
-
-		(int, ItemView) ItemFromPoint(Point pt)
-		{
-			int i = -1; int Y = 0;
-			ItemView item = null;
-
-			while (++i < Items.Count)
-			{
-				item = Items[i];
-
-				if ((Y + item.Height) > pt.Y) break;
-
-				Y += item.Height;
-				item = null;
-			}
-			if (item != null) Debug.WriteLine($"ItemFromPoint {item.Element.DisplayName}");
-			return (Y, item);
-		}
-
-		internal Target TargetFromPoint(Point pt)
-		{
-			(int Y, ItemView item) = ItemFromPoint(pt);
-
-			if (item == null) return null;
-			pt.Y -= Y;
-			Target Target = item.TargetFromPoint(pt);
-			if (Target == null) return null;
-			Target.rect.Offset(0, Y);
-			return Target;
 		}
 	}
 }
