@@ -34,7 +34,8 @@
 			// 
 			this.AutoScroll = true;
 			this.AutoScrollMargin = new System.Drawing.Size(4, 4);
-			this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.XMLTreeListPanel_Scroll);
+			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Resize += new System.EventHandler(this.XMLTreeListPanel_Resize);
 			this.ResumeLayout(false);
 
 		}

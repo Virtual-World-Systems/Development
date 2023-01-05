@@ -59,6 +59,7 @@ namespace XML
 			{
 				if (HasAttribute("DisplayName")) return GetAttribute("DisplayName");
 				if (HasAttribute("Name")) return GetAttribute("Name");
+				if (HasAttribute("name")) return GetAttribute("name");
 				if (HasAttribute("Key")) return GetAttribute("Key");
 				if (this == Root) return "Object Tree"; // •
 				if (Name == "orphans:_") return "Orphans";

@@ -48,16 +48,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		#endregion
 
 		#region Sizing / Scrolling
-		protected override void OnResize(EventArgs e)
-		{
-			Invalidate();
-			base.OnResize(e);
-		}
-		private void XMLTreeListPanel_Scroll(object sender, ScrollEventArgs e)
-		{
-			//Debug.WriteLine($"on Scroll : AutoScrollPosition={AutoScrollPosition}, PaddedOffset={PaddedOffset}");
-			Invalidate();
-		}
+
 		internal Point PaddedOffset
 		{
 			get => new Point(
@@ -67,6 +58,11 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal void SetListSize(Size sz)
 		{
 			AutoScrollMinSize = sz + Padding.Size;
+			Invalidate(true);
+		}
+		private void XMLTreeListPanel_Resize(object sender, EventArgs e)
+		{
+			Invalidate(true);
 		}
 
 		#endregion
@@ -131,21 +127,16 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal static XMLElementPainter Painter = new XMLElementPainter();
 		protected override void OnPaint(PaintEventArgs e)
 		{
-			//Debug.WriteLine($"Paint ******** clip={e.ClipRectangle}, client={ClientRectangle}");
+			Rectangle rList = new Rectangle(PaddedOffset, ElementList.Size);
+			Debug.WriteLine($"Control.Paint: client={ClientRectangle}, clip={e.ClipRectangle}, list={rList}");
+			if (ElementList == null) return;
 
-			Rectangle rl = new Rectangle(PaddedOffset, ElementList.Size);
-			rl.Width = ClientRectangle.Width - rl.Left;
-			rl.Height = ClientRectangle.Height - rl.Top;
+			Rectangle client = new Rectangle(PaddedOffset, Size.Empty);
+			client.Size = ClientRectangle.Size - new Size(client.Location);
 
-			Rectangle clip = e.ClipRectangle;
-			clip.Intersect(rl);
-			clip.Offset(-rl.Left, -rl.Top);
+			Rectangle clip = e.ClipRectangle; clip.Intersect(rList);
+			clip.Offset(Point.Empty - new Size(PaddedOffset));
 
-			Rectangle client = ClientRectangle;
-			client.Offset(PaddedOffset);
-			client.Size = ClientRectangle.Size - new Size(PaddedOffset);
-
-			//Debug.WriteLine($"OnPaint: clip={clip}, client={client}");
 			ElementList.Paint(e.Graphics, clip, client);
 		}
 

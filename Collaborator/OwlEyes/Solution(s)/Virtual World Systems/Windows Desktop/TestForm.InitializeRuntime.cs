@@ -34,8 +34,6 @@ namespace VWS.WindowsDesktop
 			//}
 		}
 
-
-
 		void InitializeRuntime()
 		{
 			SetDoubleBuffered(this);
@@ -55,16 +53,31 @@ namespace VWS.WindowsDesktop
 				//Debug.WriteLine($"{vx.GetType()}");
 				//string sx = (string)Convert.ChangeType(pi.GetValue(ol), typeof(string));
 
-				object v = Convert.ChangeType(e.InnerText, pi.PropertyType);
+				object v = null;
+
+				if (pi.PropertyType == typeof(Point)) v = ToPoint(e.InnerText); else
+					v = Convert.ChangeType(e.InnerText, pi.PropertyType);
+
+				Point pt = new Point(11, 22);
+				string sx = "" + pt;
+				Debug.WriteLine($"Point = {sx}");
 
 				//Debug.WriteLine(e.Name + " new : " + v);
 				pi.SetValue(ol, v);
+			}
+
+			Point ToPoint(string text)
+			{
+				string[] ss = text.Split(',', ';');
+				return new Point(int.Parse(ss[0]), int.Parse(ss[1]));
 			}
 			StringBuilder sb = new StringBuilder();
 			Program.XML.Root.WriteTo(sb);
 			Debug.WriteLine("\r\nDocument : " + sb.ToString());
 
 			TabControl.SelectTab(Converter);
+
+			//MessageBox.Show(Program.XML.Root.SelectElement("firestorm:Data").OuterXml);
 		}
 
 		void SetDoubleBuffered(Control c)

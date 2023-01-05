@@ -31,7 +31,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				Element = string.IsNullOrEmpty(value)
 					? Program.XML.Root
 					: Program.XML.Root.SelectElement(value);
-				Invalidate();
+				Invalidate(true);
 			}
 		}
 		private string selector;
@@ -51,4 +51,3 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		#endregion
 	}
 }
-

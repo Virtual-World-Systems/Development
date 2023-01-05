@@ -35,6 +35,7 @@
 			// Panel
 			// 
 			this.Panel.AutoScroll = true;
+			this.Panel.AutoScrollMargin = new System.Drawing.Size(4, 4);
 			this.Panel.AutoScrollMinSize = new System.Drawing.Size(2, 4);
 			this.Panel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.Panel.Location = new System.Drawing.Point(0, 19);

@@ -35,12 +35,13 @@ namespace XML
 				VWSNS = "https://Virtual-World-Systems.net";
 				NamespaceManager = new _NamespaceManager(this);
 				NamespaceManager.AddNamespace("_", VWSNS);
-				NamespaceManager.AddNamespace("orphans", "orphans");
-				NamespaceManager.AddNamespace("runtime", "runtime");
-				NamespaceManager.AddNamespace("mime", "mime");
-				NamespaceManager.AddNamespace("user", "user");
-				NamespaceManager.AddNamespace("ui", "UI");
-				NamespaceManager.AddNamespace("ns", "Namespace");
+				//NamespaceManager.AddNamespace("orphans", "orphans");
+				//NamespaceManager.AddNamespace("runtime", "runtime");
+				//NamespaceManager.AddNamespace("mime", "mime");
+				//NamespaceManager.AddNamespace("user", "user");
+				//NamespaceManager.AddNamespace("ui", "UI");
+				//NamespaceManager.AddNamespace("ns", "Namespace");
+//				NamespaceManager.AddNamespace("firestorm", "firestorm");
 				AppendChild(new Element(null, "_", null, this));
 				orphans = Orphans; orphaning.Push(true);
 
@@ -55,7 +56,7 @@ namespace XML
 			get
 			{
 				if (orphans == null)
-					Root.PrependChild(orphans = (Element)CreateElement("orphans:_", "orphans"));
+					Root.PrependChild(orphans = (Element)CreateElement("orphans", "_", "orphans"));
 				return orphans;
 			}
 		}
@@ -69,8 +70,16 @@ namespace XML
 		public Element Root { get { return (Element)base.DocumentElement; } }
 		public new Element DocumentElement { get { return (Element)base.DocumentElement; } }
 
+		//public override XmlElement CreateElement(string prefix, string localName, string namespaceURI)
+		//{
+		//	Element e = new Element(prefix, localName, namespaceURI, this);
+		//	if (isOrphaning && (DocumentElement != null) && (Orphans != null)) Orphans.AppendChild(e);
+		//	return e;
+		//}
 		public override XmlElement CreateElement(string prefix, string localName, string namespaceURI)
 		{
+			if ((prefix != null) && (prefix != "") && !NamespaceManager.HasNamespace(prefix))
+				NamespaceManager.AddNamespace(prefix, namespaceURI);
 			Element e = new Element(prefix, localName, namespaceURI, this);
 			if (isOrphaning && (DocumentElement != null) && (Orphans != null)) Orphans.AppendChild(e);
 			return e;
@@ -79,6 +88,11 @@ namespace XML
 		public new Element CreateElement(string name)
 		{
 			return (Element)CreateElement(null, name, null);
+		}
+		public new Element CreateElement(string qualname, string uri)
+		{
+			string[] ss = qualname.Split(':');
+			return (Element)CreateElement(ss[0], ss[1], uri);
 		}
 
 		static Element NewElement(string name)
@@ -115,7 +129,15 @@ namespace XML
 			{
 				using (XmlReader rdr = XmlReader.Create(sr, s))
 				{
-					e = (Element)ReadNode(rdr);
+					try
+					{
+						e = (Element)ReadNode(rdr);
+					}
+					catch(Exception ex)
+					{
+						Debug.WriteLine(ex.Message + "\r\n" + ex.StackTrace);
+						e = null;
+					}
 				}
 				if (e == null) { orphaning.Pop(); return null; }
 			}

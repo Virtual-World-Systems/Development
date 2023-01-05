@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.Design;
@@ -52,8 +53,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		int ContentIndent { get => 12; }
 		internal Size ComputeHeaderSize(XMLTreeListPanel panel, Graphics g)
 		{
-			return (Size = (HeaderSize = XMLTreeListPanel.Painter.
-				Measure(g, panel.Font, Element.DisplayName)));
+			return (Size = (HeaderSize = XMLTreeListPanel.Painter.MeasureHeader(g, panel.Font, Element.DisplayName)));
 		}
 
 		#endregion
@@ -77,93 +77,75 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal Target TargetFromPoint(Point pt)
 		{
 			//Debug.WriteLine($"TargeFromPoint, Item={Index}, Point={pt}");
-
-			Rectangle r = Rectangle.Empty;
-			r.Height = HeaderSize.Height;
-			r.Width = HeaderSize.Width;
-
-			if (r.Contains(pt))
-			{
-				r.Width = 10;
-
-				if (r.Contains(pt))
-					return new Target(this, "Button", r);
-
-				r.Offset(r.Width, 0);
-				r.Width = HeaderSize.Width - r.Left;
-				return new Target(this, "Text", r);
-			}
-			if (pt.Y < HeaderSize.Height)
-				return new Target(this, "^", r);
-
-			r = new Rectangle(Point.Empty, Size);
-
-			if ((ContentView == null) || (!ContentView.IsOpen))
-				return new Target(this, "^", r);
-
-			r = new Rectangle(
-				new Point(ContentIndent, HeaderSize.Height),
-				ContentView.ListView.Size);
-
-			if (pt.X < r.Left)
-				return new Target(this, "|", r);
-
-			pt -= new Size(r.Location);
-
-			Target target = ContentView.ListView.TargetFromPoint(pt);
-
-			if (target == null)
-				return new Target(this, "|", r);
-
+			Rectangle rect = new Rectangle(Point.Empty, HeaderSize);
+			if (rect.Contains(pt)) return XMLTreeListPanel.Painter.TargetFromPoint(this, pt);
+			if (pt.Y < HeaderSize.Height) return new Target(this, "^", rect);
+			rect = new Rectangle(Point.Empty, Size);
+			if ((ContentView == null) || (!ContentView.IsOpen)) return new Target(this, "^", rect);
+			rect = new Rectangle(new Point(ContentIndent, HeaderSize.Height), ContentView.Size);
+			if (pt.X < rect.Left) return new Target(this, "|", rect);
+			pt -= new Size(rect.Location);
+			Target target = ContentView.TargetFromPoint(pt);
+			if (target == null) return new Target(this, "|", rect);
 			target.rect.Offset(ContentIndent, HeaderSize.Height);
 			return target;
-		}
-		internal void Click(Target target)
-		{
-			Debug.WriteLine($"clicked [{Element.DisplayName}] item={target.item.Index}, rect={target.rect}, part={target.part}");
-
-			if (target.part.ToString() == "Button")
-			{
-				if (ContentView == null)
-					ContentView = new ContentView(this,
-						new Point(ContentIndent, HeaderSize.Height));
-
-				if (ContentView.IsOpen) ContentView.Close();
-				else ContentView.Open();
-
-				TopTreeListPanel.Invalidate(true);
-			}
 		}
 
 		#endregion
 
-		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
+		#region States
+		string GetState(string name)
 		{
-			//Debug.WriteLine($"Paint Items[{Index}]  clip={clip}, client={client}");
+			switch (name)
+			{
+				case "MetaButton": return "disabled";
+				case "AttributesButton": return (!Element.HasAttributes) ? "disabled"
+						: (ContentView == null) ? "normal" : ContentView.OpenState_Attributes ? "checked" : "normal";
+				case "ChildElementsButton": return (!Element.HasChildElements) ? "disabled"
+						: (ContentView == null) ? "normal" : ContentView.OpenState_ChildElements ? "checked" : "normal";
+				case "ObjectButton": return "normal";
+			}
+			return "disabled";
+		}
 
-			Control panel = ItemList.Control;
-			Size szD = new Size(client.Width, HeaderSize.Height);
+		#endregion
 
-			System.Drawing.Image img = Properties.Resources.ToggleButton_closed;
-			if (!Element.HasChildElements) img = Properties.Resources.ToggleButton_empty;
-			else if ((ContentView != null) && ContentView.IsOpen) img = Properties.Resources.ToggleButton_opened;
+		internal void Paint(Graphics g, Rectangle client)
+		{
+			using (RT.I I = RT.IN)
+			{
+				Debug.WriteLine($"{I.S}Item[{Index}].Paint: client={client} >> {Element.DisplayName}");
 
-			XMLTreeListPanel.Painter.DrawItem(g, img,
-				panel.Font, Element.DisplayName, client.Location, szD,
-				panel.ForeColor, panel.BackColor);
+				Control panel = ItemList.Control;
+				Size szD = new Size(client.Width, HeaderSize.Height);
 
-			if (ContentView == null) return;
-			if (!ContentView.IsOpen) return;
+				XMLTreeListPanel.Painter.DrawItemHeader(g,
+					panel.Font, Element.DisplayName, client.Location, szD,
+					panel.ForeColor, panel.BackColor, GetState);
 
-			clip.Height -= HeaderSize.Height;
+				if (ContentView == null) return;
+				if (!ContentView.IsOpen) return;
 
-			client.X += ContentIndent;
-			client.Width -= ContentIndent;
+				client.X += ContentIndent;
+				client.Width -= ContentIndent;
 
-			client.Y += HeaderSize.Height;
-			client.Height -= HeaderSize.Height;
+				client.Y += HeaderSize.Height;
+				client.Height -= HeaderSize.Height;
 
-			ContentView.ListView.Paint(g, clip, client);
+				ContentView.Paint(g, client);
+			}
+		}
+		
+		internal void Click(Target target)
+		{
+			Debug.WriteLine($"clicked [{Element.DisplayName}] item={target.item.Index}, rect={target.rect}, part={target.part}");
+			if (!("" + target.part).EndsWith("Button")) return;
+			if (ContentView == null) ContentView = new ContentView(this, new Point(ContentIndent, HeaderSize.Height));
+			string propName = "OpenState_" + target.part.ToString();
+			if (propName.EndsWith("Button")) propName = propName.Substring(0, propName.Length - 6);
+			PropertyInfo pi = typeof(ContentView).GetProperty(propName);
+			bool v = (bool)pi.GetValue(ContentView, null);
+			pi.SetValue(ContentView, v ? false : true);
 		}
 	}
 }

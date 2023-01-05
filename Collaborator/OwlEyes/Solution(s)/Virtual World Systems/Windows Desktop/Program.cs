@@ -38,6 +38,7 @@ namespace VWS.WindowsDesktop
 				LoadUserData();
 				LoadMimeTypes();
 				LoadObjectModel();
+				LoadAvatarSkeleton();
 			}
 			catch (Exception ex)
 			{
@@ -45,6 +46,15 @@ namespace VWS.WindowsDesktop
 			}
 		}
 
+		static void LoadAvatarSkeleton()
+		{
+			string path = CommonApplicationData + "Firestorm/avatar_skeleton.xml";
+			if (!File.Exists(path)) return;
+			Element e = XML.ReadFile(path);
+			Element p = (Element)XML.CreateElement("firestorm", "Data", "firestorm");
+			XML.Root.AppendChild(p);
+			p.AppendChild(e);
+		}
 		static void LoadUserData()
 		{
 			string path = ApplicationData + "ApplicationProperties.xml";
@@ -132,7 +142,7 @@ namespace VWS.WindowsDesktop
 				}
 				else
 				{
-					Element e = (Element)XML.CreateElement("runtime:Paths", "runtime");
+					Element e = (Element)XML.CreateElement("runtime", "Paths", "runtime");
 					XML.DocumentElement.AppendChild(e);
 					ProgramPath = LoadAssPath(e, "EntryAssembly", V);
 					e.WriteFile(XMLPath);
@@ -180,9 +190,9 @@ namespace VWS.WindowsDesktop
 				return "";
 			}
 		}
-		public static string ApplicationData { get; private set; }
-		public static string LocalApplicationData { get; private set; }
-		public static string CommonApplicationData { get; private set; }
+		public static string ApplicationData { get; private set; } // User
+		public static string LocalApplicationData { get; private set; } // User
+		public static string CommonApplicationData { get; private set; } // ProgramData
 		public static string ProgramPath { get; private set; } = null;
 		public static string SourceRoot { get; private set; } = null;
 

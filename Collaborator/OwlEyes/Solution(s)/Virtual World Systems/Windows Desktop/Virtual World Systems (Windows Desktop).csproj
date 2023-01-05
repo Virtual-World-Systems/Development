@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\XMLTreeList\ContentView.cs" />
+    <Compile Include="Controls\XMLTreeList\MiniButton.cs" />
     <Compile Include="Controls\XMLTreeList\Target.cs" />
     <Compile Include="Controls\XMLTreeList\Visuals.cs" />
     <Compile Include="Controls\XMLTreeList\ListView.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="ObjectModel\P.cs" />
     <Compile Include="ObjectModel\R.cs" />
     <Compile Include="ObjectModel\T.cs" />
+    <Compile Include="RT.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +299,7 @@
   <ItemGroup>
     <Folder Include="Controls\Layouts\Types\" />
     <Folder Include="Controls\ObjectModel\" />
+    <Folder Include="Data\MimeTypes\" />
     <Folder Include="generic\" />
     <Folder Include="TrafficInterceptor\" />
   </ItemGroup>
@@ -322,7 +325,25 @@
     <Content Include="Data\all_OSSLViewers.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\PNG_16x16\treenodebutton_opened1.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_disabled.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened2.png" />
+    <None Include="Resources\ToggleButton_opened1.png" />
+    <None Include="Resources\ToggleButton_opened2.png" />
+    <None Include="Resources\ToggleButton_opened21.png" />
+    <None Include="Resources\ToggleButton_opened22.png" />
+    <None Include="Resources\ToggleButton_opened211.png" />
+    <None Include="Resources\ToggleButton_opened2111.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened21.png" />
+    <None Include="Resources\ToggleButton_opened212.png" />
+    <None Include="Resources\ToggleButton_opened221.png" />
+    <None Include="Resources\ToggleButton_opened23.png" />
+    <None Include="Resources\ToggleButton_opened2112.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened211.png" />
+    <None Include="Resources\ToggleButton_opened21111.png" />
+    <None Include="Resources\ToggleButton_opened2113.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened212.png" />
+    <None Include="Resources\ToggleButton_opened21112.png" />
+    <Content Include="XML\runtime_tree.xml" />
     <Content Include="_ViewModel.xml" />
     <Content Include="__.xml" />
     <None Include="Resources\Earth.ico" />

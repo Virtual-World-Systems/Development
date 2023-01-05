@@ -1,0 +1,59 @@
+﻿<_>
+	<orphans:_ xmlns:orphans="orphans"></orphans:_>
+	<runtime:Paths xmlns:runtime="runtime">
+		<EntryAssembly>C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\</EntryAssembly>
+	</runtime:Paths>
+	<user:Data xmlns:user="user">
+		<User>
+			<ApplicationProperties>
+				<Location.X>32</Location.X>
+				<Location.Y>32</Location.Y>
+				<Width>1350</Width>
+				<Height>850</Height>
+			</ApplicationProperties>
+			<test></test>
+			<test2 />
+		</User>
+	</user:Data>
+	<mime:Types xmlns:mime="mime">
+		<Type Name="Text/Plain" Ext="txt" />
+		<Type Name="Text/Html" Ext="htm|html" />
+		<Type Name="Text/Xml" Ext="xml" />
+		<Type Name="Text/RichText" Ext="rtf" />
+		<Type Name="Application/Soap" Ext="" />
+		<Type Name="Application/Octet" Ext="" />
+		<Type Name="Application/Rtf" Ext="rtf" />
+		<Type Name="Application/Pdf" Ext="pdf" />
+		<Type Name="Application/Zip" Ext="zip|7z" />
+		<Type Name="Image/Gif" Ext="gif" />
+		<Type Name="Image/Tiff" Ext="tif|tiff" />
+		<Type Name="Image/Jpeg" Ext="jpg|jpeg" />
+		<Type Name="Image/Png" Ext="png" />
+		<Type Name="Text/glTF" Ext="gltf" />
+		<Type Name="Text/Collada" Ext="dae" />
+		<Type Name="Application/glB" Ext="glb" />
+		<Type Name="Application/OSSLMesh" Ext="llm" />
+	</mime:Types>
+	<_:the_Multiverse xmlns:_="https://Virtual-World-Systems.net" Name="The Multiverse" is="the Container" of="all Universes">
+		<Universe Name="The RealLife" Key="the_RealLife">
+			<Test_0>
+				<Test_0.0 />
+				<Test_0.1 />
+				<Test_0.2 />
+				<Test_0.3 />
+			</Test_0>
+		</Universe>
+		<Universe Name="The Metaverse" Key="the_Metaverse">
+			<Test_1>
+				<Test_1.0 />
+				<Test_1.1>
+					<Test_1.1.0 />
+					<Test_1.1.1 />
+				</Test_1.1>
+				<Test_1.2 />
+			</Test_1>
+			<Test_1b />
+		</Universe>
+		<Universe Name="Tom's Universe" />
+	</_:the_Multiverse>
+</_>

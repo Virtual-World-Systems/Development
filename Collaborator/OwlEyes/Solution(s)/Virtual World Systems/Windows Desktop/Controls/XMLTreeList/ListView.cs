@@ -38,13 +38,22 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal void ChangedItemHeight(ItemView itemView, int cy)
 		{
 			ComputeSize();
-
-			if (ContentView != null)
-				ContentView.ItemView.SetContentCorner(ContentView.Offset + Size);
-			else
-				((XMLTreeListPanel)Control).SetListSize(Size);
+			if (ContentView != null) ContentView.UpdateSize();
+			else ((XMLTreeListPanel)Control).SetListSize(Size);
 		}
+		internal (int, ItemView) FindItemFromY(int yT)
+		{
+			int Y = 0, N;
+			ItemView item = null;
 
+			foreach (ItemView i in Items)
+			{
+				N = Y + i.Height;
+				if (N > yT) { item = i; break; }
+				Y = N;
+			}
+			return (Y, item);
+		}
 		#endregion
 
 		#region Container
@@ -129,35 +138,52 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		}
 
 		#endregion
+		
+		#region Painting
 		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
 		{
-			//Debug.WriteLine($"Paint ItemList clip={clip}, client={client}");
+			Debug.WriteLine($"{RT.S}>> List.Paint: client={client}, clip={clip}");
 
-			(int Y, ItemView item) = ItemFromPoint(clip.Location);
-			clip.Height -= Y; if (clip.Height < 0) clip.Height = 0;
-
+			(int Y, ItemView item) = FindItemFromY(clip.Top);
 			if (item == null) return;
 
-			using (Brush b = new SolidBrush(Control.ForeColor))
+			for (int i = item.Index; i < Items.Count; i++)
 			{
-				int i = item.Index;
+				if (Y >= clip.Bottom) break;
 
-				while (clip.Height > 0)
+				item = Items[i];
+
+				Rectangle r = client;
+				r.Y += Y; r.Height = item.Height;
+
+				item.Paint(g, r);
+
+				Y += item.Height;
+			}
+		}
+		internal void Paint(Graphics g, Rectangle client)
+		{
+			using (RT.I I = RT.IN)
+			{
+				Debug.WriteLine($"{RT.S}List.Paint: client={client}");
+
+				int Y = 0;
+				ItemView item;
+
+				for (int i = 0; i < Items.Count; i++)
 				{
+					item = Items[i];
+
 					Rectangle r = client;
 					r.Y += Y; r.Height = item.Height;
 
-					item.Paint(g, clip, r);
+					item.Paint(g, r);
 
 					Y += item.Height;
-
-					clip.Height -= item.Height;
-					if (clip.Height < 0) break;
-
-					if ((i + 1) >= Items.Count) break;
-					item = Items[++i];
 				}
 			}
 		}
+
+		#endregion
 	}
 }

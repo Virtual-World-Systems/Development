@@ -61,6 +61,66 @@ namespace VWS.WindowsDesktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AttributesButton_checked {
+            get {
+                object obj = ResourceManager.GetObject("AttributesButton_checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AttributesButton_disabled {
+            get {
+                object obj = ResourceManager.GetObject("AttributesButton_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AttributesButton_normal {
+            get {
+                object obj = ResourceManager.GetObject("AttributesButton_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChildElementsButton_checked {
+            get {
+                object obj = ResourceManager.GetObject("ChildElementsButton_checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChildElementsButton_disabled {
+            get {
+                object obj = ResourceManager.GetObject("ChildElementsButton_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChildElementsButton_normal {
+            get {
+                object obj = ResourceManager.GetObject("ChildElementsButton_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Earth {
@@ -81,12 +141,72 @@ namespace VWS.WindowsDesktop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MetaButton_checked {
+            get {
+                object obj = ResourceManager.GetObject("MetaButton_checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MetaButton_disabled {
+            get {
+                object obj = ResourceManager.GetObject("MetaButton_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MetaButton_normal {
+            get {
+                object obj = ResourceManager.GetObject("MetaButton_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Multiverse {
             get {
                 object obj = ResourceManager.GetObject("Multiverse", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObjectButton_checked {
+            get {
+                object obj = ResourceManager.GetObject("ObjectButton_checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObjectButton_disabled {
+            get {
+                object obj = ResourceManager.GetObject("ObjectButton_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObjectButton_normal {
+            get {
+                object obj = ResourceManager.GetObject("ObjectButton_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -103,9 +223,9 @@ namespace VWS.WindowsDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ToggleButton_closed {
+        internal static System.Drawing.Bitmap ToggleButton_checked {
             get {
-                object obj = ResourceManager.GetObject("ToggleButton_closed", resourceCulture);
+                object obj = ResourceManager.GetObject("ToggleButton_checked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +233,9 @@ namespace VWS.WindowsDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ToggleButton_empty {
+        internal static System.Drawing.Bitmap ToggleButton_disabled {
             get {
-                object obj = ResourceManager.GetObject("ToggleButton_empty", resourceCulture);
+                object obj = ResourceManager.GetObject("ToggleButton_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +243,9 @@ namespace VWS.WindowsDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ToggleButton_opened {
+        internal static System.Drawing.Bitmap ToggleButton_normal {
             get {
-                object obj = ResourceManager.GetObject("ToggleButton_opened", resourceCulture);
+                object obj = ResourceManager.GetObject("ToggleButton_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +266,16 @@ namespace VWS.WindowsDesktop.Properties {
         internal static System.Drawing.Bitmap TreeNodeButton_closed {
             get {
                 object obj = ResourceManager.GetObject("TreeNodeButton_closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TreeNodeButton_empty {
+            get {
+                object obj = ResourceManager.GetObject("TreeNodeButton_empty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
