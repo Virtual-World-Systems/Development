@@ -114,7 +114,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		{
 			using (RT.I I = RT.IN)
 			{
-				Debug.WriteLine($"{I.S}Item[{Index}].Paint: client={client} >> {Element.DisplayName}");
+				//Debug.WriteLine($"{I.S}Item[{Index}].Paint: client={client} >> {Element.DisplayName}");
 
 				Control panel = ItemList.Control;
 				Size szD = new Size(client.Width, HeaderSize.Height);

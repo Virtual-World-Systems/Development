@@ -1,0 +1,12 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\bin\Debug\net6.0\ObjectModel.deps.json
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\bin\Debug\net6.0\ObjectModel.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\bin\Debug\net6.0\ObjectModel.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.AssemblyInfoInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.AssemblyInfo.cs
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\refint\ObjectModel.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ObjectModel.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\ObjectModel\obj\Debug\net6.0\ref\ObjectModel.dll

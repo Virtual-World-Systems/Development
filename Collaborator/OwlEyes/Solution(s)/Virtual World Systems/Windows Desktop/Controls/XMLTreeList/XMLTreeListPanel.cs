@@ -127,8 +127,10 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		internal static XMLElementPainter Painter = new XMLElementPainter();
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			if (ElementList == null) return;
+
 			Rectangle rList = new Rectangle(PaddedOffset, ElementList.Size);
-			Debug.WriteLine($"Control.Paint: client={ClientRectangle}, clip={e.ClipRectangle}, list={rList}");
+			//Debug.WriteLine($"Control.Paint: client={ClientRectangle}, clip={e.ClipRectangle}, list={rList}");
 			if (ElementList == null) return;
 
 			Rectangle client = new Rectangle(PaddedOffset, Size.Empty);

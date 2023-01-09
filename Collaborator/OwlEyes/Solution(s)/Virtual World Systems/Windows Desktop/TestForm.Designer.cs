@@ -38,12 +38,12 @@
 			this.TabControl = new System.Windows.Forms.TabControl();
 			this.Context = new System.Windows.Forms.TabPage();
 			this.TrafficInterceptor = new System.Windows.Forms.TabPage();
+			this.Interceptor = new VWS.WindowsDesktop.Traffic.TrafficInterceptor();
 			this.Converter = new System.Windows.Forms.TabPage();
 			this.ConverterControl = new VWS.WindowsDesktop.Converter.Converter();
 			this.ToolStrip = new System.Windows.Forms.ToolStrip();
 			this.EditMode = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.MainMenu.SuspendLayout();
 			this.ToolStripContainer.ContentPanel.SuspendLayout();
 			this.ToolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.ToolStripContainer.SuspendLayout();
@@ -52,14 +52,12 @@
 			this.SplitContainer.Panel2.SuspendLayout();
 			this.SplitContainer.SuspendLayout();
 			this.TabControl.SuspendLayout();
+			this.TrafficInterceptor.SuspendLayout();
 			this.Converter.SuspendLayout();
-			this.ToolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
 			// 
-			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MM_File});
 			this.MainMenu.Location = new System.Drawing.Point(0, 0);
 			this.MainMenu.Name = "MainMenu";
 			this.MainMenu.Size = new System.Drawing.Size(800, 24);
@@ -147,6 +145,8 @@
 			// 
 			// Context
 			// 
+			this.Context.AutoScroll = true;
+			this.Context.AutoScrollMargin = new System.Drawing.Size(3, 3);
 			this.Context.BackColor = System.Drawing.Color.Ivory;
 			this.Context.Location = new System.Drawing.Point(4, 22);
 			this.Context.Name = "Context";
@@ -157,12 +157,22 @@
 			// 
 			// TrafficInterceptor
 			// 
+			this.TrafficInterceptor.BackColor = System.Drawing.Color.GhostWhite;
+			this.TrafficInterceptor.Controls.Add(this.Interceptor);
 			this.TrafficInterceptor.Location = new System.Drawing.Point(4, 22);
 			this.TrafficInterceptor.Name = "TrafficInterceptor";
 			this.TrafficInterceptor.Size = new System.Drawing.Size(611, 371);
 			this.TrafficInterceptor.TabIndex = 1;
 			this.TrafficInterceptor.Text = "Traffic Interceptor";
-			this.TrafficInterceptor.UseVisualStyleBackColor = true;
+			// 
+			// Interceptor
+			// 
+			this.Interceptor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.Interceptor.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Interceptor.Location = new System.Drawing.Point(0, 0);
+			this.Interceptor.Name = "Interceptor";
+			this.Interceptor.Size = new System.Drawing.Size(611, 371);
+			this.Interceptor.TabIndex = 0;
 			// 
 			// Converter
 			// 
@@ -187,12 +197,9 @@
 			this.ToolStrip.BackColor = System.Drawing.Color.Transparent;
 			this.ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
 			this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.EditMode,
-            this.toolStripButton1});
 			this.ToolStrip.Location = new System.Drawing.Point(3, 0);
 			this.ToolStrip.Name = "ToolStrip";
-			this.ToolStrip.Size = new System.Drawing.Size(49, 25);
+			this.ToolStrip.Size = new System.Drawing.Size(102, 25);
 			this.ToolStrip.TabIndex = 0;
 			// 
 			// EditMode
@@ -229,8 +236,6 @@
 			this.Name = "TestForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "TestForm";
-			this.MainMenu.ResumeLayout(false);
-			this.MainMenu.PerformLayout();
 			this.ToolStripContainer.ContentPanel.ResumeLayout(false);
 			this.ToolStripContainer.TopToolStripPanel.ResumeLayout(false);
 			this.ToolStripContainer.TopToolStripPanel.PerformLayout();
@@ -241,9 +246,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
 			this.SplitContainer.ResumeLayout(false);
 			this.TabControl.ResumeLayout(false);
+			this.TrafficInterceptor.ResumeLayout(false);
 			this.Converter.ResumeLayout(false);
-			this.ToolStrip.ResumeLayout(false);
-			this.ToolStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -265,6 +269,7 @@
 		private System.Windows.Forms.TabPage Converter;
 		private Converter.Converter ConverterControl;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
+		private Traffic.TrafficInterceptor Interceptor;
 	}
 }
 

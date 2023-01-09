@@ -39,3 +39,8 @@ C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Vir
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Output.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Converter.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Stream.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.TrafficInterceptor.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.CrossBar.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.V3Panel.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.P_LC.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.P_RC.resources

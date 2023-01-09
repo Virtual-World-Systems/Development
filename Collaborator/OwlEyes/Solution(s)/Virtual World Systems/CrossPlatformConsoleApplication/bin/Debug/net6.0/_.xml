@@ -1,0 +1,22 @@
+﻿<_:the_Multiverse xmlns:_="https://Virtual-World-Systems.net" Name="The Multiverse" is="the Container" of="all Universes">
+	<Universe Name="The RealLife" Key="the_RealLife">
+		<Test_0>
+			<Test_0.0/>
+			<Test_0.1/>
+			<Test_0.2/>
+			<Test_0.3/>
+		</Test_0>
+	</Universe>
+	<Universe Name="The Metaverse" Key="the_Metaverse">
+		<Test_1>
+			<Test_1.0/>
+			<Test_1.1>
+				<Test_1.1.0/>
+				<Test_1.1.1/>
+			</Test_1.1>
+			<Test_1.2/>
+		</Test_1>
+		<Test_1b/>
+	</Universe>
+	<Universe Name="Tom's Universe"/>
+</_:the_Multiverse>

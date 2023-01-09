@@ -1,0 +1,7 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\bin\Debug\TCPInterceptor.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\obj\Debug\TCPInterceptor.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\obj\Debug\TCPInterceptor.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\obj\Debug\TCPInterceptor.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\bin\Debug\TCPInterceptor.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\obj\Debug\TCPInterceptor.csproj.SuggestedBindingRedirects.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\TCPInterceptor\obj\Debug\TCPInterceptor.exe

@@ -142,7 +142,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		#region Painting
 		internal void Paint(Graphics g, Rectangle clip, Rectangle client)
 		{
-			Debug.WriteLine($"{RT.S}>> List.Paint: client={client}, clip={clip}");
+			//Debug.WriteLine($"{RT.S}>> List.Paint: client={client}, clip={clip}");
 
 			(int Y, ItemView item) = FindItemFromY(clip.Top);
 			if (item == null) return;

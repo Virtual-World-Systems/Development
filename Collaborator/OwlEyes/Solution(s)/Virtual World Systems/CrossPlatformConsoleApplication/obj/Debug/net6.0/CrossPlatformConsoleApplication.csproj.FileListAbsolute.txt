@@ -1,0 +1,32 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\CrossPlatformConsoleApplication.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\CrossPlatformConsoleApplication.deps.json
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\CrossPlatformConsoleApplication.runtimeconfig.json
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\CrossPlatformConsoleApplication.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\CrossPlatformConsoleApplication.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.AssemblyInfoInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.AssemblyInfo.cs
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\refint\CrossPlatformConsoleApplication.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.genruntimeconfig.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\ref\CrossPlatformConsoleApplication.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\ObjectModel.dll
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\ObjectModel.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\obj\Debug\net6.0\CrossPlatformConsoleApplication.csproj.CopyComplete
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\all_OSSLGrids.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\all_RealPersons.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\the_Multiverse.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\the_RealLife.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\the_Metaverse.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\all_VirtualUniverseSystems.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Data\all_OSSLViewers.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Resources\PNG_32x32\Tree_32x32.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\_.xml
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Resources\PNG_16x16\TreeNodeButton_closed.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Resources\PNG_16x16\TreeNodeButton_opened.png
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Virtual World Systems.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Virtual World Systems.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\CrossPlatformConsoleApplication\bin\Debug\net6.0\Virtual World Systems.exe.config

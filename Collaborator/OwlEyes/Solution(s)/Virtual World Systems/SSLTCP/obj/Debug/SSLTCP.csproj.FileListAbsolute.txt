@@ -1,0 +1,7 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\obj\Debug\SSLTCP.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\obj\Debug\SSLTCP.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\bin\Debug\SSLTCP.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\obj\Debug\SSLTCP.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\obj\Debug\SSLTCP.csproj.SuggestedBindingRedirects.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\bin\Debug\SSLTCP.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\SSLTCP\obj\Debug\SSLTCP.exe

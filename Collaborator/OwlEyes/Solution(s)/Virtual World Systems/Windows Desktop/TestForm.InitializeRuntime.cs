@@ -60,7 +60,7 @@ namespace VWS.WindowsDesktop
 
 				Point pt = new Point(11, 22);
 				string sx = "" + pt;
-				Debug.WriteLine($"Point = {sx}");
+				//Debug.WriteLine($"Point = {sx}");
 
 				//Debug.WriteLine(e.Name + " new : " + v);
 				pi.SetValue(ol, v);
@@ -73,9 +73,9 @@ namespace VWS.WindowsDesktop
 			}
 			StringBuilder sb = new StringBuilder();
 			Program.XML.Root.WriteTo(sb);
-			Debug.WriteLine("\r\nDocument : " + sb.ToString());
+			//Debug.WriteLine("\r\nDocument : " + sb.ToString());
 
-			TabControl.SelectTab(Converter);
+			TabControl.SelectTab(TrafficInterceptor);
 
 			//MessageBox.Show(Program.XML.Root.SelectElement("firestorm:Data").OuterXml);
 		}

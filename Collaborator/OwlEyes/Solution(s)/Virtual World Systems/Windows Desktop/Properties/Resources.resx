@@ -142,6 +142,12 @@
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PNG_16x16\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Firestorm_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\firestorm_64x64_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kitely_128x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kitely_128x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MetaButton_checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToggleButton_opened2113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

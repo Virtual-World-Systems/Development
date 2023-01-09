@@ -1,0 +1,46 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CrossPlatformConsoleApplication/1.0.0": {
+        "dependencies": {
+          "ObjectModel": "1.0.0"
+        },
+        "runtime": {
+          "CrossPlatformConsoleApplication.dll": {}
+        }
+      },
+      "ObjectModel/1.0.0": {
+        "runtime": {
+          "ObjectModel.dll": {}
+        }
+      },
+      "Virtual World Systems (Windows Desktop)/1.0.0": {
+        "runtime": {
+          "Virtual World Systems.exe": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CrossPlatformConsoleApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ObjectModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Virtual World Systems (Windows Desktop)/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

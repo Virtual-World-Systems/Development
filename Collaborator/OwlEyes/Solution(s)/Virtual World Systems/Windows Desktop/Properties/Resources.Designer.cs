@@ -143,6 +143,26 @@ namespace VWS.WindowsDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Firestorm_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("Firestorm_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kitely_128x64 {
+            get {
+                object obj = ResourceManager.GetObject("Kitely_128x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MetaButton_checked {
             get {
                 object obj = ResourceManager.GetObject("MetaButton_checked", resourceCulture);

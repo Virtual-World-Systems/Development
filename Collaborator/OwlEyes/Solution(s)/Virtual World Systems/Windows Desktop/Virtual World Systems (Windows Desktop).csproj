@@ -167,7 +167,7 @@
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Splitter.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Splitter.Designer.cs">
       <DependentUpon>Splitter.cs</DependentUpon>
@@ -207,6 +207,42 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Test\Generator.cs" />
+    <Compile Include="Traffic\CrossBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Traffic\CrossBar.Designer.cs">
+      <DependentUpon>CrossBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Traffic\CrossBarHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Traffic\CrossBarHandler.Designer.cs">
+      <DependentUpon>CrossBarHandler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Traffic\P_LC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Traffic\P_LC.Designer.cs">
+      <DependentUpon>P_LC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Traffic\P_RC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Traffic\P_RC.Designer.cs">
+      <DependentUpon>P_RC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Traffic\TrafficInterceptor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Traffic\TrafficInterceptor.Designer.cs">
+      <DependentUpon>TrafficInterceptor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Traffic\V3Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Traffic\V3Panel.Designer.cs">
+      <DependentUpon>V3Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
@@ -280,6 +316,21 @@
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Traffic\CrossBar.resx">
+      <DependentUpon>CrossBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traffic\P_LC.resx">
+      <DependentUpon>P_LC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traffic\P_RC.resx">
+      <DependentUpon>P_RC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traffic\TrafficInterceptor.resx">
+      <DependentUpon>TrafficInterceptor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traffic\V3Panel.resx">
+      <DependentUpon>V3Panel.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -301,7 +352,8 @@
     <Folder Include="Controls\ObjectModel\" />
     <Folder Include="Data\MimeTypes\" />
     <Folder Include="generic\" />
-    <Folder Include="TrafficInterceptor\" />
+    <Folder Include="Traffic\IO\TCP\" />
+    <Folder Include="Traffic\Receiver\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\all_OSSLGrids.xml">
@@ -343,6 +395,8 @@
     <None Include="Resources\ToggleButton_opened2113.png" />
     <None Include="Resources\PNG_16x16\treenodebutton_opened212.png" />
     <None Include="Resources\ToggleButton_opened21112.png" />
+    <Content Include="Resources\Firestorm_64x64_.png" />
+    <None Include="Resources\Kitely_128x64.png" />
     <Content Include="XML\runtime_tree.xml" />
     <Content Include="_ViewModel.xml" />
     <Content Include="__.xml" />
