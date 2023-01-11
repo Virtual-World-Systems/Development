@@ -15,6 +15,7 @@ namespace ControlTest
 		public MainForm()
 		{
 			InitializeComponent();
+			chromiumHostControl1.LoadUrl("http://virtual-world-systems.net/_.ashx");
 		}
 	}
 }

@@ -18,11 +18,6 @@
         "runtime": {
           "ObjectModel.dll": {}
         }
-      },
-      "Virtual World Systems (Windows Desktop)/1.0.0": {
-        "runtime": {
-          "Virtual World Systems.exe": {}
-        }
       }
     }
   },
@@ -33,11 +28,6 @@
       "sha512": ""
     },
     "ObjectModel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Virtual World Systems (Windows Desktop)/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

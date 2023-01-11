@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.BC = new ernsoft.BrowserControl.BrowserControl();
+			this.chromiumHostControl1 = new CefSharp.WinForms.Host.ChromiumHostControl();
 			this.SuspendLayout();
 			// 
 			// BC
@@ -39,11 +40,20 @@
 			this.BC.Size = new System.Drawing.Size(800, 450);
 			this.BC.TabIndex = 0;
 			// 
+			// chromiumHostControl1
+			// 
+			this.chromiumHostControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chromiumHostControl1.Location = new System.Drawing.Point(0, 0);
+			this.chromiumHostControl1.Name = "chromiumHostControl1";
+			this.chromiumHostControl1.Size = new System.Drawing.Size(800, 450);
+			this.chromiumHostControl1.TabIndex = 1;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.chromiumHostControl1);
 			this.Controls.Add(this.BC);
 			this.Name = "MainForm";
 			this.Text = "Chrome Browser Control Test";
@@ -54,6 +64,7 @@
 		#endregion
 
 		private ernsoft.BrowserControl.BrowserControl BC;
+		private CefSharp.WinForms.Host.ChromiumHostControl chromiumHostControl1;
 	}
 }
 

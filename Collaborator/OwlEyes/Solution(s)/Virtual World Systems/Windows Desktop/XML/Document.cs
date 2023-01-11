@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using VWS.WindowsDesktop;
+using VWS.ObjectModel;
 
 namespace XML
 {
@@ -33,15 +34,8 @@ namespace XML
 			try
 			{
 				VWSNS = "https://Virtual-World-Systems.net";
-				NamespaceManager = new _NamespaceManager(this);
-				NamespaceManager.AddNamespace("_", VWSNS);
-				//NamespaceManager.AddNamespace("orphans", "orphans");
-				//NamespaceManager.AddNamespace("runtime", "runtime");
-				//NamespaceManager.AddNamespace("mime", "mime");
-				//NamespaceManager.AddNamespace("user", "user");
-				//NamespaceManager.AddNamespace("ui", "UI");
-				//NamespaceManager.AddNamespace("ns", "Namespace");
-//				NamespaceManager.AddNamespace("firestorm", "firestorm");
+				NSM = new _NamespaceManager(this);
+				NSM.AddNamespace("_", VWSNS);
 				AppendChild(new Element(null, "_", null, this));
 				orphans = Orphans; orphaning.Push(true);
 
@@ -65,7 +59,7 @@ namespace XML
 		bool isOrphaning { get { return (orphaning.Count > 0) ? orphaning.Peek() : false; } }
 
 		internal string VWSNS { get; }
-		internal _NamespaceManager NamespaceManager { get; set; }
+		internal _NamespaceManager NSM { get; set; }
 
 		public Element Root { get { return (Element)base.DocumentElement; } }
 		public new Element DocumentElement { get { return (Element)base.DocumentElement; } }
@@ -78,10 +72,13 @@ namespace XML
 		//}
 		public override XmlElement CreateElement(string prefix, string localName, string namespaceURI)
 		{
-			if ((prefix != null) && (prefix != "") && !NamespaceManager.HasNamespace(prefix))
-				NamespaceManager.AddNamespace(prefix, namespaceURI);
+			return CreateElement(isOrphaning, prefix, localName, namespaceURI);
+		}
+		public Element CreateElement(bool orphaning, string prefix, string localName, string namespaceURI)
+		{
+			if ((prefix != null) && (prefix != "") && !NSM.HasNamespace(prefix)) NSM.AddNamespace(prefix, namespaceURI);
 			Element e = new Element(prefix, localName, namespaceURI, this);
-			if (isOrphaning && (DocumentElement != null) && (Orphans != null)) Orphans.AppendChild(e);
+			if (orphaning && (DocumentElement != null) && (Orphans != null)) Orphans.AppendChild(e);
 			return e;
 		}
 
@@ -113,10 +110,11 @@ namespace XML
 			return (Attribute)CreateAttribute(null, name, null);
 		}
 
-
 		public Element ReadFile(string path)
 		{
 			orphaning.Push(false);
+
+			Debug.WriteLine("**** reading XML from " + path);
 
 			XmlReaderSettings s = new XmlReaderSettings()
 			{
@@ -140,6 +138,7 @@ namespace XML
 					}
 				}
 				if (e == null) { orphaning.Pop(); return null; }
+				e.SetAttribute("runtime:Path", path);
 			}
 			orphaning.Pop();
 			//Debug.WriteLine("orphaning : " + e.ElementXML);

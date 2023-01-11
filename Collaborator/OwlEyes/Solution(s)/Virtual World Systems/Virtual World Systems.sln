@@ -34,7 +34,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C101ED19-002E-49F4-8135-C13DCDAFCF18}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		Class1.cs = Class1.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M33", "M33\M33.csproj", "{15B6FAD8-B271-42FD-9037-E82665AB4A41}"
@@ -43,9 +42,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLTCP", "SSLTCP\SSLTCP.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPInterceptor", "TCPInterceptor\TCPInterceptor.csproj", "{CB1D620F-E727-4175-877A-4C4587D0A4D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectModel", "ObjectModel\ObjectModel.csproj", "{70A9E19F-3537-491D-98DC-4E4C91A87D63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectModel", "ObjectModel\ObjectModel.csproj", "{70A9E19F-3537-491D-98DC-4E4C91A87D63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossPlatformConsoleApplication", "CrossPlatformConsoleApplication\CrossPlatformConsoleApplication.csproj", "{312BB14B-2F6D-492C-B7FA-880AC87A9FE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossPlatformConsoleApplication", "CrossPlatformConsoleApplication\CrossPlatformConsoleApplication.csproj", "{312BB14B-2F6D-492C-B7FA-880AC87A9FE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +93,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2666048F-F3FF-466C-ACA6-F103CCF46CB5} = {7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}
+		{C0FE2515-B503-4D2F-9071-D2419917E020} = {7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}
+		{15B6FAD8-B271-42FD-9037-E82665AB4A41} = {7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}
+		{88E38294-EE4D-4C46-8585-AA9C29057AAE} = {7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}
+		{CB1D620F-E727-4175-877A-4C4587D0A4D5} = {7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}
+		{70A9E19F-3537-491D-98DC-4E4C91A87D63} = {7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F}
+		{7DD22DBE-FA9A-4E8F-AA98-1B1E86198D7F} = {C101ED19-002E-49F4-8135-C13DCDAFCF18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6F447D7-F11B-4982-8D52-9D458E3100AE}

@@ -1,6 +1,0 @@
-﻿<all_OSSLGrids default.System="OSSL_OS">
-	<OSSLGrid Name="Second Life" System="OSSL_SL" login-URI="https://login.agni.lindenlab.com/cgi-bin/login.cgi"/>
-	<OSSLGrid Name="rOwlGrid Sasquatch" login-URI="http://ernsoft.selfhost.eu:8002"/>
-	<OSSLGrid Name="Kitely" login-URI="http://grid.kitely.com:8002/"/>
-	<OSSLGrid Name="OSGrid" login-URI="http://login.osgrid.org/"/>
-</all_OSSLGrids>

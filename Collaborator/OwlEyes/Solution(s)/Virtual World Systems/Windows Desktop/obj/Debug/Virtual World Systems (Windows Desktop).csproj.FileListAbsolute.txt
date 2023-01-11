@@ -1,46 +1,25 @@
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.AssemblyReference.cache
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.SuggestedBindingRedirects.cache
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Properties.Resources.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.GenerateResource.cache
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.CoreCompileInputs.cache
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.TestForm.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\_.xml
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Virtual World Systems.exe.config
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Virtual World Systems.exe
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Virtual World Systems.pdb
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems.exe
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems.pdb
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.PanelWithHeader.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.TitleBar.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.ScrollableContentsPanel.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.HeaderBar.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Nodes.TreeNodeButton.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Container.TreeList.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Container.TreeListHeader.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Container.TreeListItem.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Resources\PNG_16x16\TreeNodeButton_closed.png
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Resources\PNG_16x16\TreeNodeButton_opened.png
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Container.TreeListBox.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.ElementControl.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\_.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\all_OSSLGrids.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\all_RealPersons.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\the_Multiverse.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\the_RealLife.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\the_Metaverse.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\all_VirtualUniverseSystems.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Data\all_OSSLViewers.xml
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\bin\Debug\Resources\PNG_32x32\Tree_32x32.png
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.DataViews.Filetypes.Collada.dae.DataView_Collada.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.SuggestedBindingRedirects.cache
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListHeader.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListPanel.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.Splitter.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeListPanel.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Converter.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.FormatSettings.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Output.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Converter.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Converter.Stream.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.TrafficInterceptor.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Properties.Resources.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.TestForm.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.CrossBar.resources
-C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.V3Panel.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.P_LC.resources
 C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.P_RC.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.TrafficInterceptor.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\VWS.WindowsDesktop.Traffic.V3Panel.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.GenerateResource.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems (Windows Desktop).csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Windows Desktop\obj\Debug\Virtual World Systems.pdb

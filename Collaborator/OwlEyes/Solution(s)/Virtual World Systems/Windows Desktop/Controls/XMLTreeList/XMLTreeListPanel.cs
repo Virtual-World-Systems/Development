@@ -74,6 +74,8 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		{
 			Rectangle r = Target.rect;
 			r.Offset(Point.Empty + new Size(PaddedOffset));
+			if (r.X < 0) { r.Width += r.X; r.X = 0; }
+			if ((r.X + r.Width) > ClientRectangle.Width) r.Width = ClientRectangle.Width - r.X;
 			r = RectangleToScreen(r);
 
 			ControlPaint.DrawReversibleFrame(

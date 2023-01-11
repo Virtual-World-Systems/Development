@@ -11,15 +11,6 @@
         "runtime": {
           "bin/placeholder/ObjectModel.dll": {}
         }
-      },
-      "Virtual World Systems (Windows Desktop)/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Virtual World Systems (Windows Desktop).dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Virtual World Systems (Windows Desktop).dll": {}
-        }
       }
     }
   },
@@ -28,17 +19,11 @@
       "type": "project",
       "path": "../ObjectModel/ObjectModel.csproj",
       "msbuildProject": "../ObjectModel/ObjectModel.csproj"
-    },
-    "Virtual World Systems (Windows Desktop)/1.0.0": {
-      "type": "project",
-      "path": "../Windows Desktop/Virtual World Systems (Windows Desktop).csproj",
-      "msbuildProject": "../Windows Desktop/Virtual World Systems (Windows Desktop).csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ObjectModel >= 1.0.0",
-      "Virtual World Systems (Windows Desktop) >= 1.0.0"
+      "ObjectModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -76,9 +61,6 @@
           "projectReferences": {
             "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\ObjectModel\\ObjectModel.csproj": {
               "projectPath": "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\ObjectModel\\ObjectModel.csproj"
-            },
-            "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj": {
-              "projectPath": "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj"
             }
           }
         }
@@ -108,7 +90,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

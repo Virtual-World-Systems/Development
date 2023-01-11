@@ -61,6 +61,7 @@ namespace XML
 				if (HasAttribute("Name")) return GetAttribute("Name");
 				if (HasAttribute("name")) return GetAttribute("name");
 				if (HasAttribute("Key")) return GetAttribute("Key");
+				if (HasAttribute("_")) return GetAttribute("_");
 				if (this == Root) return "Object Tree"; // •
 				if (Name == "orphans:_") return "Orphans";
 				if (Name == "user:Data") return "User Data";
@@ -72,19 +73,19 @@ namespace XML
 
 		public XmlNodeList SelectElements(string selector)
 		{
-			return SelectNodes(selector, Document.NamespaceManager);
+			return SelectNodes(selector, Document.NSM);
 		}
 		public Element SelectElement(string selector)
 		{
-			return (Element)SelectSingleNode(selector, Document.NamespaceManager);
+			return (Element)SelectSingleNode(selector, Document.NSM);
 		}
 		public XmlNodeList SelectAttributes(string selector)
 		{
-			return SelectNodes(selector, Document.NamespaceManager);
+			return SelectNodes(selector, Document.NSM);
 		}
 		public Attribute SelectAttribute(string selector)
 		{
-			return (Attribute)SelectSingleNode(selector, Document.NamespaceManager);
+			return (Attribute)SelectSingleNode(selector, Document.NSM);
 		}
 
 		public bool HasChildElements
@@ -97,6 +98,15 @@ namespace XML
 			}
 		}
 
+		public void WriteFile()
+		{
+			if (!HasAttribute("runtime:Path")) throw new ArgumentNullException();
+			Attribute a = (Attribute)GetAttributeNode("runtime:Path");
+			Debug.WriteLine("**** saving XML to " + a.Value);
+			Attributes.Remove(a);
+			WriteFile(a.Value);
+			Attributes.Append(a);
+		}
 		public void WriteFile(string path)
 		{
 			Debug.WriteLine("**** writing XML to " + path);

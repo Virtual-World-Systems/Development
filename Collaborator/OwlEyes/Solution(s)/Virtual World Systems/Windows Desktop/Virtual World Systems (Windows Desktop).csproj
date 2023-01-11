@@ -60,6 +60,27 @@
     <Compile Include="Controls\XMLTreeList\XMLTreeListHeader.Designer.cs">
       <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Helper.cs" />
+    <Compile Include="Controls\Splitter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Splitter.Designer.cs">
+      <DependentUpon>Splitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLElementPainter.cs" />
+    <Compile Include="Controls\XMLTreeList\XMLTreeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeList.Designer.cs">
+      <DependentUpon>XMLTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\ItemView.cs" />
+    <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.Designer.cs">
+      <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Converter\Conversion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,129 +105,36 @@
     <Compile Include="Converter\Input.Designer.cs">
       <DependentUpon>Input.cs</DependentUpon>
     </Compile>
-    <Compile Include="Converter\Stream.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Converter\Stream.Designer.cs">
-      <DependentUpon>Stream.cs</DependentUpon>
-    </Compile>
     <Compile Include="Converter\Output.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Converter\Output.Designer.cs">
       <DependentUpon>Output.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\ElementComponent.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Components\ElementComponent.Designer.cs">
-      <DependentUpon>ElementComponent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Container\TreeList.cs">
+    <Compile Include="Converter\Stream.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Container\TreeList.Designer.cs">
-      <DependentUpon>TreeList.cs</DependentUpon>
+    <Compile Include="Converter\Stream.Designer.cs">
+      <DependentUpon>Stream.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Container\TreeListBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Container\TreeListBox.Designer.cs">
-      <DependentUpon>TreeListBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Container\TreeListHeader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Container\TreeListHeader.Designer.cs">
-      <DependentUpon>TreeListHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Container\TreeListItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Container\TreeListItem.Designer.cs">
-      <DependentUpon>TreeListItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DataViews\Filetypes\Collada.dae\DataView_Collada.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\DataViews\Filetypes\Collada.dae\DataView_Collada.Designer.cs">
-      <DependentUpon>DataView_Collada.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ElementControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\ElementControl.Designer.cs">
-      <DependentUpon>ElementControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HeaderBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\HeaderBar.Designer.cs">
-      <DependentUpon>HeaderBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Helper.cs" />
-    <Compile Include="Controls\Nodes\TreeNodeButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Nodes\TreeNodeButton.Designer.cs">
-      <DependentUpon>TreeNodeButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\old\PanelWithHeader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\old\PanelWithHeader.Designer.cs">
-      <DependentUpon>PanelWithHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\old\ScrollableContentsPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\old\TitleBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\old\TitleBar.Designer.cs">
-      <DependentUpon>TitleBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Splitter.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Splitter.Designer.cs">
-      <DependentUpon>Splitter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\XMLTreeList\XMLElementPainter.cs" />
-    <Compile Include="Controls\XMLTreeList\XMLTreeList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\XMLTreeList\XMLTreeList.Designer.cs">
-      <DependentUpon>XMLTreeList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\XMLTreeList\ItemView.cs" />
-    <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\XMLTreeList\XMLTreeListPanel.Designer.cs">
-      <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="G.cs" />
-    <Compile Include="Layouts\HorizontalLayout.cs" />
-    <Compile Include="Layouts\_Layout.cs" />
-    <Compile Include="ObjectModel\A.cs" />
-    <Compile Include="ObjectModel\O.cs" />
-    <Compile Include="ObjectModel\P.cs" />
-    <Compile Include="ObjectModel\R.cs" />
-    <Compile Include="ObjectModel\T.cs" />
-    <Compile Include="RT.cs" />
-    <Compile Include="TestForm.cs">
+    <Compile Include="ObjectModel\Base\A.cs" />
+    <Compile Include="ObjectModel\Base\O.cs" />
+    <Compile Include="ObjectModel\Base\P.cs" />
+    <Compile Include="ObjectModel\Base\R.cs" />
+    <Compile Include="ObjectModel\Base\T.cs" />
+    <Compile Include="Logging\RT.cs" />
+    <Compile Include="UI\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm.Designer.cs">
+    <Compile Include="UI\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestForm.InitializeRuntime.cs">
+    <Compile Include="UI\TestForm.InitializeRuntime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test\Generator.cs" />
+    <Compile Include="_Test\Generator.cs" />
     <Compile Include="Traffic\CrossBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,51 +177,6 @@
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListHeader.resx">
       <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Converter\Converter.resx">
-      <DependentUpon>Converter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Converter\FormatSettings.resx">
-      <DependentUpon>FormatSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Converter\Stream.resx">
-      <DependentUpon>Stream.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Converter\Output.resx">
-      <DependentUpon>Output.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Container\TreeList.resx">
-      <DependentUpon>TreeList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Container\TreeListBox.resx">
-      <DependentUpon>TreeListBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Container\TreeListHeader.resx">
-      <DependentUpon>TreeListHeader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Container\TreeListItem.resx">
-      <DependentUpon>TreeListItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DataViews\Filetypes\Collada.dae\DataView_Collada.resx">
-      <DependentUpon>DataView_Collada.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ElementControl.resx">
-      <DependentUpon>ElementControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HeaderBar.resx">
-      <DependentUpon>HeaderBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Nodes\TreeNodeButton.resx">
-      <DependentUpon>TreeNodeButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\old\PanelWithHeader.resx">
-      <DependentUpon>PanelWithHeader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\old\ScrollableContentsPanel.resx">
-      <DependentUpon>ScrollableContentsPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\old\TitleBar.resx">
-      <DependentUpon>TitleBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Splitter.resx">
       <DependentUpon>Splitter.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +185,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListPanel.resx">
       <DependentUpon>XMLTreeListPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\Converter.resx">
+      <DependentUpon>Converter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\FormatSettings.resx">
+      <DependentUpon>FormatSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\Output.resx">
+      <DependentUpon>Output.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Converter\Stream.resx">
+      <DependentUpon>Stream.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -313,7 +208,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TestForm.resx">
+    <EmbeddedResource Include="UI\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Traffic\CrossBar.resx">
@@ -343,82 +238,56 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Earth.ico" />
+    <None Include="Resources\Firestorm_64x64_.png" />
+    <None Include="Resources\Kitely_128x64.png" />
+    <None Include="Resources\Multiverse.ico" />
+    <None Include="Resources\PNG_16x16\treenodebutton_disabled.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened2.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened21.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened211.png" />
+    <None Include="Resources\PNG_16x16\treenodebutton_opened212.png" />
+    <None Include="Resources\ToggleButton_closed.png" />
+    <None Include="Resources\ToggleButton_opened.png" />
+    <None Include="Resources\ToggleButton_opened1.png" />
+    <None Include="Resources\ToggleButton_opened2.png" />
+    <None Include="Resources\ToggleButton_opened21.png" />
+    <None Include="Resources\ToggleButton_opened211.png" />
+    <None Include="Resources\ToggleButton_opened2111.png" />
+    <None Include="Resources\ToggleButton_opened21111.png" />
+    <None Include="Resources\ToggleButton_opened21112.png" />
+    <None Include="Resources\ToggleButton_opened2112.png" />
+    <None Include="Resources\ToggleButton_opened2113.png" />
+    <None Include="Resources\ToggleButton_opened212.png" />
+    <None Include="Resources\ToggleButton_opened22.png" />
+    <None Include="Resources\ToggleButton_opened221.png" />
+    <None Include="Resources\ToggleButton_opened23.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Layouts\Types\" />
-    <Folder Include="Controls\ObjectModel\" />
-    <Folder Include="Data\MimeTypes\" />
-    <Folder Include="generic\" />
+    <Folder Include="Controls\_old\" />
     <Folder Include="Traffic\IO\TCP\" />
     <Folder Include="Traffic\Receiver\" />
+    <Folder Include="_old\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\all_OSSLGrids.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\all_RealPersons.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\the_Multiverse.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\the_RealLife.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\the_Metaverse.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\all_VirtualUniverseSystems.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\all_OSSLViewers.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Resources\PNG_16x16\treenodebutton_disabled.png" />
-    <None Include="Resources\PNG_16x16\treenodebutton_opened2.png" />
-    <None Include="Resources\ToggleButton_opened1.png" />
-    <None Include="Resources\ToggleButton_opened2.png" />
-    <None Include="Resources\ToggleButton_opened21.png" />
-    <None Include="Resources\ToggleButton_opened22.png" />
-    <None Include="Resources\ToggleButton_opened211.png" />
-    <None Include="Resources\ToggleButton_opened2111.png" />
-    <None Include="Resources\PNG_16x16\treenodebutton_opened21.png" />
-    <None Include="Resources\ToggleButton_opened212.png" />
-    <None Include="Resources\ToggleButton_opened221.png" />
-    <None Include="Resources\ToggleButton_opened23.png" />
-    <None Include="Resources\ToggleButton_opened2112.png" />
-    <None Include="Resources\PNG_16x16\treenodebutton_opened211.png" />
-    <None Include="Resources\ToggleButton_opened21111.png" />
-    <None Include="Resources\ToggleButton_opened2113.png" />
-    <None Include="Resources\PNG_16x16\treenodebutton_opened212.png" />
-    <None Include="Resources\ToggleButton_opened21112.png" />
-    <Content Include="Resources\Firestorm_64x64_.png" />
-    <None Include="Resources\Kitely_128x64.png" />
-    <Content Include="XML\runtime_tree.xml" />
-    <Content Include="_ViewModel.xml" />
-    <Content Include="__.xml" />
-    <None Include="Resources\Earth.ico" />
-    <Content Include="Resources\Multiverse.ico" />
-    <Content Include="Resources\PNG_32x32\Tree_32x32.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Resources\ToggleButton_closed.png" />
-    <None Include="Resources\ToggleButton_opened.png" />
+    <Content Include="ObjectModel\_old\_.xml" />
+    <Content Include="ObjectModel\_old\runtime_tree.xml" />
+    <Content Include="Resources\PNG_16x16\edit.png" />
+    <Content Include="Resources\PNG_16x16\ObjectTree.png" />
+    <Content Include="Resources\PNG_16x16\TreeNodeButton_closed.png" />
+    <Content Include="Resources\PNG_16x16\TreeNodeButton_opened.png" />
+    <Content Include="Resources\PNG_32x32\Tree_32x32.png" />
+    <Content Include="Resources\xxx\TreeNodeButton.png" />
     <Content Include="_.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\PNG_16x16\edit.png" />
-    <Content Include="Resources\PNG_16x16\ObjectTree.png" />
-    <Content Include="Resources\PNG_16x16\TreeNodeButton_closed.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\PNG_16x16\TreeNodeButton_opened.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="zz_Snippets.txt" />
+    <Content Include="ObjectModel\_old\_ViewModel.xml" />
+    <Content Include="ObjectModel\_old\the_oldObjectModel.xml" />
+    <Content Include="ObjectModel\_old\the_oldMultiverse.xml" />
+    <Content Include="generic\zz_Snippets.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

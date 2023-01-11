@@ -35,9 +35,6 @@
             "projectReferences": {
               "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\ObjectModel\\ObjectModel.csproj": {
                 "projectPath": "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\ObjectModel\\ObjectModel.csproj"
-              },
-              "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj": {
-                "projectPath": "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj"
               }
             }
           }
@@ -67,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -127,23 +124,8 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
-      }
-    },
-    "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj",
-        "projectName": "Virtual World Systems (Windows Desktop)",
-        "projectPath": "C:\\github\\Virtual-World-Systems\\Development\\Collaborator\\OwlEyes\\Solution(s)\\Virtual World Systems\\Windows Desktop\\Virtual World Systems (Windows Desktop).csproj",
-        "frameworks": {
-          "net48": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net48": {}
       }
     }
   }

@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ObjectModel\ObjectModel.csproj" />
-    <ProjectReference Include="..\Windows Desktop\Virtual World Systems (Windows Desktop).csproj" />
   </ItemGroup>
 
 </Project>
