@@ -87,6 +87,16 @@ namespace VWS.WindowsDesktop
 				Debug.WriteLine($"**** ProgramPath: {ProgramPath}");
 
 				#endregion
+				#region load ObjectModel
+
+				void LoadObjectModel()
+				{
+					Element elem = XML.ReadFile(Path + "_.xml");
+					XML.DocumentElement.AppendChild(elem);
+				}
+				LoadObjectModel();
+
+				#endregion
 				#region load MimeTypes
 
 				XMLPath = CommonApplicationData + "MimeTypes.xml";
@@ -131,16 +141,6 @@ namespace VWS.WindowsDesktop
 				XML.DocumentElement.AppendChild(e);
 
 				#endregion
-				#region load ObjectModel
-
-				void LoadObjectModel()
-				{
-					Element elem = XML.ReadFile(Path + "_.xml");
-					XML.DocumentElement.AppendChild(elem);
-				}
-				LoadObjectModel();
-
-				#endregion
 				#region load Grids
 				XMLPath = UserLocalApplicationData + "OSSL_Grids.xml";
 
@@ -173,7 +173,7 @@ namespace VWS.WindowsDesktop
 				}
 				LoadUserData();
 				#endregion
-				#region load AvatarSkeleton (disbled)
+				#region load AvatarSkeleton (disabled)
 #if LOAD_AVATAR_SKELETON
 				void LoadAvatarSkeleton()
 				{
@@ -212,7 +212,7 @@ namespace VWS.WindowsDesktop
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Form = new TestForm();
+			Form = new MainForm();
 			Application.Run(Form);
 		}
 		public static XML.Document XML;

@@ -49,8 +49,8 @@ namespace VWS.WindowsDesktop.Traffic
 				if (Parent is CrossBar) SetMinWidth(((CrossBar)Parent).LP, cx);
 			}
 		}
-		void SetMinWidth(Control control, int cx) { Size sz = control.MinimumSize; sz.Width = cx; control.MinimumSize = sz; }
-
+		void SetMinWidth(Control control, int cx) { if (control != null) { Size sz = control.MinimumSize; sz.Width = cx; control.MinimumSize = sz; } }
+	
 		private void P_LC_SizeChanged(object sender, EventArgs e)
 		{
 			Invalidate();

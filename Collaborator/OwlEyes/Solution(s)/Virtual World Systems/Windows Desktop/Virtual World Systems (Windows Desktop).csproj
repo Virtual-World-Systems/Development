@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ScrollRect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScrollRect.Designer.cs">
+      <DependentUpon>ScrollRect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\V11.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\V11.Designer.cs">
+      <DependentUpon>V11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\V33.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\V33.Designer.cs">
+      <DependentUpon>V33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\XMLTreeList\ContentView.cs" />
     <Compile Include="Controls\XMLTreeList\MiniButton.cs" />
     <Compile Include="Controls\XMLTreeList\Target.cs" />
@@ -117,12 +135,23 @@
     <Compile Include="Converter\Stream.Designer.cs">
       <DependentUpon>Stream.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="misc\M55.cs" />
+    <Compile Include="misc\M33.cs" />
+    <Compile Include="misc\Rect.cs" />
+    <Compile Include="System\Log.cs" />
     <Compile Include="ObjectModel\Base\A.cs" />
     <Compile Include="ObjectModel\Base\O.cs" />
     <Compile Include="ObjectModel\Base\P.cs" />
     <Compile Include="ObjectModel\Base\R.cs" />
     <Compile Include="ObjectModel\Base\T.cs" />
-    <Compile Include="Logging\RT.cs" />
+    <Compile Include="System\RT.cs" />
+    <Compile Include="System\IOMessenger.cs" />
     <Compile Include="UI\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +203,15 @@
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
+    <EmbeddedResource Include="Controls\ScrollRect.resx">
+      <DependentUpon>ScrollRect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\V11.resx">
+      <DependentUpon>V11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\V33.resx">
+      <DependentUpon>V33.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListHeader.resx">
       <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Converter\Stream.resx">
       <DependentUpon>Stream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
