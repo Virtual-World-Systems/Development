@@ -1,6 +1,6 @@
 ﻿namespace VWS.WindowsDesktop.Controls
 {
-	partial class ScrollRect
+	partial class ScrollableInterceptor
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,24 +28,22 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.v331 = new VWS.WindowsDesktop.Controls.V33();
+			this.Interceptor = new VWS.WindowsDesktop.Controls.InterceptorContent();
 			this.SuspendLayout();
 			// 
-			// v331
+			// Interceptor
 			// 
-			this.v331.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.v331.Location = new System.Drawing.Point(0, 0);
-			this.v331.Name = "v331";
-			this.v331.Size = new System.Drawing.Size(780, 569);
-			this.v331.TabIndex = 0;
+			this.Interceptor.CellCount = new System.Drawing.Size(0, 0);
+			this.Interceptor.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Interceptor.Location = new System.Drawing.Point(0, 0);
+			this.Interceptor.Name = "Interceptor";
+			this.Interceptor.Size = new System.Drawing.Size(780, 569);
+			this.Interceptor.TabIndex = 0;
 			// 
-			// ScrollRect
+			// ScrollableInterceptor
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.Controls.Add(this.v331);
+			this.Controls.Add(this.Interceptor);
 			this.Name = "ScrollRect";
 			this.Size = new System.Drawing.Size(780, 569);
 			this.ResumeLayout(false);
@@ -54,6 +52,6 @@
 
 		#endregion
 
-		private V33 v331;
+		internal InterceptorContent Interceptor;
 	}
 }

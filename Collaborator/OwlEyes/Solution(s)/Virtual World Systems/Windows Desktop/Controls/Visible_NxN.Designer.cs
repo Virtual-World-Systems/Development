@@ -1,6 +1,6 @@
 ﻿namespace VWS.WindowsDesktop.Controls
 {
-	partial class V33
+	partial class Visible_NxN
 	{
 		/// <summary> 
 		/// Required designer variable.

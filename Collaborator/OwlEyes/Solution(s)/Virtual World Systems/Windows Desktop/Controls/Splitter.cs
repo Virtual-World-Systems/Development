@@ -50,7 +50,7 @@ namespace VWS.WindowsDesktop.Controls
 				if (c.Dock != Dock) continue;
 				if (c == this) continue;
 				target = c;
-				Debug.WriteLine($"target={target} name={target.Name}");
+				//Debug.WriteLine($"target={target} name={target.Name}");
 			}
 		}
 		Point ptStart;

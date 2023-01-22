@@ -1,0 +1,11 @@
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\bin\Debug\Tester.exe.config
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\bin\Debug\Tester.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\bin\Debug\Tester.pdb
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.csproj.AssemblyReference.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.csproj.SuggestedBindingRedirects.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.MainForm.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.Properties.Resources.resources
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.csproj.GenerateResource.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.csproj.CoreCompileInputs.cache
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.exe
+C:\github\Virtual-World-Systems\Development\Collaborator\OwlEyes\Solution(s)\Virtual World Systems\Tester\obj\Debug\Tester.pdb

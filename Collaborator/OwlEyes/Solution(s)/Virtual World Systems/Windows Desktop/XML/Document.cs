@@ -112,20 +112,32 @@ namespace XML
 
 		public Element ReadFile(string path)
 		{
-			orphaning.Push(false);
-
 			Debug.WriteLine("**** reading XML from " + path);
-
-			XmlReaderSettings s = new XmlReaderSettings()
+			Element ee = null;
+			using (FileStream sr = new FileStream(path, FileMode.OpenOrCreate)) ee = ReadStream(new StreamReader(sr));
+			if (ee != null) ee.SetAttribute("runtime:Path", path);
+			return ee;
+		}
+		public Element ReadString(string xml)
+		{
+			Debug.WriteLine("**** reading XML from String");
+			Element ee = null;
+			using (StringReader sr = new StringReader(xml)) ee = ReadStream(sr);
+			return ee;
+		}
+		public Element ReadStream(TextReader str)
+		{
 			{
-				IgnoreWhitespace = true,
-				NameTable = NameTable
-			};
-			Element e = null;
+				XmlReaderSettings s = new XmlReaderSettings()
+				{
+					IgnoreWhitespace = true,
+					NameTable = NameTable
+				};
+				Element e = null;
 
-			using (FileStream sr = new FileStream(path, FileMode.OpenOrCreate))
-			{
-				using (XmlReader rdr = XmlReader.Create(sr, s))
+				orphaning.Push(false);
+
+				using (XmlReader rdr = XmlReader.Create(str, s))
 				{
 					try
 					{
@@ -138,12 +150,13 @@ namespace XML
 					}
 				}
 				if (e == null) { orphaning.Pop(); return null; }
-				e.SetAttribute("runtime:Path", path);
+
+				orphaning.Pop();
+				//Debug.WriteLine("orphaning : " + e.ElementXML);
+				Orphans.AppendChild(e);
+
+				return e;
 			}
-			orphaning.Pop();
-			//Debug.WriteLine("orphaning : " + e.ElementXML);
-			Orphans.AppendChild(e);
-			return e;
 		}
 	}
 }

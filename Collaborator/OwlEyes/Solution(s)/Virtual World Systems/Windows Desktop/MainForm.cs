@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using VWS.IO;
+
 namespace VWS.WindowsDesktop
 {
 	public partial class MainForm : Form
@@ -17,7 +19,7 @@ namespace VWS.WindowsDesktop
 			InitializeComponent();
 		}
 
-		private void MM_Exit_Click(object sender, EventArgs e)
+		private void MMF_Exit_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
@@ -28,6 +30,17 @@ namespace VWS.WindowsDesktop
 			{
 				e.Graphics.DrawLine(p, Point.Empty, Point.Empty + ClientRectangle.Size);
 			}
+		}
+
+		private void Listener_ItemChecked(object sender, ItemCheckedEventArgs e)
+		{
+			if (e.Item.Tag == null) e.Item.Tag = new TCPListener(5404);
+			TCPListener listener = (TCPListener) e.Item.Tag;
+			if (e.Item.Checked) listener.Start(); else listener.Stop();
+		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
 		}
 	}
 }

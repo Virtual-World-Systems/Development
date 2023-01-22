@@ -49,11 +49,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ScrollRect.cs">
+    <Compile Include="Controls\Interceptor\BorderedInterceptorServer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ScrollRect.Designer.cs">
-      <DependentUpon>ScrollRect.cs</DependentUpon>
+    <Compile Include="Controls\Interceptor\BorderedInterceptorServer.Designer.cs">
+      <DependentUpon>BorderedInterceptorServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interceptor\InterceptorServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Interceptor\InterceptorServer.Designer.cs">
+      <DependentUpon>InterceptorServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interceptor\BorderedScrollableInterceptor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Interceptor\BorderedScrollableInterceptor.Designer.cs">
+      <DependentUpon>BorderedScrollableInterceptor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interceptor\InterceptorContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Interceptor\InterceptorContent.Designer.cs">
+      <DependentUpon>InterceptorContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interceptor\InterceptorPipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Interceptor\InterceptorPipe.Designer.cs">
+      <DependentUpon>InterceptorPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interceptor\_InterceptorTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Interceptor\_InterceptorTabPage.Designer.cs">
+      <DependentUpon>_InterceptorTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interceptor\ScrollableInterceptor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Interceptor\ScrollableInterceptor.Designer.cs">
+      <DependentUpon>ScrollableInterceptor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Listener\Listener.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Listener\Listener.Designer.cs">
+      <DependentUpon>Listener.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RaisedRectangle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RaisedRectangle.Designer.cs">
+      <DependentUpon>RaisedRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolStrip\CheckButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\V11.cs">
       <SubType>UserControl</SubType>
@@ -61,11 +112,17 @@
     <Compile Include="Controls\V11.Designer.cs">
       <DependentUpon>V11.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\V33.cs">
+    <Compile Include="Controls\Visible_NxN.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\V33.Designer.cs">
-      <DependentUpon>V33.cs</DependentUpon>
+    <Compile Include="Controls\Visible_NxN.Designer.cs">
+      <DependentUpon>Visible_NxN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitleBar.Designer.cs">
+      <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\XMLTreeList\ContentView.cs" />
     <Compile Include="Controls\XMLTreeList\MiniButton.cs" />
@@ -144,6 +201,10 @@
     <Compile Include="misc\M55.cs" />
     <Compile Include="misc\M33.cs" />
     <Compile Include="misc\Rect.cs" />
+    <Compile Include="System\IO\HTTPMessage.cs" />
+    <Compile Include="System\IO\TCPConnection.cs" />
+    <Compile Include="System\IO\TCPListener.cs" />
+    <Compile Include="System\IO\UDPListener.cs" />
     <Compile Include="System\Log.cs" />
     <Compile Include="ObjectModel\Base\A.cs" />
     <Compile Include="ObjectModel\Base\O.cs" />
@@ -151,7 +212,6 @@
     <Compile Include="ObjectModel\Base\R.cs" />
     <Compile Include="ObjectModel\Base\T.cs" />
     <Compile Include="System\RT.cs" />
-    <Compile Include="System\IOMessenger.cs" />
     <Compile Include="UI\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,14 +263,35 @@
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
-    <EmbeddedResource Include="Controls\ScrollRect.resx">
-      <DependentUpon>ScrollRect.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Interceptor\BorderedInterceptorServer.resx">
+      <DependentUpon>BorderedInterceptorServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interceptor\BorderedScrollableInterceptor.resx">
+      <DependentUpon>BorderedScrollableInterceptor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interceptor\InterceptorContent.resx">
+      <DependentUpon>InterceptorContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interceptor\InterceptorPipe.resx">
+      <DependentUpon>InterceptorPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interceptor\InterceptorServer.resx">
+      <DependentUpon>InterceptorServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interceptor\_InterceptorTabPage.resx">
+      <DependentUpon>_InterceptorTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interceptor\ScrollableInterceptor.resx">
+      <DependentUpon>ScrollableInterceptor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\V11.resx">
       <DependentUpon>V11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\V33.resx">
-      <DependentUpon>V33.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Visible_NxN.resx">
+      <DependentUpon>Visible_NxN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitleBar.resx">
+      <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\XMLTreeList\XMLTreeListHeader.resx">
       <DependentUpon>XMLTreeListHeader.cs</DependentUpon>
@@ -316,12 +397,14 @@
   <ItemGroup>
     <Content Include="ObjectModel\_old\_.xml" />
     <Content Include="ObjectModel\_old\runtime_tree.xml" />
+    <Content Include="Resources\ear.png" />
     <Content Include="Resources\PNG_16x16\edit.png" />
     <Content Include="Resources\PNG_16x16\ObjectTree.png" />
     <Content Include="Resources\PNG_16x16\TreeNodeButton_closed.png" />
     <Content Include="Resources\PNG_16x16\TreeNodeButton_opened.png" />
     <Content Include="Resources\PNG_32x32\Tree_32x32.png" />
     <Content Include="Resources\xxx\TreeNodeButton.png" />
+    <Content Include="System\RPC login_to_simulator.xml" />
     <Content Include="_.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

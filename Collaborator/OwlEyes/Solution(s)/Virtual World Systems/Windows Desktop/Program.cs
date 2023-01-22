@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -194,12 +195,26 @@ namespace VWS.WindowsDesktop
 				Debug.WriteLine("\r\n" + sb.ToString() + "\r\n");
 #endif
 				#endregion
+
+				dataSet = new DataSet();
+				dataSet.ReadXml(new StringReader(@"
+<test>
+	<t.1>
+		<t.1.1 a1='c' a2='def'>asdkl</t.1.1>
+		<t.1.2 a1='a' a2='owprwerp'/>
+	</t.1>
+	<t.2 xxx='yyy'>
+		<t.1 ddd='55'/>
+	</t.2>
+</test>
+"));
 			}
 			catch (Exception ex)
 			{
 				Mess(ex.Message + "\r\n" + ex.StackTrace);
 			}
 		}
+		public static DataSet dataSet;
 		#endregion
 		#region Main incl. XML, Form, Mess
 		/// <summary>

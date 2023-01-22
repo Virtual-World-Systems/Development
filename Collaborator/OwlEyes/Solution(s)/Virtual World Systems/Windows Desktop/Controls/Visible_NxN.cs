@@ -4,7 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.IO.MemoryMappedFiles;
+using System.IO.Pipes;
 using System.Linq;
+using System.Net.Security;
+using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
@@ -14,23 +19,18 @@ using static VWS.WindowsDesktop.RT;
 
 namespace VWS.WindowsDesktop.Controls
 {
-	public partial class V33 : UserControl
+	public partial class Visible_NxN : UserControl
 	{
-		public V33()
+		public Visible_NxN()
 		{
 			InitializeComponent();
 		}
 
-		//public class Navigator
-		//{
-		//	internal Navigator(V33 V33)
-		//	{
-		//		this.V33 = V33;
-		//	}
-		//	V33 V33;
-		//}
+		[Browsable(true)]
+		public Size CellCount { get; set; }
 
-		ScrollRect ScrollRect { get { return (Parent == null) ? null : (ScrollRect)Parent; } }
+		ScrollableInterceptor ScrollRect { get { return (Parent == null) ? null :
+					(Parent is ScrollableInterceptor) ? (ScrollableInterceptor)Parent : null; } }
 
 		Rectangle oldBounds = Rectangle.Empty;
 
@@ -197,7 +197,7 @@ namespace VWS.WindowsDesktop.Controls
 			r.Size = szPLT; r = PaintP(e, r, 0); r1 = r; r1.Size = szSLT;
 			r.Size = szSLT; r = PaintS(e, r, 1);
 			r.Size = szPCC; r = PaintP(e, r, 2); r2 = r; r2.Size = szSRB;
-			r.Size = szSRB; r = PaintS(e, r, 3); 
+			r.Size = szSRB; r = PaintS(e, r, 3);
 			r.Size = szPRB; r = PaintP(e, r, 4);
 
 			rects.Clear();
@@ -310,7 +310,7 @@ namespace VWS.WindowsDesktop.Controls
 
 				return;
 			}
-			Debug.WriteLine($"MouseMove {rects[0]} {rects[1]} {rects[2]} {rects[3]}");
+			//Debug.WriteLine($"MouseMove {rects[0]} {rects[1]} {rects[2]} {rects[3]}");
 			Rectangle r; ptTarget = Point.Empty;
 			Point pt = PointToClient(MousePosition);
 

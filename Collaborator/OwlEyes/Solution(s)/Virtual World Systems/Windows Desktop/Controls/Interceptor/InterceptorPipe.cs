@@ -8,14 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VWS.WindowsDesktop.Controls
+namespace VWS.WindowsDesktop.Controls.Interceptor
 {
-	public partial class ScrollRect : UserControl
+	public partial class InterceptorPipe : UserControl
 	{
-		public ScrollRect()
+		public InterceptorPipe()
 		{
-			AutoScroll = true;
-			AutoScrollMinSize = Size.Empty;
 			InitializeComponent();
 		}
 	}

@@ -138,8 +138,11 @@ Content-Length: {?}
 				ms.Write(buffer, 0, len);
 				//sslStream.ReadTimeout = 1;
 				//sslStream.BeginRead(buffer, 0, buffer.Length, OnReceive, sslStream);
-				strm.BeginRead(buffer, 0, buffer.Length, OnReceive, sslStream);
-				return;
+				if (len == buffer.Length)
+				{
+					strm.BeginRead(buffer, 0, buffer.Length, OnReceive, sslStream);
+					return;
+				}
 			}
 			msg = Encoding.UTF8.GetString(ms.GetBuffer());
 			ReceivedEvent.Set();
@@ -148,7 +151,7 @@ Content-Length: {?}
 		static MemoryStream ms;
 		static TcpClient client;
 		static NetworkStream strm;
-		static byte[] buffer = new byte[9];
+		static byte[] buffer = new byte[4097];
 
 		static void DisplaySecurityLevel(SslStream stream)
 		{
