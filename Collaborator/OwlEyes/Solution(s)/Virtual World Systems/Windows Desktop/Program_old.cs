@@ -19,10 +19,10 @@ using XML;
 #endregion
 namespace VWS.WindowsDesktop
 {
-	public static class Program
+	public static class Program_old
 	{
 		#region static Initialization
-		static Program()
+		static Program_old()
 		{
 			try
 			{
@@ -222,7 +222,7 @@ namespace VWS.WindowsDesktop
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		public static void Main()
+		public static void xMain()
 		{
 			//Generator.Run();
 

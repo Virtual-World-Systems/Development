@@ -1,60 +1,62 @@
-﻿<Multiverse>
-	<Universes>
-		<Universe _="RealLife" EntityType="real">
-			<Software>
-				<Software _=".NET">
-					<Assemblies from="GAC"/>
-				</Software>
-				<OperatingSystems>
-					<OperatingSystem _="Windows">
-						<Software>
-							<Software _="Visual Studio"/>
-							<Software _="Virtual World Systems" github="https://github.com/Virtual-World-Systems"/>
-						</Software>
-					</OperatingSystem>
-					<Platform _=".NET">
-					</Platform>
-				</OperatingSystems>
-				<Software _="Metaverse Viewer" by="Owl Eyes">
-					<Form.TabPages>
-						<Test>
+﻿<System _="VWS.Objects">
+	<Multiverse>
+		<Universes>
+			<Universe _="RealLife" EntityType="real">
+				<Software>
+					<Software _=".NET">
+						<Assemblies from="GAC"/>
+					</Software>
+					<OperatingSystems>
+						<OperatingSystem _="Windows">
+							<Software>
+								<Software _="Visual Studio"/>
+								<Software _="Virtual World Systems" github="https://github.com/Virtual-World-Systems"/>
+							</Software>
+						</OperatingSystem>
+						<Platform _=".NET">
+						</Platform>
+					</OperatingSystems>
+					<Software _="Metaverse Viewer" by="Owl Eyes">
+						<Form.TabPages>
+							<Test>
 							
-						</Test>
-					</Form.TabPages>
+							</Test>
+						</Form.TabPages>
+					</Software>
 				</Software>
-			</Software>
-			<Persons>
-				<Person _="Greta Thunberg"/>
-			</Persons>
-		</Universe>
-		<Universe _="Metaverse" EntityType="virtual">
-			<Systems>
-				<System _="SecondLife/OpenSimulator">
-					<Viewers>
-						<Viewer _="Firestorm"/>
-						<Viewer _="Hydrastorm"/>
-						<Viewer _="Scenegate"/>
-						<Viewer _="Radegast"/>
-						<Viewer _="OwlView"/>
-					</Viewers>
-					<Grids Union_of="../SubSystems/*/Grids"/>
-					<SubSystems>
-						<SubSystem _="SecondLife" _.="SL">
-							<Grids>
-								<Grid _="Second Life" login-URI="https://login.agni.lindenlab.com/cgi-bin/login.cgi"/>
-								<Grid _="Aditi"/>
-							</Grids>
-						</SubSystem>
-						<SubSystem _="OpenSimulator" _.="OS">
-							<Grids>
-								<Grid _="OSGrid" login-URI="http://login.osgrid.org/"/>
-								<Grid _="Kitely" login-URI="http://grid.kitely.com:8002/"/>
-								<Grid _="rOwlGrid Sasquatch" login-URI="http://ernsoft.selfhost.eu:8002"/>
-							</Grids>
-						</SubSystem>
-					</SubSystems>
-				</System>
-			</Systems>
-		</Universe>
-	</Universes>
-</Multiverse>
+				<Persons>
+					<Person _="Greta Thunberg"/>
+				</Persons>
+			</Universe>
+			<Universe _="Metaverse" EntityType="virtual">
+				<Systems>
+					<System _="SecondLife/OpenSimulator">
+						<Viewers>
+							<Viewer _="Firestorm"/>
+							<Viewer _="Hydrastorm"/>
+							<Viewer _="Scenegate"/>
+							<Viewer _="Radegast"/>
+							<Viewer _="OwlView"/>
+						</Viewers>
+						<Grids Union_of="../SubSystems/*/Grids"/>
+						<SubSystems>
+							<SubSystem _="SecondLife" _.="SL">
+								<Grids>
+									<Grid _="Second Life" login-URI="https://login.agni.lindenlab.com/cgi-bin/login.cgi"/>
+									<Grid _="Aditi"/>
+								</Grids>
+							</SubSystem>
+							<SubSystem _="OpenSimulator" _.="OS">
+								<Grids>
+									<Grid _="OSGrid" login-URI="http://login.osgrid.org/"/>
+									<Grid _="Kitely" login-URI="http://grid.kitely.com:8002/"/>
+									<Grid _="rOwlGrid Sasquatch" login-URI="http://ernsoft.selfhost.eu:8002"/>
+								</Grids>
+							</SubSystem>
+						</SubSystems>
+					</System>
+				</Systems>
+			</Universe>
+		</Universes>
+	</Multiverse>
+</System>
