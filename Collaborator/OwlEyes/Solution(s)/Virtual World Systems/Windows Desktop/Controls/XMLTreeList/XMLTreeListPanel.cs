@@ -38,7 +38,7 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				if (value == null) return;
 
 				parentElement = value.AttatchTo(this);
-				ElementList = new ListView(this, parentElement);
+				ElementList = new ListView(this, parentElement, 'C');
 				//Debug.WriteLine($"new Panel, Size={ElementList.Size}");
 				AutoScrollMinSize = ElementList.Size + Padding.Size;
 			}

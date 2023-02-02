@@ -33,18 +33,19 @@
 			this.MMF_Exit = new System.Windows.Forms.ToolStripMenuItem();
 			this.StatusBar = new System.Windows.Forms.StatusStrip();
 			this.Tools = new System.Windows.Forms.ToolStripContainer();
+			this.MainTabs = new System.Windows.Forms.TabControl();
+			this.Interceptor = new VWS.WindowsDesktop.Controls.InterceptorTabPage();
+			this.TestPage = new VWS.WindowsDesktop.Controls.TestTabPage();
 			this.MainLeftSplitter = new VWS.WindowsDesktop.Controls.Splitter();
 			this.ObjectTree = new VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList();
 			this.MainToolStrip = new System.Windows.Forms.ToolStrip();
 			this.MainEditModeButton = new VWS.WindowsDesktop.Controls.ToolStrip.CheckButton();
-			this.Interceptor = new VWS.WindowsDesktop.Controls.InterceptorTabPage();
-			this.MainTabs = new System.Windows.Forms.TabControl();
 			this.MainMenu.SuspendLayout();
 			this.Tools.ContentPanel.SuspendLayout();
 			this.Tools.TopToolStripPanel.SuspendLayout();
 			this.Tools.SuspendLayout();
-			this.MainToolStrip.SuspendLayout();
 			this.MainTabs.SuspendLayout();
+			this.MainToolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainMenu
@@ -105,6 +106,34 @@
 			this.Tools.TopToolStripPanel.Controls.Add(this.MainToolStrip);
 			this.Tools.TopToolStripPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
 			// 
+			// MainTabs
+			// 
+			this.MainTabs.Controls.Add(this.Interceptor);
+			this.MainTabs.Controls.Add(this.TestPage);
+			this.MainTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MainTabs.Location = new System.Drawing.Point(181, 0);
+			this.MainTabs.Name = "MainTabs";
+			this.MainTabs.SelectedIndex = 0;
+			this.MainTabs.Size = new System.Drawing.Size(1153, 740);
+			this.MainTabs.TabIndex = 3;
+			// 
+			// Interceptor
+			// 
+			this.Interceptor.Location = new System.Drawing.Point(4, 22);
+			this.Interceptor.Name = "Interceptor";
+			this.Interceptor.Size = new System.Drawing.Size(1145, 714);
+			this.Interceptor.TabIndex = 0;
+			this.Interceptor.Text = "Interceptor";
+			// 
+			// TestPage
+			// 
+			this.TestPage.Location = new System.Drawing.Point(4, 22);
+			this.TestPage.Name = "TestPage";
+			this.TestPage.Size = new System.Drawing.Size(1145, 714);
+			this.TestPage.TabIndex = 1;
+			this.TestPage.Text = "TestPage";
+			this.TestPage.UseVisualStyleBackColor = true;
+			// 
 			// MainLeftSplitter
 			// 
 			this.MainLeftSplitter.Cursor = System.Windows.Forms.Cursors.VSplit;
@@ -146,24 +175,6 @@
 			this.MainEditModeButton.Text = "MainEditMode";
 			this.MainEditModeButton.ToolTipText = "Edit Mode";
 			// 
-			// Interceptor
-			// 
-			this.Interceptor.Location = new System.Drawing.Point(4, 22);
-			this.Interceptor.Name = "Interceptor";
-			this.Interceptor.Size = new System.Drawing.Size(1145, 714);
-			this.Interceptor.TabIndex = 0;
-			this.Interceptor.Text = "Interceptor";
-			// 
-			// MainTabs
-			// 
-			this.MainTabs.Controls.Add(this.Interceptor);
-			this.MainTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.MainTabs.Location = new System.Drawing.Point(181, 0);
-			this.MainTabs.Name = "MainTabs";
-			this.MainTabs.SelectedIndex = 0;
-			this.MainTabs.Size = new System.Drawing.Size(1153, 740);
-			this.MainTabs.TabIndex = 3;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,7 +189,6 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "MainForm";
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
 			this.MainMenu.ResumeLayout(false);
 			this.MainMenu.PerformLayout();
 			this.Tools.ContentPanel.ResumeLayout(false);
@@ -186,9 +196,9 @@
 			this.Tools.TopToolStripPanel.PerformLayout();
 			this.Tools.ResumeLayout(false);
 			this.Tools.PerformLayout();
+			this.MainTabs.ResumeLayout(false);
 			this.MainToolStrip.ResumeLayout(false);
 			this.MainToolStrip.PerformLayout();
-			this.MainTabs.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -207,5 +217,6 @@
 		private VWS.WindowsDesktop.Controls.ToolStrip.CheckButton MainEditModeButton;
 		private System.Windows.Forms.TabControl MainTabs;
 		private Controls.InterceptorTabPage Interceptor;
+		private Controls.TestTabPage TestPage;
 	}
 }

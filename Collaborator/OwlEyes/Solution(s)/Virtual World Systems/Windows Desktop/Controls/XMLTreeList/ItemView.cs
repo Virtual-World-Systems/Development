@@ -22,10 +22,18 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 			Element = e;
 			Index = i;
 		}
+		internal ItemView(ListView p, XML.Attribute a, int i)
+		{
+			ItemList = p;
+			Attribute = a;
+			Element = a.Element;
+			Index = i;
+		}
 
 		ListView ItemList;
 		internal int Index;
 		internal Element Element;
+		internal XML.Attribute Attribute = null;
 
 		internal XMLTreeListPanel Panel
 		{
@@ -53,7 +61,9 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		int ContentIndent { get => 12; }
 		internal Size ComputeHeaderSize(XMLTreeListPanel panel, Graphics g)
 		{
-			return (Size = (HeaderSize = XMLTreeListPanel.Painter.MeasureHeader(g, panel.Font, Element.DisplayName)));
+			if (Attribute == null)
+				return (Size = (HeaderSize = XMLTreeListPanel.Painter.MeasureHeader(g, panel.Font, Element.DisplayName)));
+			return (Size = (HeaderSize = XMLTreeListPanel.Painter.MeasureAttribute(g, Panel.Font, Attribute)));
 		}
 
 		#endregion
@@ -119,9 +129,14 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 				Control panel = ItemList.Control;
 				Size szD = new Size(client.Width, HeaderSize.Height);
 
-				XMLTreeListPanel.Painter.DrawItemHeader(g,
-					panel.Font, Element.DisplayName, client.Location, szD,
-					panel.ForeColor, panel.BackColor, GetState);
+				if (Attribute == null)
+					XMLTreeListPanel.Painter.DrawItemHeader(g,
+						panel.Font, Element.DisplayName, client.Location, szD,
+						panel.ForeColor, panel.BackColor, GetState);
+				else
+					XMLTreeListPanel.Painter.DrawAttribute(g,
+							panel.Font, Attribute, client.Location, szD,
+							panel.ForeColor, panel.BackColor);
 
 				if (ContentView == null) return;
 				if (!ContentView.IsOpen) return;

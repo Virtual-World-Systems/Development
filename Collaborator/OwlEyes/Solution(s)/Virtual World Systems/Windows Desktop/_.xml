@@ -15,7 +15,13 @@
 					<Platform _=".NET">
 					</Platform>
 				</OperatingSystems>
-				<Software _="MetaverseViewer"/>
+				<Software _="Metaverse Viewer" by="Owl Eyes">
+					<Form.TabPages>
+						<Test>
+							
+						</Test>
+					</Form.TabPages>
+				</Software>
 			</Software>
 			<Persons>
 				<Person _="Greta Thunberg"/>
@@ -23,7 +29,7 @@
 		</Universe>
 		<Universe _="Metaverse" EntityType="virtual">
 			<Systems>
-				<System _="OSSL">
+				<System _="SecondLife/OpenSimulator">
 					<Viewers>
 						<Viewer _="Firestorm"/>
 						<Viewer _="Hydrastorm"/>
@@ -33,17 +39,17 @@
 					</Viewers>
 					<Grids Union_of="../SubSystems/*/Grids"/>
 					<SubSystems>
-						<SubSystem _="SecondLife">
+						<SubSystem _="SecondLife" _.="SL">
 							<Grids>
-								<Grid _="Second Life" System="OSSL_SL" login-URI="https://login.agni.lindenlab.com/cgi-bin/login.cgi"/>
+								<Grid _="Second Life" login-URI="https://login.agni.lindenlab.com/cgi-bin/login.cgi"/>
 								<Grid _="Aditi"/>
 							</Grids>
 						</SubSystem>
-						<SubSystem _="OpenSimulator">
+						<SubSystem _="OpenSimulator" _.="OS">
 							<Grids>
-								<Grid _="rOwlGrid Sasquatch" login-URI="http://ernsoft.selfhost.eu:8002"/>
-								<Grid _="Kitely" login-URI="http://grid.kitely.com:8002/"/>
 								<Grid _="OSGrid" login-URI="http://login.osgrid.org/"/>
+								<Grid _="Kitely" login-URI="http://grid.kitely.com:8002/"/>
+								<Grid _="rOwlGrid Sasquatch" login-URI="http://ernsoft.selfhost.eu:8002"/>
 							</Grids>
 						</SubSystem>
 					</SubSystems>

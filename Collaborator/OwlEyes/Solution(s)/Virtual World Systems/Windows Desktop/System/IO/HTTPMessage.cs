@@ -21,7 +21,7 @@ namespace VWS.IO
 			int eoh = -1; ID = id;
 			for (int i = 0; i < bytes.Length; i++) if (is_double_EOL(bytes, i)) { eoh = i + 1; break; }
 			if (eoh == -1) throw new EndOfStreamException();
-			string msg = ASCIIEncoding.ASCII.GetString(bytes, 0, eoh);
+			string msg = Encoding.ASCII.GetString(bytes, 0, eoh);
 			Debug.WriteLine($"\r\nHTTPMessage\r\n>>>{msg}<<<");
 			StringReader stringReader = new StringReader(msg);
 			(string H1, string H2, string H3) = RH_from(stringReader.ReadLine());

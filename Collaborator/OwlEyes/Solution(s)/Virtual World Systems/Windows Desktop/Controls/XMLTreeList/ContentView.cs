@@ -56,15 +56,19 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		}
 
 		#region OpenState
-		bool _osMeta = false; public bool OpenState_Meta { get => _osMeta; set { _set(ref _osMeta, value, ref MetaView); } }
-		bool _osAttributes = false; public bool OpenState_Attributes { get => _osAttributes; set { _set(ref _osAttributes, value, ref AttributesView); } }
-		bool _osChildElements = false; public bool OpenState_ChildElements { get => _osChildElements; set { _set(ref _osChildElements, value, ref ChildElementsView); } }
-		bool _osObject = false; public bool OpenState_Object { get => _osObject; set { _set(ref _osObject, value, ref ObjectView); } }
+		bool _osMeta = false; public bool OpenState_Meta { 
+			get => _osMeta; set { _set(ref _osMeta, value, 'M', ref MetaView); } }
+		bool _osAttributes = false; public bool OpenState_Attributes { 
+			get => _osAttributes; set { _set(ref _osAttributes, value, 'A', ref AttributesView); } }
+		bool _osChildElements = false; public bool OpenState_ChildElements {
+			get => _osChildElements; set { _set(ref _osChildElements, value, 'C', ref ChildElementsView); } }
+		bool _osObject = false; public bool OpenState_Object {
+			get => _osObject; set { _set(ref _osObject, value, 'O', ref ObjectView); } }
 
-		void _set(ref bool oldState, bool newState, ref ListView partView)
+		void _set(ref bool oldState, bool newState, char mode, ref ListView partView)
 		{
 			if (oldState == newState) return;
-			if (newState && (partView == null)) { partView = new ListView(this); }
+			if (newState && (partView == null)) { partView = new ListView(this, mode); }
 			oldState = newState;
 			if (!IsOpen) ItemView.SetContentCorner(new Point(ItemView.HeaderSize));
 			else ItemView.SetContentCorner(Offset + Size);
@@ -75,10 +79,14 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 		internal void Paint(Graphics g, Rectangle client)
 		{
-			if (_osMeta) { MetaView.Paint(g, client); client.Y += MetaView.Size.Height; client.Height += MetaView.Size.Height; }
-			if (_osAttributes) { AttributesView.Paint(g, client); client.Y += AttributesView.Size.Height; client.Height += AttributesView.Size.Height; }
-			if (_osChildElements) { ChildElementsView.Paint(g, client); client.Y += ChildElementsView.Size.Height; client.Height += ChildElementsView.Size.Height; }
-			if (_osObject) { ObjectView.Paint(g, client); client.Y += ObjectView.Size.Height; client.Height += ObjectView.Size.Height; }
+			if (_osMeta) { MetaView.Paint(g, client);
+				client.Y += MetaView.Size.Height; client.Height += MetaView.Size.Height; }
+			if (_osAttributes) { AttributesView.Paint(g, client);
+				client.Y += AttributesView.Size.Height; client.Height += AttributesView.Size.Height; }
+			if (_osChildElements) { ChildElementsView.Paint(g, client);
+				client.Y += ChildElementsView.Size.Height; client.Height += ChildElementsView.Size.Height; }
+			if (_osObject) { ObjectView.Paint(g, client);
+				client.Y += ObjectView.Size.Height; client.Height += ObjectView.Size.Height; }
 		}
 	}
 }

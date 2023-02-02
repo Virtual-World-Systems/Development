@@ -13,8 +13,9 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 	internal class ListView : IDisposable
 	{
 		#region misc
-		public ListView(Control control, Element element)
+		public ListView(Control control, Element element, char mode)
 		{
+			Mode = mode;
 			Control = control;
 			Element = element;
 			ContentView = null;
@@ -57,11 +58,12 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 		#endregion
 
 		#region Container
-		public ListView(ContentView ContentView)
-			: this(ContentView.ItemView.Panel, ContentView.ItemView.Element)
+		public ListView(ContentView ContentView, char mode)
+			: this(ContentView.ItemView.Panel, ContentView.ItemView.Element, mode)
 		{
 			this.ContentView = ContentView;
 		}
+		internal char Mode = '-';
 		internal ContentView ContentView { get; private set; } = null;
 
 		#endregion
@@ -96,10 +98,21 @@ namespace VWS.WindowsDesktop.Controls.XMLTreeList
 
 			using (Graphics g = Control.CreateGraphics())
 			{
-				foreach (Element child in Element.SelectElements("*"))
+				if (Mode == 'C')
 				{
-					Items.Add(item = new ItemView(this, child, index++));
-					item.ComputeHeaderSize((XMLTreeListPanel)Control, g);
+					foreach (Element child in Element.SelectElements("*"))
+					{
+						Items.Add(item = new ItemView(this, child, index++));
+						item.ComputeHeaderSize((XMLTreeListPanel)Control, g);
+					}
+				}
+				else
+				{
+					foreach (XML.Attribute attr in Element.Attributes)
+					{
+						Items.Add(item = new ItemView(this, attr, index++));
+						item.ComputeHeaderSize((XMLTreeListPanel)Control, g);
+					}
 				}
 			}
 		}

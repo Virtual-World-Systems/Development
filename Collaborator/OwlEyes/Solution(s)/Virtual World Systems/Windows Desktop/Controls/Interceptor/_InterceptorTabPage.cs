@@ -55,17 +55,20 @@ namespace VWS.WindowsDesktop.Controls
 			lvi.Tag = c; Connections.Items.Add(lvi);
 			c.HTTPMessageReceived += Connection_HTTPMessageReceived;
 			c.ConnectionClosed += Connection_Closed;
-			//addUDPListener(c.ID);
+			addUDPListener(c.ID);
 		}
 
+		bool udpOpen = false;
 		void addUDPListener(string id)
 		{
-			int port = 17000 + int.Parse(id.Substring(2));
+			if (udpOpen) return; udpOpen = true;
+			int port = 17009;// 17000 + int.Parse(id.Substring(2));
 			UDPListener udpClient = new UDPListener(port, id);
 			string udpPort = "" + udpClient.Client.LocalEndPoint;
 			udpPort = udpPort.Substring(udpPort.IndexOf(":") + 1);
 			ListViewItem lvi = new ListViewItem(new string[] { udpPort, id });
 			lvi.Tag = udpClient; UDPListeners.Items.Add(lvi);
+			udpClient.Send(new byte[0], 0, "virtual-world-systems.net", port);
 			udpClient.Listen();
 		}
 

@@ -192,6 +192,10 @@
     <Compile Include="Converter\Stream.Designer.cs">
       <DependentUpon>Stream.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\MeshPrim.cs" />
+    <Compile Include="Data\TypeSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +267,12 @@
     <Compile Include="XML\Attribute.cs" />
     <Compile Include="XML\Document.cs" />
     <Compile Include="XML\Element.cs" />
+    <Compile Include="_Test\TestTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Test\TestTabPage.Designer.cs">
+      <DependentUpon>TestTabPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\Interceptor\BorderedInterceptorServer.resx">
       <DependentUpon>BorderedInterceptorServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Traffic\V3Panel.resx">
       <DependentUpon>V3Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Test\TestTabPage.resx">
+      <DependentUpon>TestTabPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
