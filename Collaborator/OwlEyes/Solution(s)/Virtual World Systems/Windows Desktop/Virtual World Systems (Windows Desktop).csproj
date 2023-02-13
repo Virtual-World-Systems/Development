@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DataGrid\DataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGrid\DataGridView.Designer.cs">
+      <DependentUpon>DataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGrid\_DataGridTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGrid\_DataGridTabPage.Designer.cs">
+      <DependentUpon>_DataGridTabPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Interceptor\BorderedInterceptorServer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -274,6 +286,12 @@
     <Compile Include="_Test\TestTabPage.Designer.cs">
       <DependentUpon>TestTabPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\DataGrid\DataGridView.resx">
+      <DependentUpon>DataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGrid\_DataGridTabPage.resx">
+      <DependentUpon>_DataGridTabPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Interceptor\BorderedInterceptorServer.resx">
       <DependentUpon>BorderedInterceptorServer.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,6 @@
-﻿namespace VWS.WindowsDesktop
+﻿using VWS.WindowsDesktop.Controls;
+
+namespace VWS.WindowsDesktop
 {
 	partial class MainForm
 	{
@@ -40,6 +42,7 @@
 			this.ObjectTree = new VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList();
 			this.MainToolStrip = new System.Windows.Forms.ToolStrip();
 			this.MainEditModeButton = new VWS.WindowsDesktop.Controls.ToolStrip.CheckButton();
+			this.DataGridTabPage = new DataGridTabPage();
 			this.MainMenu.SuspendLayout();
 			this.Tools.ContentPanel.SuspendLayout();
 			this.Tools.TopToolStripPanel.SuspendLayout();
@@ -110,6 +113,7 @@
 			// 
 			this.MainTabs.Controls.Add(this.Interceptor);
 			this.MainTabs.Controls.Add(this.TestPage);
+			this.MainTabs.Controls.Add(this.DataGridTabPage);
 			this.MainTabs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.MainTabs.Location = new System.Drawing.Point(181, 0);
 			this.MainTabs.Name = "MainTabs";
@@ -175,6 +179,15 @@
 			this.MainEditModeButton.Text = "MainEditMode";
 			this.MainEditModeButton.ToolTipText = "Edit Mode";
 			// 
+			// DataGridTabPage
+			// 
+			this.DataGridTabPage.Location = new System.Drawing.Point(4, 22);
+			this.DataGridTabPage.Name = "DataGridTabPage";
+			this.DataGridTabPage.Size = new System.Drawing.Size(1145, 714);
+			this.DataGridTabPage.TabIndex = 2;
+			this.DataGridTabPage.Text = "DataGrid";
+			this.DataGridTabPage.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,5 +231,6 @@
 		private System.Windows.Forms.TabControl MainTabs;
 		private Controls.InterceptorTabPage Interceptor;
 		private Controls.TestTabPage TestPage;
+		private Controls.DataGridTabPage DataGridTabPage;
 	}
 }

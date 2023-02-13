@@ -26,7 +26,7 @@ namespace VWS.WindowsDesktop
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			MainTabs.SelectedTab = Interceptor;
+			MainTabs.SelectedTab = Interceptor;// DataGridTabPage;
 		}
 	}
 }

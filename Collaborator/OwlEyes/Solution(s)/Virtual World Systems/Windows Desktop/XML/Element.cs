@@ -24,7 +24,7 @@ namespace XML
 
 		public Document Document { get { return (Document)OwnerDocument; } }
 		public Element Root { get { return Document.Root; } }
-		public Element Parent { get { return (Element) ParentNode; } }
+		public Element Parent { get { return (Element) ((ParentNode is Element) ? ParentNode : null); } }
 
 		public static Element @new(string name) { return Document.Instance.CreateElement(name); }
 
