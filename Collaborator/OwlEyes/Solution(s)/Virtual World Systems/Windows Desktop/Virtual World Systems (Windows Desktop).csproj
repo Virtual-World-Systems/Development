@@ -441,6 +441,7 @@
     <Content Include="Data\Interceptor 01.txt" />
     <Content Include="Data\Interceptor 02.txt" />
     <Content Include="Data\Interceptor Login Response.xml" />
+    <Content Include="Data\_.xml" />
     <Content Include="ObjectModel\_old\_.xml" />
     <Content Include="ObjectModel\_old\runtime_tree.xml" />
     <Content Include="Resources\ear.png" />
