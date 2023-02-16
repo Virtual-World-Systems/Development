@@ -1,6 +1,6 @@
 ﻿namespace VWS.WindowsDesktop.Controls
 {
-	partial class DataGridView
+	partial class TODO_Control
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,16 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// DataGridView
+			// TODO_Control
 			// 
-			this.MultiSelect = false;
-			this.Name = "DataGrid";
-			this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.Size = new System.Drawing.Size(446, 362);
-			((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Name = "TODO_Control";
+			this.Size = new System.Drawing.Size(536, 190);
 			this.ResumeLayout(false);
 
 		}

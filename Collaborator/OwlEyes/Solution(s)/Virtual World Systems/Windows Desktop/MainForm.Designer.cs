@@ -38,16 +38,19 @@ namespace VWS.WindowsDesktop
 			this.MainTabs = new System.Windows.Forms.TabControl();
 			this.Interceptor = new VWS.WindowsDesktop.Controls.InterceptorTabPage();
 			this.TestPage = new VWS.WindowsDesktop.Controls.TestTabPage();
+			this.DataGridTabPage = new VWS.WindowsDesktop.Controls.DataGridTabPage();
+			this.TODO_Page = new System.Windows.Forms.TabPage();
 			this.MainLeftSplitter = new VWS.WindowsDesktop.Controls.Splitter();
 			this.ObjectTree = new VWS.WindowsDesktop.Controls.XMLTreeList.XMLTreeList();
 			this.MainToolStrip = new System.Windows.Forms.ToolStrip();
 			this.MainEditModeButton = new VWS.WindowsDesktop.Controls.ToolStrip.CheckButton();
-			this.DataGridTabPage = new DataGridTabPage();
+			this.TODO_Control = new VWS.WindowsDesktop.Controls.TODO_Control();
 			this.MainMenu.SuspendLayout();
 			this.Tools.ContentPanel.SuspendLayout();
 			this.Tools.TopToolStripPanel.SuspendLayout();
 			this.Tools.SuspendLayout();
 			this.MainTabs.SuspendLayout();
+			this.TODO_Page.SuspendLayout();
 			this.MainToolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -114,6 +117,7 @@ namespace VWS.WindowsDesktop
 			this.MainTabs.Controls.Add(this.Interceptor);
 			this.MainTabs.Controls.Add(this.TestPage);
 			this.MainTabs.Controls.Add(this.DataGridTabPage);
+			this.MainTabs.Controls.Add(this.TODO_Page);
 			this.MainTabs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.MainTabs.Location = new System.Drawing.Point(181, 0);
 			this.MainTabs.Name = "MainTabs";
@@ -137,6 +141,27 @@ namespace VWS.WindowsDesktop
 			this.TestPage.TabIndex = 1;
 			this.TestPage.Text = "TestPage";
 			this.TestPage.UseVisualStyleBackColor = true;
+			// 
+			// DataGridTabPage
+			// 
+			this.DataGridTabPage.Location = new System.Drawing.Point(4, 22);
+			this.DataGridTabPage.Name = "DataGridTabPage";
+			this.DataGridTabPage.Size = new System.Drawing.Size(1145, 714);
+			this.DataGridTabPage.TabIndex = 2;
+			this.DataGridTabPage.Text = "DataGrid";
+			this.DataGridTabPage.UseVisualStyleBackColor = true;
+			// 
+			// TODO_Page
+			// 
+			this.TODO_Page.AutoScroll = true;
+			this.TODO_Page.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.TODO_Page.Controls.Add(this.TODO_Control);
+			this.TODO_Page.Location = new System.Drawing.Point(4, 22);
+			this.TODO_Page.Name = "TODO_Page";
+			this.TODO_Page.Size = new System.Drawing.Size(1145, 714);
+			this.TODO_Page.TabIndex = 3;
+			this.TODO_Page.Text = "TODO";
+			this.TODO_Page.UseVisualStyleBackColor = true;
 			// 
 			// MainLeftSplitter
 			// 
@@ -179,14 +204,16 @@ namespace VWS.WindowsDesktop
 			this.MainEditModeButton.Text = "MainEditMode";
 			this.MainEditModeButton.ToolTipText = "Edit Mode";
 			// 
-			// DataGridTabPage
+			// TODO_Control
 			// 
-			this.DataGridTabPage.Location = new System.Drawing.Point(4, 22);
-			this.DataGridTabPage.Name = "DataGridTabPage";
-			this.DataGridTabPage.Size = new System.Drawing.Size(1145, 714);
-			this.DataGridTabPage.TabIndex = 2;
-			this.DataGridTabPage.Text = "DataGrid";
-			this.DataGridTabPage.UseVisualStyleBackColor = true;
+			this.TODO_Control.AutoSize = true;
+			this.TODO_Control.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.TODO_Control.BackColor = System.Drawing.Color.Ivory;
+			this.TODO_Control.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.TODO_Control.Location = new System.Drawing.Point(0, 0);
+			this.TODO_Control.Name = "TODO_Control";
+			this.TODO_Control.Size = new System.Drawing.Size(1141, 710);
+			this.TODO_Control.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -210,6 +237,8 @@ namespace VWS.WindowsDesktop
 			this.Tools.ResumeLayout(false);
 			this.Tools.PerformLayout();
 			this.MainTabs.ResumeLayout(false);
+			this.TODO_Page.ResumeLayout(false);
+			this.TODO_Page.PerformLayout();
 			this.MainToolStrip.ResumeLayout(false);
 			this.MainToolStrip.PerformLayout();
 			this.ResumeLayout(false);
@@ -232,5 +261,7 @@ namespace VWS.WindowsDesktop
 		private Controls.InterceptorTabPage Interceptor;
 		private Controls.TestTabPage TestPage;
 		private Controls.DataGridTabPage DataGridTabPage;
+		private System.Windows.Forms.TabPage TODO_Page;
+		private TODO_Control TODO_Control;
 	}
 }

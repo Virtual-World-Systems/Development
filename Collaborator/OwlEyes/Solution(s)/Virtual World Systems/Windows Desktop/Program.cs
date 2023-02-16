@@ -82,11 +82,11 @@ namespace VWS.WindowsDesktop
 				if (SourceRoot.EndsWith("Debug\\") || SourceRoot.EndsWith("Release\\"))
 					SourceRoot = SourceRoot = SourceRoot.Substring(0, SourceRoot.IndexOf("\\bin\\") + 1);
 
-				UserLocalFirestormData = LoadEnvPath(Environment.SpecialFolder.ApplicationData, "\\Firestorm_x64\\");
+				UserRoamingFirestormData = LoadEnvPath(Environment.SpecialFolder.ApplicationData, "\\Firestorm_x64\\");
 
 				Debug.WriteLine($"**** SourceRoot: {SourceRoot}");
 				Debug.WriteLine($"**** ProgramPath: {ProgramPath}");
-
+				Debug.WriteLine($"**** UserRoamingFirestormData: {UserRoamingFirestormData}");
 				#endregion
 				#region load ObjectModel
 
@@ -149,7 +149,7 @@ namespace VWS.WindowsDesktop
 				else
 				{
 					e = XML.CreateElement(true, "OSSL", "Grids", "OSSL");
-					Element elem = XML.ReadFile(UserLocalFirestormData + "user_settings\\grids.remote.xml");
+					Element elem = XML.ReadFile(UserRoamingFirestormData + "user_settings\\grids.user.xml");
 					e.AppendChild(elem);
 					e.WriteFile(XMLPath);
 				}
@@ -249,7 +249,7 @@ namespace VWS.WindowsDesktop
 		public static string ProgramPath { get; private set; } = null;
 		public static string SourceRoot { get; private set; } = null;
 		public static string Path { get { return ProgramPath; } }
-		public static string UserLocalFirestormData { get; private set; }
+		public static string UserRoamingFirestormData { get; private set; }
 		#endregion
 	}
 }

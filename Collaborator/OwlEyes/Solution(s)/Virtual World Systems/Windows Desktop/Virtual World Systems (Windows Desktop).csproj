@@ -115,6 +115,12 @@
     <Compile Include="Controls\RaisedRectangle.Designer.cs">
       <DependentUpon>RaisedRectangle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ToDoPage\TODO_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToDoPage\TODO_Control.Designer.cs">
+      <DependentUpon>TODO_Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ToolStrip\CheckButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     <EmbeddedResource Include="Controls\Interceptor\ScrollableInterceptor.resx">
       <DependentUpon>ScrollableInterceptor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToDoPage\TODO_Control.resx">
+      <DependentUpon>TODO_Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\V11.resx">
       <DependentUpon>V11.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +438,9 @@
     <Folder Include="_old\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Interceptor 01.txt" />
+    <Content Include="Data\Interceptor 02.txt" />
+    <Content Include="Data\Interceptor Login Response.xml" />
     <Content Include="ObjectModel\_old\_.xml" />
     <Content Include="ObjectModel\_old\runtime_tree.xml" />
     <Content Include="Resources\ear.png" />

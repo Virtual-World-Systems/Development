@@ -1,0 +1,749 @@
+﻿
+
+HTTPMessage
+>>>GET /get_grid_info HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-alive: 300
+Accept: application/llsd+xml
+Content-Type: application/llsd+xml
+X-SecondLife-UDP-Listen-Port: 56202
+
+<<<
+
+UDPListener[00001]
+
+
+VWS.IO.TCPConnection incoming
+GET /get_grid_info HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-Alive: 300
+Accept: application/llsd+xml
+Content-Type: application/llsd+xml
+X-SecondLife-UDP-Listen-Port: 56202
+
+
+
+
+modified
+GET /get_grid_info HTTP/1.1
+Host: ernsoft.selfhost.eu:8002
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-Alive: 300
+Accept: application/llsd+xml
+Content-Type: application/llsd+xml
+X-SecondLife-UDP-Listen-Port: 17009
+
+
+
+
+HTTPMessage
+>>>HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:17:18 GMT
+Content-Length: 629
+Content-Type: text/html;charset=UTF-8
+Connection: close
+Server: OSWebServer
+
+<<<
+
+Response:
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:17:18 GMT
+Content-Length: 629
+Content-Type: text/html;charset=UTF-8
+Connection: close
+Server: OSWebServer
+
+
+
+**** reading XML from String
+
+sending
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:17:18 GMT
+Content-Length: 691
+Content-Type: text/html;charset=UTF-8
+Connection: close
+Server: OSWebServer
+
+<gridinfo>
+	<gridnick>_rOWLplay</gridnick>
+	<register>http://virtual-world-systems.net:5404/register</register>
+	<gridname>_rOWLplay</gridname><gatekeeper>http://virtual-world-systems.net:5404/</gatekeeper>
+	<password>http://virtual-world-systems.net:5404/password</password>
+	<platform>OpenSim</platform>
+	<login>http://virtual-world-systems.net:5404/</login>
+	<welcome>http://virtual-world-systems.net:5404/welcome</welcome>
+	<about>http://virtual-world-systems.net:5404/about</about>
+	<GridStatusRSS>http://virtual-world-systems.net:5404/GridStatusRSS</GridStatusRSS>
+	<help>http://virtual-world-systems.net:5404/help</help>
+	<GridStatus>http://virtual-world-systems.net:5404/GridStatus</GridStatus>
+</gridinfo>
+
+
+sending binary data (Length=691)
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+VWS.IO.TCPConnection: len == 0
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+The thread 0xcb9c has exited with code 0 (0x0).
+The thread 0xb888 has exited with code 0 (0x0).
+The thread 0xae24 has exited with code 0 (0x0).
+The thread 0xc960 has exited with code 0 (0x0).
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+The thread 0xb1dc has exited with code 0 (0x0).
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+The thread 0x9c0c has exited with code 0 (0x0).
+VWS.IO.TCPConnection: len == 0
+
+HTTPMessage
+>>>POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-alive: 300
+Content-Type: text/xml
+Content-Length: 3011
+
+<<<
+
+VWS.IO.TCPConnection incoming
+POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-Alive: 300
+Content-Type: text/xml
+Content-Length: 3011
+
+
+
+<?xml version="1.0"?><methodCall><methodName>login_to_simulator</methodName><params><param><value><struct><member><name>address_size</name><value><int>64</int></value></member><member><name>agree_to_tos</name><value><int>0</int></value></member><member><name>channel</name><value><string>Firestorm-Releasex64</string></value></member><member><name>extended_errors</name><value><int>1</int></value></member><member><name>first</name><value><string>Tom</string></value></member><member><name>host_id</name><value><string/></value></member><member><name>id0</name><value><string>0442a211920a26b90cd7b067ac33034b</string></value></member><member><name>last</name><value><string>Ernst</string></value></member><member><name>last_exec_duration</name><value><int>193711149</int></value></member><member><name>last_exec_event</name><value><int>0</int></value></member><member><name>mac</name><value><string>288e25b85c15b20ff733ce2fa026d951</string></value></member><member><name>mfa_hash</name><value><string/></value></member><member><name>passwd</name><value><string>$1$</string></value></member><member><name>platform</name><value><string>win</string></value></member><member><name>platform_string</name><value><string>Microsoft Windows 10 64-bit</string></value></member><member><name>platform_version</name><value><string>10.0.19044</string></value></member><member><name>read_critical</name><value><int>0</int></value></member><member><name>start</name><value><string>home</string></value></member><member><name>token</name><value><string/></value></member><member><name>version</name><value><string>6.6.3.67470</string></value></member><member><name>options</name><value><array><data><value><string>inventory-root</string></value><value><string>inventory-skeleton</string></value><value><string>inventory-lib-root</string></value><value><string>inventory-lib-owner</string></value><value><string>inventory-skel-lib</string></value><value><string>initial-outfit</string></value><value><string>gestures</string></value><value><string>display_names</string></value><value><string>event_categories</string></value><value><string>event_notifications</string></value><value><string>classified_categories</string></value><value><string>adult_compliant</string></value><value><string>buddy-list</string></value><value><string>newuser-config</string></value><value><string>ui-config</string></value><value><string>advanced-mode</string></value><value><string>max-agent-groups</string></value><value><string>map-server-url</string></value><value><string>voice-config</string></value><value><string>tutorial_setting</string></value><value><string>login-flags</string></value><value><string>global-textures</string></value><value><string>currency</string></value><value><string>max_groups</string></value><value><string>search</string></value><value><string>destination_guide_url</string></value><value><string>avatar_picker_url</string></value></data></array></value></member></struct></value></param></params></methodCall>
+
+HTTPMessage
+>>>HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:21:36 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<<<
+
+Login Response:
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:21:36 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:21:36 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending binary data (Length=463)
+
+VWS.IO.TCPConnection: len == 0
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+The thread 0xbe50 has exited with code 0 (0x0).
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+
+HTTPMessage
+>>>POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-alive: 300
+Content-Type: text/xml
+Content-Length: 3010
+
+<<<
+
+VWS.IO.TCPConnection incoming
+POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-Alive: 300
+Content-Type: text/xml
+Content-Length: 3010
+
+
+
+<?xml version="1.0"?><methodCall><methodName>login_to_simulator</methodName><params><param><value><struct><member><name>address_size</name><value><int>64</int></value></member><member><name>agree_to_tos</name><value><int>0</int></value></member><member><name>channel</name><value><string>Firestorm-Releasex64</string></value></member><member><name>extended_errors</name><value><int>1</int></value></member><member><name>first</name><value><string>Owl</string></value></member><member><name>host_id</name><value><string/></value></member><member><name>id0</name><value><string>0442a211920a26b90cd7b067ac33034b</string></value></member><member><name>last</name><value><string>Eyes</string></value></member><member><name>last_exec_duration</name><value><int>193711149</int></value></member><member><name>last_exec_event</name><value><int>0</int></value></member><member><name>mac</name><value><string>288e25b85c15b20ff733ce2fa026d951</string></value></member><member><name>mfa_hash</name><value><string/></value></member><member><name>passwd</name><value><string>$1$</string></value></member><member><name>platform</name><value><string>win</string></value></member><member><name>platform_string</name><value><string>Microsoft Windows 10 64-bit</string></value></member><member><name>platform_version</name><value><string>10.0.19044</string></value></member><member><name>read_critical</name><value><int>0</int></value></member><member><name>start</name><value><string>home</string></value></member><member><name>token</name><value><string/></value></member><member><name>version</name><value><string>6.6.3.67470</string></value></member><member><name>options</name><value><array><data><value><string>inventory-root</string></value><value><string>inventory-skeleton</string></value><value><string>inventory-lib-root</string></value><value><string>inventory-lib-owner</string></value><value><string>inventory-skel-lib</string></value><value><string>initial-outfit</string></value><value><string>gestures</string></value><value><string>display_names</string></value><value><string>event_categories</string></value><value><string>event_notifications</string></value><value><string>classified_categories</string></value><value><string>adult_compliant</string></value><value><string>buddy-list</string></value><value><string>newuser-config</string></value><value><string>ui-config</string></value><value><string>advanced-mode</string></value><value><string>max-agent-groups</string></value><value><string>map-server-url</string></value><value><string>voice-config</string></value><value><string>tutorial_setting</string></value><value><string>login-flags</string></value><value><string>global-textures</string></value><value><string>currency</string></value><value><string>max_groups</string></value><value><string>search</string></value><value><string>destination_guide_url</string></value><value><string>avatar_picker_url</string></value></data></array></value></member></struct></value></param></params></methodCall>
+
+HTTPMessage
+>>>HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:06 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<<<
+
+Login Response:
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:06 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:06 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending binary data (Length=463)
+
+VWS.IO.TCPConnection: len == 0
+The thread 0x6cf0 has exited with code 0 (0x0).
+
+HTTPMessage
+>>>POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-alive: 300
+Content-Type: text/xml
+Content-Length: 3042
+
+<<<
+
+VWS.IO.TCPConnection incoming
+POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-Alive: 300
+Content-Type: text/xml
+Content-Length: 3042
+
+
+
+<?xml version="1.0"?><methodCall><methodName>login_to_simulator</methodName><params><param><value><struct><member><name>address_size</name><value><int>64</int></value></member><member><name>agree_to_tos</name><value><int>0</int></value></member><member><name>channel</name><value><string>Firestorm-Releasex64</string></value></member><member><name>extended_errors</name><value><int>1</int></value></member><member><name>first</name><value><string>Owl</string></value></member><member><name>host_id</name><value><string/></value></member><member><name>id0</name><value><string>0442a211920a26b90cd7b067ac33034b</string></value></member><member><name>last</name><value><string>Eyes</string></value></member><member><name>last_exec_duration</name><value><int>193711149</int></value></member><member><name>last_exec_event</name><value><int>0</int></value></member><member><name>mac</name><value><string>288e25b85c15b20ff733ce2fa026d951</string></value></member><member><name>mfa_hash</name><value><string/></value></member><member><name>passwd</name><value><string>$1$7240ba365bccdbbf442c403e7ad79827</string></value></member><member><name>platform</name><value><string>win</string></value></member><member><name>platform_string</name><value><string>Microsoft Windows 10 64-bit</string></value></member><member><name>platform_version</name><value><string>10.0.19044</string></value></member><member><name>read_critical</name><value><int>0</int></value></member><member><name>start</name><value><string>home</string></value></member><member><name>token</name><value><string/></value></member><member><name>version</name><value><string>6.6.3.67470</string></value></member><member><name>options</name><value><array><data><value><string>inventory-root</string></value><value><string>inventory-skeleton</string></value><value><string>inventory-lib-root</string></value><value><string>inventory-lib-owner</string></value><value><string>inventory-skel-lib</string></value><value><string>initial-outfit</string></value><value><string>gestures</string></value><value><string>display_names</string></value><value><string>event_categories</string></value><value><string>event_notifications</string></value><value><string>classified_categories</string></value><value><string>adult_compliant</string></value><value><string>buddy-list</string></value><value><string>newuser-config</string></value><value><string>ui-config</string></value><value><string>advanced-mode</string></value><value><string>max-agent-groups</string></value><value><string>map-server-url</string></value><value><string>voice-config</string></value><value><string>tutorial_setting</string></value><value><string>login-flags</string></value><value><string>global-textures</string></value><value><string>currency</string></value><value><string>max_groups</string></value><value><string>search</string></value><value><string>destination_guide_url</string></value><value><string>avatar_picker_url</string></value></data></array></value></member></struct></value></param></params></methodCall>
+
+HTTPMessage
+>>>HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:27 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<<<
+
+Login Response:
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:27 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:27 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending binary data (Length=463)
+
+VWS.IO.TCPConnection: len == 0
+
+HTTPMessage
+>>>POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-alive: 300
+Content-Type: text/xml
+Content-Length: 3042
+
+<<<
+
+VWS.IO.TCPConnection incoming
+POST / HTTP/1.1
+Host: virtual-world-systems.net:5404
+Accept: */*
+Accept-Encoding: deflate, gzip
+Connection: keep-alive
+Keep-Alive: 300
+Content-Type: text/xml
+Content-Length: 3042
+
+
+
+<?xml version="1.0"?><methodCall><methodName>login_to_simulator</methodName><params><param><value><struct><member><name>address_size</name><value><int>64</int></value></member><member><name>agree_to_tos</name><value><int>0</int></value></member><member><name>channel</name><value><string>Firestorm-Releasex64</string></value></member><member><name>extended_errors</name><value><int>1</int></value></member><member><name>first</name><value><string>Owl</string></value></member><member><name>host_id</name><value><string/></value></member><member><name>id0</name><value><string>0442a211920a26b90cd7b067ac33034b</string></value></member><member><name>last</name><value><string>Eyes</string></value></member><member><name>last_exec_duration</name><value><int>193711149</int></value></member><member><name>last_exec_event</name><value><int>0</int></value></member><member><name>mac</name><value><string>288e25b85c15b20ff733ce2fa026d951</string></value></member><member><name>mfa_hash</name><value><string/></value></member><member><name>passwd</name><value><string>$1$7ac71d433f282034e088473244df8c02</string></value></member><member><name>platform</name><value><string>win</string></value></member><member><name>platform_string</name><value><string>Microsoft Windows 10 64-bit</string></value></member><member><name>platform_version</name><value><string>10.0.19044</string></value></member><member><name>read_critical</name><value><int>0</int></value></member><member><name>start</name><value><string>home</string></value></member><member><name>token</name><value><string/></value></member><member><name>version</name><value><string>6.6.3.67470</string></value></member><member><name>options</name><value><array><data><value><string>inventory-root</string></value><value><string>inventory-skeleton</string></value><value><string>inventory-lib-root</string></value><value><string>inventory-lib-owner</string></value><value><string>inventory-skel-lib</string></value><value><string>initial-outfit</string></value><value><string>gestures</string></value><value><string>display_names</string></value><value><string>event_categories</string></value><value><string>event_notifications</string></value><value><string>classified_categories</string></value><value><string>adult_compliant</string></value><value><string>buddy-list</string></value><value><string>newuser-config</string></value><value><string>ui-config</string></value><value><string>advanced-mode</string></value><value><string>max-agent-groups</string></value><value><string>map-server-url</string></value><value><string>voice-config</string></value><value><string>tutorial_setting</string></value><value><string>login-flags</string></value><value><string>global-textures</string></value><value><string>currency</string></value><value><string>max_groups</string></value><value><string>search</string></value><value><string>destination_guide_url</string></value><value><string>avatar_picker_url</string></value></data></array></value></member></struct></value></param></params></methodCall>
+
+HTTPMessage
+>>>HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:38 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<<<
+
+Login Response:
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:38 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending
+HTTP/1.1 200 OK
+Date: Mon, 13 Feb 2023 05:22:38 GMT
+Content-Length: 463
+Content-Type: text/xml
+Connection: close
+Access-Control-Allow-Origin: *
+Server: OSWebServer
+
+<?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>message</name><value><string>Could not authenticate your avatar. Please check your username and password, and check the grid if problems persist.</string></value></member><member><name>reason</name><value><string>key</string></value></member><member><name>login</name><value><string>false</string></value></member></struct></value></param></params></methodResponse>
+
+
+sending binary data (Length=463)
+
+VWS.IO.TCPConnection: len == 0
+The thread 0xa718 has exited with code 0 (0x0).
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+Exception thrown: 'System.Net.Sockets.SocketException' in System.dll
+
+HTTPMessage
+>>>GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+<<<
+
+VWS.IO.TCPConnection incoming
+GET /welcome?channel=Firestorm-Releasex64&grid=_rOWLplay&lang=en&login_content_version=2&os=Microsoft%20Windows%2010%2064-bit&sourceid=&version=6.6.3%20%2867470%29 HTTP/1.1
+Host: virtual-world-systems.net:5404
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) (Dullahan:1.12.3.202111032221 [64bit] - SecondLife/6.6.3.67470 (Firestorm-Releasex64; starlight skin))  Chrome/91.0.4472.114 [64bit] Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: en
+Accept-Encoding: gzip, deflate
+
+
+
+
+sending
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Connection: Keep-Alive
+Expires: -1
+Server: Microsoft-IIS/10.0
+X-AspNet-Version: 4.0.30319
+Set-Cookie: .=1; domain=virtual-world-systems.net; expires=Sat, 07-Jan-2023 14:53:13 GMT; path=/; secure; SameSite=Strict
+X-Powered-By: ASP.NET
+Date: Sat, 07 Jan 2023 14:52:53 GMT
+Content-Length: 61
+
+<html><head><title>XXX</title></head><body>TEST</body></html>
+
+
+sending binary data (Length=61)
+
+The thread 0x855c has exited with code 0 (0x0).
+VWS.IO.TCPConnection: len == 0
+The thread 0xb0b4 has exited with code 0 (0x0).

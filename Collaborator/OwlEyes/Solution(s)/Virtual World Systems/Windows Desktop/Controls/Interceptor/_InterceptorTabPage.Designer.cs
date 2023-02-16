@@ -54,6 +54,8 @@
 			this.UDPListenerTitleBar = new VWS.WindowsDesktop.Controls.TitleBar();
 			this.BorderedScrollableInterceptor = new VWS.WindowsDesktop.Controls.BorderedScrollableInterceptor();
 			this.InterceptorRightSplitter = new VWS.WindowsDesktop.Controls.Splitter();
+			this.InterceptorTopSplitter = new VWS.WindowsDesktop.Controls.Splitter();
+			this.TopPanel = new System.Windows.Forms.Panel();
 			this.ListenerPanel.SuspendLayout();
 			this.ConnectionListPanel.SuspendLayout();
 			this.ListenerListPanel.SuspendLayout();
@@ -259,10 +261,10 @@
 			// 
 			this.BorderedScrollableInterceptor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.BorderedScrollableInterceptor.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.BorderedScrollableInterceptor.Location = new System.Drawing.Point(0, 0);
+			this.BorderedScrollableInterceptor.Location = new System.Drawing.Point(168, 0);
 			this.BorderedScrollableInterceptor.Name = "BorderedScrollableInterceptor";
 			this.BorderedScrollableInterceptor.Padding = new System.Windows.Forms.Padding(10);
-			this.BorderedScrollableInterceptor.Size = new System.Drawing.Size(525, 502);
+			this.BorderedScrollableInterceptor.Size = new System.Drawing.Size(357, 502);
 			this.BorderedScrollableInterceptor.TabIndex = 0;
 			// 
 			// InterceptorRightSplitter
@@ -275,11 +277,31 @@
 			this.InterceptorRightSplitter.Size = new System.Drawing.Size(8, 502);
 			this.InterceptorRightSplitter.TabIndex = 4;
 			// 
+			// InterceptorTopSplitter
+			// 
+			this.InterceptorTopSplitter.BackColor = System.Drawing.SystemColors.Control;
+			this.InterceptorTopSplitter.Cursor = System.Windows.Forms.Cursors.HSplit;
+			this.InterceptorTopSplitter.Dock = System.Windows.Forms.DockStyle.Top;
+			this.InterceptorTopSplitter.Name = "InterceptorTopSplitter";
+			this.InterceptorTopSplitter.Size = new System.Drawing.Size(8, 8);
+			this.InterceptorTopSplitter.TabIndex = 0;
+			// 
+			// TopPanel
+			// 
+			this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+			this.TopPanel.Location = new System.Drawing.Point(0, 0);
+			this.TopPanel.Name = "TopPanel";
+			this.TopPanel.Size = new System.Drawing.Size(160, 100);
+			this.TopPanel.TabIndex = 0;
+			// 
 			// InterceptorTabPage
 			// 
 			this.Controls.Add(this.BorderedScrollableInterceptor);
 			this.Controls.Add(this.InterceptorRightSplitter);
 			this.Controls.Add(this.ListenerPanel);
+			this.Controls.Add(this.InterceptorTopSplitter);
+			this.Controls.Add(this.TopPanel);
+			this.Name = "InterceptorTabPage";
 			this.Size = new System.Drawing.Size(733, 502);
 			this.ListenerPanel.ResumeLayout(false);
 			this.ConnectionListPanel.ResumeLayout(false);
@@ -313,5 +335,7 @@
 		private System.Windows.Forms.ColumnHeader UDPPort;
 		private System.Windows.Forms.ColumnHeader UDPID;
 		private TitleBar UDPListenerTitleBar;
+		private Splitter InterceptorTopSplitter;
+		private System.Windows.Forms.Panel TopPanel;
 	}
 }
